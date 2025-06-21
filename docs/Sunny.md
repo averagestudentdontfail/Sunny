@@ -4,7 +4,7 @@ author: "Kiran K. Nath"
 date: "21/06/2025"
 format:
   html:
-    theme: cosmo
+    theme: journal
     toc: true
     toc-depth: 3
     number-sections: true
