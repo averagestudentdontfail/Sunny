@@ -1,24 +1,176 @@
 ---
-title: "The Sunny Algorithm: A Systematic Framework for Harvesting the Earnings Volatility Risk Premium Through Calendar Spreads"
+title: "Harvesting Market Fear: The Sunny Algorithm for Systematic Earnings Volatility Exploitation"
+subtitle: "A Calendar Spread Framework for Consistent Alpha Generation"
 author: "Kiran K. Nath"
-date: "21/06/2025"
-format:
-  html:
-    theme: journal
-    toc: true
-    toc-depth: 3
-    number-sections: true
-    code-fold: true
-    html-math-method: katex
-  pdf:
-    documentclass: article
-    fontsize: 11pt
-    geometry: "margin=1in"
-    number-sections: true
+date: "June 21, 2025"
 abstract: |
   This paper presents the Sunny algorithm, a quantitative framework designed to systematically exploit the volatility risk premium (VRP) around corporate earnings announcements through long calendar spread strategies. The methodology integrates three fundamental predictive factors: the Yang-Zhang realized volatility estimator, implied volatility term structure analysis, and the IV/RV ratio, combined with rigorous position sizing based on fractional Kelly criterion principles. Empirical validation demonstrates the algorithm's capacity to generate risk-adjusted returns while maintaining strict capital preservation through defined-risk option structures. The framework addresses persistent market inefficiencies where institutional hedging demand and retail speculation systematically inflate option premiums beyond actuarially fair values, particularly acute during earnings uncertainty periods. The systematic approach removes emotional decision-making while ensuring disciplined, repeatable execution across diverse market conditions.
-keywords: "Volatility Risk Premium, Earnings Announcements, Calendar Spreads, Algorithmic Trading, Options Strategies, Yang-Zhang Estimator"
-jel: "G11, G13, G14, C58"
+
+keywords: [Volatility Risk Premium, Earnings Announcements, Calendar Spreads, Algorithmic Trading, Options Strategies, Yang-Zhang Estimator]
+jel: [G11, G13, G14, C58]
+
+# Document formatting
+format:
+  html:
+    theme: 
+      - cosmo
+      - Styling.scss
+    # Removed redundant css: Styles.css
+    mainfont: "Source Serif Pro"
+    sansfont: "Source Sans Pro" 
+    monofont: "Source Code Pro"
+    fontsize: 12pt
+    linestretch: 1.6
+    toc: true
+    toc-depth: 4
+    toc-location: left
+    toc-title: "Contents"
+    number-sections: true
+    number-depth: 3
+    code-fold: false
+    code-tools: false
+    code-copy: false
+    html-math-method: katex
+    fig-cap-location: bottom
+    tbl-cap-location: top
+    citations-hover: true
+    footnotes-hover: true
+    smooth-scroll: true
+    anchor-sections: true
+    link-external-newwindow: true
+    highlight-style: github
+    grid:
+      sidebar-width: 300px
+      body-width: 900px
+      margin-width: 300px
+    page-layout: article
+    
+  pdf:
+    documentclass: article
+    classoption: [11pt, letterpaper, onecolumn]
+    geometry: 
+      - top=1.2in
+      - bottom=1.2in
+      - left=1.25in
+      - right=1.25in
+    fontfamily: mathpazo
+    fontsize: 11pt
+    linestretch: 1.5
+    number-sections: true
+    colorlinks: true
+    linkcolor: NavyBlue
+    urlcolor: NavyBlue
+    citecolor: NavyBlue
+    toccolor: black
+    fig-pos: "H"
+    tbl-pos: "H"
+    lot: false
+    lof: false
+    keep-tex: true
+    pdf-engine: pdflatex
+    cite-method: biblatex
+    biblio-style: apa
+    biblatexoptions: [backend=biber, style=apa, natbib=true]
+    include-in-header:
+      - text: |
+          \usepackage{booktabs}
+          \usepackage{longtable}
+          \usepackage{array}
+          \usepackage{multirow}
+          \usepackage{wrapfig}
+          \usepackage{float}
+          \usepackage{colortbl}
+          \usepackage{pdflscape}
+          \usepackage{tabu}
+          \usepackage{threeparttable}
+          \usepackage{threeparttablex}
+          \usepackage[normalem]{ulem}
+          \usepackage{makecell}
+          \usepackage{xcolor}
+          \usepackage{amsmath}
+          \usepackage{amsfonts}
+          \usepackage{amssymb}
+          \usepackage{mathtools}
+          \usepackage{bm}
+          \usepackage{microtype}
+          \usepackage{setspace}
+          \usepackage{fancyhdr}
+          \usepackage{titlesec}
+          \usepackage{caption}
+          
+          % Table and figure captions
+          \captionsetup[table]{skip=12pt, font=small, labelfont=bf}
+          \captionsetup[figure]{skip=12pt, font=small, labelfont=bf}
+          
+          % Professional section formatting
+          \titleformat{\section}{\large\bfseries\sffamily\color{NavyBlue}}{\thesection}{1em}{}
+          \titlespacing*{\section}{0pt}{24pt}{12pt}
+          
+          \titleformat{\subsection}{\normalsize\bfseries\sffamily\color{NavyBlue}}{\thesubsection}{1em}{}
+          \titlespacing*{\subsection}{0pt}{18pt}{9pt}
+          
+          \titleformat{\subsubsection}{\normalsize\bfseries\sffamily\color{NavyBlue}}{\thesubsubsection}{1em}{}
+          \titlespacing*{\subsubsection}{0pt}{12pt}{6pt}
+          
+          % Custom colors matching your theme
+          \definecolor{sunnyyellow}{RGB}{255, 223, 0}
+          \definecolor{sunnyblue}{RGB}{30, 144, 255}
+          \definecolor{sunnygray}{RGB}{248, 249, 250}
+          
+          % Professional header and footer
+          \pagestyle{fancy}
+          \fancyhf{}
+          \rhead{\small\thepage}
+          \lhead{\small\textit{The Sunny Algorithm}}
+          \renewcommand{\headrulewidth}{0.5pt}
+          \renewcommand{\headrule}{\hbox to\headwidth{\color{NavyBlue}\leaders\hrule height \headrulewidth\hfill}}
+          \setlength{\headheight}{14pt}
+          
+          % Better typography and spacing
+          \setlength{\emergencystretch}{3em}
+          \tolerance=9999
+          \hbadness=10000
+          \raggedbottom
+          
+          % Paragraph spacing
+          \setlength{\parskip}{8pt}
+          \setlength{\parindent}{0pt}
+          
+          % Better table spacing
+          \renewcommand{\arraystretch}{1.2}
+          
+          % Abstract formatting
+          \renewenvironment{abstract}
+            {\small\quotation\noindent\rule{\linewidth}{.5pt}\par\smallskip
+             \noindent\textbf{Abstract.}\space}
+            {\par\smallskip\noindent\rule{\linewidth}{.5pt}\endquotation}
+
+# Bibliography and references  
+bibliography: References.bib
+csl: Finance.csl
+link-citations: true
+reference-section-title: "References"
+
+# Execution and render options
+execute:
+  echo: false
+  warning: false
+  message: false
+  cache: true
+  freeze: auto
+
+# Cross-referencing
+crossref:
+  fig-title: "Figure"
+  tbl-title: "Table"
+  eq-title: "Equation"
+  title-delim: ":"
+  fig-prefix: "Figure"
+  tbl-prefix: "Table"
+  eq-prefix: "Equation"
+
+# Language and locale
+lang: en-US
 ---
 
 ## Introduction
@@ -265,9 +417,9 @@ $$f^* = \frac{bp - q}{b} = \frac{p - q/b}{1}$$
 
 The multi-asset Kelly criterion extends this framework through vector optimization:
 
-$$\mathbf{f}^* = \mathbf{\Sigma}^{-1}(\boldsymbol{\mu} - r\mathbf{1})$$
+$$\mathbf{f}^* = \mathbf{\Sigma}^{-1}(\mathbf{\mu} - r\mathbf{1})$$
 
-where $\mathbf{f}^*$ represents the optimal position weight vector, $\mathbf{\Sigma}$ denotes the return covariance matrix, $\boldsymbol{\mu}$ contains expected returns, and $r$ represents the risk-free rate.
+where $\mathbf{f}^*$ represents the optimal position weight vector, $\mathbf{\Sigma}$ denotes the return covariance matrix, $\mathbf{\mu}$ contains expected returns, and $r$ represents the risk-free rate.
 
 The Sunny implementation recognizes that full Kelly sizing often proves impractical due to estimation uncertainty and drawdown considerations. Fractional Kelly sizing addresses these concerns through scaling parameter $\gamma \in (0,1)$:
 
@@ -965,1241 +1117,3 @@ Trolle, A. B., & Schwartz, E. S. (2009). Unspanned stochastic volatility and the
 Yang, D., & Zhang, Q. (2000). Drift-independent volatility estimation based on high, low, open, and close prices. *Journal of Business*, 73(3), 477-492.
 
 ---
-
-## Appendix A: Python Implementation Code
-
-### Yang-Zhang Volatility Estimator
-
-```python
-import numpy as np
-import pandas as pd
-import matplotlib.pyplot as plt
-from scipy import stats
-from typing import Tuple, Optional
-import seaborn as sns
-
-def yang_zhang_volatility(data: pd.DataFrame, window: int = 30) -> pd.Series:
-    """
-    Calculate Yang-Zhang volatility estimator
-    
-    Parameters:
-    data: DataFrame with columns ['Open', 'High', 'Low', 'Close']
-    window: Rolling window for calculation
-    
-    Returns:
-    Series of annualized Yang-Zhang volatility estimates
-    """
-    # Calculate log returns
-    data = data.copy()
-    data['Close_lag'] = data['Close'].shift(1)
-    
-    # Overnight returns (close to open)
-    data['overnight'] = np.log(data['Open'] / data['Close_lag'])
-    
-    # Open to close returns
-    data['open_close'] = np.log(data['Close'] / data['Open'])
-    
-    # High to open and low to open
-    data['high_open'] = np.log(data['High'] / data['Open'])
-    data['low_open'] = np.log(data['Low'] / data['Open'])
-    
-    # High to close and low to close
-    data['high_close'] = np.log(data['High'] / data['Close'])
-    data['low_close'] = np.log(data['Low'] / data['Close'])
-    
-    # Close to close returns
-    data['close_close'] = np.log(data['Close'] / data['Close_lag'])
-    
-    def calculate_yz_variance(window_data):
-        n = len(window_data)
-        if n < 2:
-            return np.nan
-            
-        # Overnight variance
-        overnight_var = window_data['overnight'].var(ddof=1)
-        
-        # Close-to-close variance
-        close_var = window_data['close_close'].var(ddof=1)
-        
-        # Rogers-Satchell variance
-        rs_var = (window_data['high_open'] * window_data['high_close'] + 
-                  window_data['low_open'] * window_data['low_close']).mean()
-        
-        # Optimal weighting factor
-        k = 0.34 / (1.34 + (n + 1) / (n - 1))
-        
-        # Yang-Zhang variance
-        yz_var = overnight_var + k * close_var + (1 - k) * rs_var
-        
-        return yz_var
-    
-    # Rolling calculation
-    yz_variance = data.rolling(window=window).apply(
-        lambda x: calculate_yz_variance(x), raw=False
-    )['Close']
-    
-    # Annualize volatility
-    yz_volatility = np.sqrt(yz_variance * 252)
-    
-    return yz_volatility
-
-# Visualization function
-def plot_volatility_comparison(data: pd.DataFrame, window: int = 30):
-    """Plot comparison of different volatility estimators"""
-    
-    # Calculate different estimators
-    close_vol = data['Close'].pct_change().rolling(window).std() * np.sqrt(252)
-    yz_vol = yang_zhang_volatility(data, window)
-    
-    # Create comparison plot
-    plt.figure(figsize=(12, 8))
-    plt.style.use('seaborn-v0_8-whitegrid')
-    
-    plt.plot(data.index, close_vol, label='Close-to-Close', alpha=0.7, linewidth=2)
-    plt.plot(data.index, yz_vol, label='Yang-Zhang', alpha=0.8, linewidth=2)
-    
-    plt.title('Volatility Estimator Comparison', fontsize=16, fontweight='bold')
-    plt.xlabel('Date', fontsize=12)
-    plt.ylabel('Annualized Volatility', fontsize=12)
-    plt.legend(fontsize=12)
-    plt.grid(True, alpha=0.3)
-    
-    plt.tight_layout()
-    plt.show()
-```
-
-### Implied Volatility Term Structure Analysis
-
-```python
-import numpy as np
-import pandas as pd
-import matplotlib.pyplot as plt
-from scipy.optimize import minimize_scalar
-from sklearn.linear_model import LinearRegression
-from sklearn.metrics import r2_score
-import warnings
-warnings.filterwarnings('ignore')
-
-class TermStructureAnalyzer:
-    """Analyze implied volatility term structure and extract slope signals"""
-    
-    def __init__(self):
-        self.regression_results = {}
-        
-    def fit_term_structure(self, dte_array: np.array, iv_array: np.array, 
-                          min_points: int = 3) -> dict:
-        """
-        Fit linear regression to term structure data
-        
-        Parameters:
-        dte_array: Days to expiration
-        iv_array: Implied volatilities
-        min_points: Minimum points required for regression
-        
-        Returns:
-        Dictionary with regression results
-        """
-        if len(dte_array) < min_points or len(iv_array) < min_points:
-            return {'slope': np.nan, 'intercept': np.nan, 'r2': np.nan, 'valid': False}
-        
-        # Remove any NaN values
-        mask = ~(np.isnan(dte_array) | np.isnan(iv_array))
-        dte_clean = dte_array[mask]
-        iv_clean = iv_array[mask]
-        
-        if len(dte_clean) < min_points:
-            return {'slope': np.nan, 'intercept': np.nan, 'r2': np.nan, 'valid': False}
-        
-        # Fit linear regression
-        reg = LinearRegression()
-        X = dte_clean.reshape(-1, 1)
-        reg.fit(X, iv_clean)
-        
-        # Calculate R-squared
-        iv_pred = reg.predict(X)
-        r2 = r2_score(iv_clean, iv_pred)
-        
-        # Calculate standard errors
-        residuals = iv_clean - iv_pred
-        mse = np.mean(residuals**2)
-        var_dte = np.var(dte_clean, ddof=1)
-        se_slope = np.sqrt(mse / (len(dte_clean) * var_dte)) if var_dte > 0 else np.nan
-        
-        return {
-            'slope': reg.coef_[0],
-            'intercept': reg.intercept_,
-            'r2': r2,
-            'se_slope': se_slope,
-            'n_points': len(dte_clean),
-            'valid': True
-        }
-    
-    def analyze_backwardation(self, slope: float, threshold: float = -0.00406) -> str:
-        """Analyze term structure shape and generate signal"""
-        if np.isnan(slope):
-            return 'INVALID'
-        elif slope <= threshold:
-            return 'BACKWARDATION'
-        else:
-            return 'CONTANGO'
-    
-    def plot_term_structure(self, dte_array: np.array, iv_array: np.array, 
-                           title: str = "Implied Volatility Term Structure"):
-        """Plot term structure with fitted regression line"""
-        
-        # Fit regression
-        results = self.fit_term_structure(dte_array, iv_array)
-        
-        if not results['valid']:
-            print("Insufficient data for term structure analysis")
-            return
-        
-        # Create plot
-        plt.figure(figsize=(10, 6))
-        plt.style.use('seaborn-v0_8-whitegrid')
-        
-        # Plot data points
-        plt.scatter(dte_array, iv_array, alpha=0.7, s=60, color='steelblue', 
-                   label='Market Data')
-        
-        # Plot regression line
-        dte_range = np.linspace(dte_array.min(), dte_array.max(), 100)
-        iv_fitted = results['intercept'] + results['slope'] * dte_range
-        plt.plot(dte_range, iv_fitted, 'r--', linewidth=2, 
-                label=f"Slope: {results['slope']:.6f}")
-        
-        # Add statistics
-        stats_text = f"R²: {results['r2']:.3f}\n"
-        stats_text += f"Shape: {self.analyze_backwardation(results['slope'])}"
-        plt.text(0.02, 0.98, stats_text, transform=plt.gca().transAxes, 
-                verticalalignment='top', bbox=dict(boxstyle='round', facecolor='wheat'))
-        
-        plt.xlabel('Days to Expiration', fontsize=12)
-        plt.ylabel('Implied Volatility', fontsize=12)
-        plt.title(title, fontsize=14, fontweight='bold')
-        plt.legend()
-        plt.grid(True, alpha=0.3)
-        
-        plt.tight_layout()
-        plt.show()
-        
-        return results
-
-# Example usage and simulation
-def simulate_term_structure_data():
-    """Generate sample term structure data for demonstration"""
-    np.random.seed(42)
-    
-    # Simulate term structure with backwardation
-    dte_points = np.array([7, 14, 21, 30, 45, 60, 90])
-    base_iv = 0.25
-    slope = -0.006  # Backwardation
-    noise = np.random.normal(0, 0.01, len(dte_points))
-    
-    iv_points = base_iv + slope * dte_points + noise
-    iv_points = np.maximum(iv_points, 0.05)  # Ensure positive volatilities
-    
-    return dte_points, iv_points
-
-# Run example
-analyzer = TermStructureAnalyzer()
-dte_sim, iv_sim = simulate_term_structure_data()
-results = analyzer.plot_term_structure(dte_sim, iv_sim, 
-                                     "Simulated Term Structure - Backwardation")
-```
-
-### Calendar Spread Payoff Analysis
-
-```python
-import numpy as np
-import pandas as pd
-import matplotlib.pyplot as plt
-from scipy.stats import norm
-from mpl_toolkits.mplot3d import Axes3D
-
-class CalendarSpreadAnalyzer:
-    """Analyze calendar spread payoffs and Greeks"""
-    
-    def __init__(self, S0: float, K: float, T1: float, T2: float, r: float = 0.05):
-        self.S0 = S0  # Current stock price
-        self.K = K    # Strike price
-        self.T1 = T1  # Front month expiration (years)
-        self.T2 = T2  # Back month expiration (years)
-        self.r = r    # Risk-free rate
-        
-    def black_scholes_call(self, S: float, K: float, T: float, r: float, sigma: float) -> float:
-        """Calculate Black-Scholes call option price"""
-        if T <= 0:
-            return max(S - K, 0)
-        
-        d1 = (np.log(S / K) + (r + 0.5 * sigma**2) * T) / (sigma * np.sqrt(T))
-        d2 = d1 - sigma * np.sqrt(T)
-        
-        call_price = S * norm.cdf(d1) - K * np.exp(-r * T) * norm.cdf(d2)
-        return call_price
-    
-    def calendar_spread_value(self, S: float, sigma: float, time_to_expiry_front: float) -> float:
-        """Calculate calendar spread value at any point in time"""
-        # Front month value (time remaining = time_to_expiry_front)
-        if time_to_expiry_front <= 0:
-            front_value = max(S - self.K, 0)
-        else:
-            front_value = self.black_scholes_call(S, self.K, time_to_expiry_front, self.r, sigma)
-        
-        # Back month value (time remaining = T2 - (T1 - time_to_expiry_front))
-        back_time_remaining = self.T2 - (self.T1 - time_to_expiry_front)
-        if back_time_remaining <= 0:
-            back_value = max(S - self.K, 0)
-        else:
-            back_value = self.black_scholes_call(S, self.K, back_time_remaining, self.r, sigma)
-        
-        # Calendar spread P&L (long back month - short front month)
-        return back_value - front_value
-    
-    def plot_payoff_diagram(self, sigma: float = 0.25, price_range: float = 0.3):
-        """Plot calendar spread payoff at front month expiration"""
-        
-        # Create price range
-        S_min = self.S0 * (1 - price_range)
-        S_max = self.S0 * (1 + price_range)
-        S_range = np.linspace(S_min, S_max, 100)
-        
-        # Calculate initial spread cost
-        front_initial = self.black_scholes_call(self.S0, self.K, self.T1, self.r, sigma)
-        back_initial = self.black_scholes_call(self.S0, self.K, self.T2, self.r, sigma)
-        initial_cost = back_initial - front_initial
-        
-        # Calculate payoff at front month expiration
-        payoffs = []
-        for S in S_range:
-            spread_value = self.calendar_spread_value(S, sigma, 0)  # At expiration
-            net_payoff = spread_value - initial_cost
-            payoffs.append(net_payoff)
-        
-        # Create plot
-        plt.figure(figsize=(12, 8))
-        plt.style.use('seaborn-v0_8-whitegrid')
-        
-        plt.plot(S_range, payoffs, linewidth=3, color='darkblue', label='Calendar Spread P&L')
-        plt.axhline(y=0, color='black', linestyle='-', alpha=0.3)
-        plt.axvline(x=self.K, color='red', linestyle='--', alpha=0.7, label=f'Strike: ${self.K:.0f}')
-        
-        # Highlight maximum profit point
-        max_idx = np.argmax(payoffs)
-        max_profit_price = S_range[max_idx]
-        max_profit = payoffs[max_idx]
-        plt.plot(max_profit_price, max_profit, 'ro', markersize=10, 
-                label=f'Max Profit: ${max_profit:.2f}')
-        
-        plt.xlabel('Stock Price at Front Month Expiration ($)', fontsize=12)
-        plt.ylabel('Profit/Loss ($)', fontsize=12)
-        plt.title('Calendar Spread Payoff Diagram', fontsize=16, fontweight='bold')
-        plt.legend(fontsize=12)
-        plt.grid(True, alpha=0.3)
-        
-        # Add text box with trade details
-        trade_details = f"Initial Cost: ${initial_cost:.2f}\n"
-        trade_details += f"Max Profit: ${max_profit:.2f}\n"
-        trade_details += f"Max Loss: ${initial_cost:.2f}\n"
-        trade_details += f"Breakeven: ${self.K:.0f} ± ${abs(initial_cost/2):.2f}"
-        
-        plt.text(0.02, 0.98, trade_details, transform=plt.gca().transAxes,
-                verticalalignment='top', bbox=dict(boxstyle='round', facecolor='lightblue'))
-        
-        plt.tight_layout()
-        plt.show()
-    
-    def plot_greeks_evolution(self, sigma: float = 0.25):
-        """Plot how Greeks evolve with time and stock price"""
-        
-        # Time points (days to front month expiration)
-        time_points = np.linspace(self.T1, 0, 50)
-        price_points = np.linspace(self.S0 * 0.8, self.S0 * 1.2, 50)
-        
-        # Calculate Greeks surface
-        delta_surface = np.zeros((len(time_points), len(price_points)))
-        gamma_surface = np.zeros((len(time_points), len(price_points)))
-        theta_surface = np.zeros((len(time_points), len(price_points)))
-        
-        for i, t in enumerate(time_points):
-            for j, S in enumerate(price_points):
-                # Calculate finite difference Greeks
-                dS = 0.01
-                dt = 1/365
-                
-                # Delta (price sensitivity)
-                val_up = self.calendar_spread_value(S + dS, sigma, t)
-                val_down = self.calendar_spread_value(S - dS, sigma, t)
-                delta_surface[i, j] = (val_up - val_down) / (2 * dS)
-                
-                # Gamma (delta sensitivity)
-                val_center = self.calendar_spread_value(S, sigma, t)
-                gamma_surface[i, j] = (val_up - 2 * val_center + val_down) / (dS**2)
-                
-                # Theta (time decay)
-                if t > dt:
-                    val_tomorrow = self.calendar_spread_value(S, sigma, t - dt)
-                    theta_surface[i, j] = (val_tomorrow - val_center) / dt
-        
-        # Create subplots
-        fig, axes = plt.subplots(2, 2, figsize=(15, 12))
-        fig.suptitle('Calendar Spread Greeks Evolution', fontsize=16, fontweight='bold')
-        
-        # Delta surface
-        X, Y = np.meshgrid(price_points, time_points * 365)  # Convert to days
-        im1 = axes[0, 0].contourf(X, Y, delta_surface, levels=20, cmap='RdYlBu')
-        axes[0, 0].set_title('Delta')
-        axes[0, 0].set_xlabel('Stock Price ($)')
-        axes[0, 0].set_ylabel('Days to Front Expiration')
-        plt.colorbar(im1, ax=axes[0, 0])
-        
-        # Gamma surface
-        im2 = axes[0, 1].contourf(X, Y, gamma_surface, levels=20, cmap='RdYlBu')
-        axes[0, 1].set_title('Gamma')
-        axes[0, 1].set_xlabel('Stock Price ($)')
-        axes[0, 1].set_ylabel('Days to Front Expiration')
-        plt.colorbar(im2, ax=axes[0, 1])
-        
-        # Theta surface
-        im3 = axes[1, 0].contourf(X, Y, theta_surface, levels=20, cmap='RdYlBu')
-        axes[1, 0].set_title('Theta')
-        axes[1, 0].set_xlabel('Stock Price ($)')
-        axes[1, 0].set_ylabel('Days to Front Expiration')
-        plt.colorbar(im3, ax=axes[1, 0])
-        
-        # P&L surface at different times
-        current_values = np.zeros(len(price_points))
-        for j, S in enumerate(price_points):
-            current_values[j] = self.calendar_spread_value(S, sigma, self.T1/2)  # Halfway to expiration
-        
-        axes[1, 1].plot(price_points, current_values, linewidth=2, label='Halfway to Expiration')
-        
-        expiration_values = np.zeros(len(price_points))
-        for j, S in enumerate(price_points):
-            expiration_values[j] = self.calendar_spread_value(S, sigma, 0)  # At expiration
-        
-        axes[1, 1].plot(price_points, expiration_values, linewidth=2, label='At Expiration')
-        axes[1, 1].axvline(x=self.K, color='red', linestyle='--', alpha=0.7)
-        axes[1, 1].set_title('P&L at Different Times')
-        axes[1, 1].set_xlabel('Stock Price ($)')
-        axes[1, 1].set_ylabel('P&L ($)')
-        axes[1, 1].legend()
-        axes[1, 1].grid(True, alpha=0.3)
-        
-        plt.tight_layout()
-        plt.show()
-
-# Example usage
-if __name__ == "__main__":
-    # Create calendar spread analyzer
-    analyzer = CalendarSpreadAnalyzer(S0=100, K=100, T1=30/365, T2=60/365)
-    
-    # Plot payoff diagram
-    analyzer.plot_payoff_diagram(sigma=0.25)
-    
-    # Plot Greeks evolution
-    analyzer.plot_greeks_evolution(sigma=0.25)
-```
-
-### Risk Management Dashboard
-
-```python
-import numpy as np
-import pandas as pd
-import matplotlib.pyplot as plt
-import seaborn as sns
-from datetime import datetime, timedelta
-import plotly.graph_objects as go
-from plotly.subplots import make_subplots
-import plotly.express as px
-
-class RiskManagementDashboard:
-    """Comprehensive risk management dashboard for Sunny algorithm"""
-    
-    def __init__(self, portfolio_data: pd.DataFrame):
-        self.portfolio_data = portfolio_data
-        self.risk_metrics = {}
-        
-    def calculate_risk_metrics(self):
-        """Calculate comprehensive risk metrics"""
-        returns = self.portfolio_data['returns']
-        portfolio_value = self.portfolio_data['portfolio_value']
-        
-        # Basic metrics
-        self.risk_metrics['total_return'] = (portfolio_value.iloc[-1] / portfolio_value.iloc[0] - 1) * 100
-        self.risk_metrics['annual_return'] = ((portfolio_value.iloc[-1] / portfolio_value.iloc[0]) ** (252/len(returns)) - 1) * 100
-        self.risk_metrics['volatility'] = returns.std() * np.sqrt(252) * 100
-        self.risk_metrics['sharpe_ratio'] = self.risk_metrics['annual_return'] / self.risk_metrics['volatility'] if self.risk_metrics['volatility'] > 0 else 0
-        
-        # Drawdown analysis
-        rolling_max = portfolio_value.expanding().max()
-        drawdown = (portfolio_value - rolling_max) / rolling_max * 100
-        self.risk_metrics['max_drawdown'] = abs(drawdown.min())
-        self.risk_metrics['current_drawdown'] = abs(drawdown.iloc[-1])
-        
-        # Calmar ratio
-        self.risk_metrics['calmar_ratio'] = self.risk_metrics['annual_return'] / self.risk_metrics['max_drawdown'] if self.risk_metrics['max_drawdown'] > 0 else 0
-        
-        # Win rate analysis
-        winning_trades = returns[returns > 0]
-        losing_trades = returns[returns < 0]
-        self.risk_metrics['win_rate'] = len(winning_trades) / len(returns) * 100
-        self.risk_metrics['avg_win'] = winning_trades.mean() * 100 if len(winning_trades) > 0 else 0
-        self.risk_metrics['avg_loss'] = losing_trades.mean() * 100 if len(losing_trades) > 0 else 0
-        self.risk_metrics['win_loss_ratio'] = abs(self.risk_metrics['avg_win'] / self.risk_metrics['avg_loss']) if self.risk_metrics['avg_loss'] != 0 else 0
-        
-        # Value at Risk (VaR)
-        self.risk_metrics['var_95'] = abs(np.percentile(returns, 5)) * 100
-        self.risk_metrics['var_99'] = abs(np.percentile(returns, 1)) * 100
-        
-        # Expected Shortfall (CVaR)
-        var_95_threshold = np.percentile(returns, 5)
-        tail_losses = returns[returns <= var_95_threshold]
-        self.risk_metrics['cvar_95'] = abs(tail_losses.mean()) * 100 if len(tail_losses) > 0 else 0
-        
-        return self.risk_metrics
-    
-    def create_performance_dashboard(self):
-        """Create comprehensive performance dashboard using Plotly"""
-        
-        # Calculate metrics first
-        self.calculate_risk_metrics()
-        
-        # Create subplots
-        fig = make_subplots(
-            rows=3, cols=2,
-            subplot_titles=('Portfolio Value Evolution', 'Daily Returns Distribution',
-                          'Drawdown Analysis', 'Rolling Risk Metrics',
-                          'Monthly Returns Heatmap', 'Risk Metrics Summary'),
-            specs=[[{"secondary_y": False}, {"secondary_y": False}],
-                   [{"secondary_y": False}, {"secondary_y": False}],
-                   [{"secondary_y": False}, {"secondary_y": False}]]
-        )
-        
-        # Portfolio value evolution
-        fig.add_trace(
-            go.Scatter(x=self.portfolio_data.index, 
-                      y=self.portfolio_data['portfolio_value'],
-                      mode='lines', name='Portfolio Value',
-                      line=dict(color='steelblue', width=2)),
-            row=1, col=1
-        )
-        
-        # Returns distribution
-        fig.add_trace(
-            go.Histogram(x=self.portfolio_data['returns'] * 100,
-                        nbinsx=50, name='Daily Returns (%)',
-                        marker_color='darkgreen', opacity=0.7),
-            row=1, col=2
-        )
-        
-        # Drawdown analysis
-        rolling_max = self.portfolio_data['portfolio_value'].expanding().max()
-        drawdown = (self.portfolio_data['portfolio_value'] - rolling_max) / rolling_max * 100
-        
-        fig.add_trace(
-            go.Scatter(x=self.portfolio_data.index, y=drawdown,
-                      mode='lines', name='Drawdown (%)',
-                      fill='tonexty', fillcolor='rgba(255,0,0,0.3)',
-                      line=dict(color='red', width=1)),
-            row=2, col=1
-        )
-        
-        # Rolling metrics
-        window = 60
-        rolling_sharpe = (self.portfolio_data['returns'].rolling(window).mean() * 252) / \
-                        (self.portfolio_data['returns'].rolling(window).std() * np.sqrt(252))
-        rolling_vol = self.portfolio_data['returns'].rolling(window).std() * np.sqrt(252) * 100
-        
-        fig.add_trace(
-            go.Scatter(x=self.portfolio_data.index, y=rolling_sharpe,
-                      mode='lines', name='60-Day Sharpe Ratio',
-                      line=dict(color='purple', width=2)),
-            row=2, col=2
-        )
-        
-        # Monthly returns heatmap (simplified representation)
-        if len(self.portfolio_data) > 30:
-            monthly_returns = self.portfolio_data['returns'].resample('M').apply(lambda x: (1 + x).prod() - 1) * 100
-            years = monthly_returns.index.year.unique()
-            months = range(1, 13)
-            
-            # Create matrix for heatmap
-            heatmap_data = np.full((len(years), 12), np.nan)
-            for i, year in enumerate(years):
-                year_data = monthly_returns[monthly_returns.index.year == year]
-                for month_data in year_data.iteritems():
-                    month = month_data[0].month
-                    heatmap_data[i, month-1] = month_data[1]
-            
-            fig.add_trace(
-                go.Heatmap(z=heatmap_data, 
-                          x=[f'M{i}' for i in range(1, 13)],
-                          y=years,
-                          colorscale='RdYlGn',
-                          name='Monthly Returns (%)'),
-                row=3, col=1
-            )
-        
-        # Risk metrics summary table
-        metrics_data = [
-            ['Annual Return', f"{self.risk_metrics['annual_return']:.2f}%"],
-            ['Volatility', f"{self.risk_metrics['volatility']:.2f}%"],
-            ['Sharpe Ratio', f"{self.risk_metrics['sharpe_ratio']:.2f}"],
-            ['Max Drawdown', f"{self.risk_metrics['max_drawdown']:.2f}%"],
-            ['Win Rate', f"{self.risk_metrics['win_rate']:.1f}%"],
-            ['VaR 95%', f"{self.risk_metrics['var_95']:.2f}%"]
-        ]
-        
-        fig.add_trace(
-            go.Table(
-                header=dict(values=['Metric', 'Value'],
-                           fill_color='lightblue',
-                           align='left'),
-                cells=dict(values=list(zip(*metrics_data)),
-                          fill_color='white',
-                          align='left')
-            ),
-            row=3, col=2
-        )
-        
-        # Update layout
-        fig.update_layout(
-            height=1000,
-            title_text="Sunny Algorithm Risk Management Dashboard",
-            title_x=0.5,
-            showlegend=True
-        )
-        
-        # Update axes labels
-        fig.update_xaxes(title_text="Date", row=1, col=1)
-        fig.update_yaxes(title_text="Portfolio Value ($)", row=1, col=1)
-        fig.update_xaxes(title_text="Daily Return (%)", row=1, col=2)
-        fig.update_yaxes(title_text="Frequency", row=1, col=2)
-        fig.update_xaxes(title_text="Date", row=2, col=1)
-        fig.update_yaxes(title_text="Drawdown (%)", row=2, col=1)
-        fig.update_xaxes(title_text="Date", row=2, col=2)
-        fig.update_yaxes(title_text="Sharpe Ratio", row=2, col=2)
-        
-        return fig
-    
-    def plot_position_level_analysis(self, positions_data: pd.DataFrame):
-        """Analyze individual position performance"""
-        
-        plt.figure(figsize=(15, 10))
-        
-        # Position P&L distribution
-        plt.subplot(2, 3, 1)
-        plt.hist(positions_data['pnl_pct'], bins=30, alpha=0.7, color='steelblue', edgecolor='black')
-        plt.xlabel('P&L (%)')
-        plt.ylabel('Frequency')
-        plt.title('Position P&L Distribution')
-        plt.grid(True, alpha=0.3)
-        
-        # Win rate by holding period
-        plt.subplot(2, 3, 2)
-        positions_data['holding_period_bins'] = pd.cut(positions_data['holding_days'], 
-                                                      bins=[0, 7, 14, 21, 30, float('inf')],
-                                                      labels=['1-7', '8-14', '15-21', '22-30', '30+'])
-        win_rate_by_period = positions_data.groupby('holding_period_bins')['pnl_pct'].apply(lambda x: (x > 0).mean() * 100)
-        
-        plt.bar(range(len(win_rate_by_period)), win_rate_by_period.values, color='darkgreen', alpha=0.7)
-        plt.xlabel('Holding Period (Days)')
-        plt.ylabel('Win Rate (%)')
-        plt.title('Win Rate by Holding Period')
-        plt.xticks(range(len(win_rate_by_period)), win_rate_by_period.index)
-        plt.grid(True, alpha=0.3)
-        
-        # P&L vs IV Rank
-        plt.subplot(2, 3, 3)
-        plt.scatter(positions_data['iv_rank'], positions_data['pnl_pct'], alpha=0.6, color='purple')
-        plt.xlabel('IV Rank at Entry')
-        plt.ylabel('P&L (%)')
-        plt.title('P&L vs IV Rank')
-        plt.grid(True, alpha=0.3)
-        
-        # Monthly win rate
-        plt.subplot(2, 3, 4)
-        positions_data['entry_month'] = pd.to_datetime(positions_data['entry_date']).dt.month
-        monthly_win_rate = positions_data.groupby('entry_month')['pnl_pct'].apply(lambda x: (x > 0).mean() * 100)
-        
-        months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 
-                 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
-        plt.bar(range(1, 13), [monthly_win_rate.get(i, 0) for i in range(1, 13)], 
-               color='orange', alpha=0.7)
-        plt.xlabel('Month')
-        plt.ylabel('Win Rate (%)')
-        plt.title('Seasonal Win Rate Pattern')
-        plt.xticks(range(1, 13), [months[i] for i in range(12)], rotation=45)
-        plt.grid(True, alpha=0.3)
-        
-        # Cumulative P&L
-        plt.subplot(2, 3, 5)
-        positions_data_sorted = positions_data.sort_values('entry_date')
-        cumulative_pnl = positions_data_sorted['pnl_dollars'].cumsum()
-        plt.plot(range(len(cumulative_pnl)), cumulative_pnl, linewidth=2, color='navy')
-        plt.xlabel('Trade Number')
-        plt.ylabel('Cumulative P&L ($)')
-        plt.title('Cumulative P&L by Trade')
-        plt.grid(True, alpha=0.3)
-        
-        # Risk-adjusted returns by volatility regime
-        plt.subplot(2, 3, 6)
-        positions_data['vol_regime'] = pd.cut(positions_data['vix_at_entry'], 
-                                            bins=[0, 15, 25, float('inf')],
-                                            labels=['Low Vol', 'Normal Vol', 'High Vol'])
-        vol_regime_returns = positions_data.groupby('vol_regime')['pnl_pct'].mean()
-        
-        colors = ['green', 'yellow', 'red']
-        plt.bar(range(len(vol_regime_returns)), vol_regime_returns.values, 
-               color=colors, alpha=0.7)
-        plt.xlabel('Volatility Regime')
-        plt.ylabel('Average P&L (%)')
-        plt.title('Performance by Vol Regime')
-        plt.xticks(range(len(vol_regime_returns)), vol_regime_returns.index)
-        plt.grid(True, alpha=0.3)
-        
-        plt.tight_layout()
-        plt.show()
-    
-    def generate_risk_report(self):
-        """Generate comprehensive risk report"""
-        
-        self.calculate_risk_metrics()
-        
-        print("=" * 60)
-        print("Sunny ALGORITHM RISK MANAGEMENT REPORT")
-        print("=" * 60)
-        print(f"Report Generated: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
-        print()
-        
-        print("PERFORMANCE SUMMARY")
-        print("-" * 30)
-        print(f"Total Return:           {self.risk_metrics['total_return']:8.2f}%")
-        print(f"Annualized Return:      {self.risk_metrics['annual_return']:8.2f}%")
-        print(f"Annualized Volatility:  {self.risk_metrics['volatility']:8.2f}%")
-        print(f"Sharpe Ratio:           {self.risk_metrics['sharpe_ratio']:8.2f}")
-        print(f"Calmar Ratio:           {self.risk_metrics['calmar_ratio']:8.2f}")
-        print()
-        
-        print("RISK METRICS")
-        print("-" * 30)
-        print(f"Maximum Drawdown:       {self.risk_metrics['max_drawdown']:8.2f}%")
-        print(f"Current Drawdown:       {self.risk_metrics['current_drawdown']:8.2f}%")
-        print(f"VaR (95%):             {self.risk_metrics['var_95']:8.2f}%")
-        print(f"VaR (99%):             {self.risk_metrics['var_99']:8.2f}%")
-        print(f"CVaR (95%):            {self.risk_metrics['cvar_95']:8.2f}%")
-        print()
-        
-        print("TRADE STATISTICS")
-        print("-" * 30)
-        print(f"Win Rate:               {self.risk_metrics['win_rate']:8.1f}%")
-        print(f"Average Win:            {self.risk_metrics['avg_win']:8.2f}%")
-        print(f"Average Loss:           {self.risk_metrics['avg_loss']:8.2f}%")
-        print(f"Win/Loss Ratio:         {self.risk_metrics['win_loss_ratio']:8.2f}")
-        print()
-        
-        # Risk assessment
-        print("RISK ASSESSMENT")
-        print("-" * 30)
-        
-        risk_level = "LOW"
-        if self.risk_metrics['max_drawdown'] > 15:
-            risk_level = "HIGH"
-        elif self.risk_metrics['max_drawdown'] > 10:
-            risk_level = "MODERATE"
-        
-        print(f"Overall Risk Level:     {risk_level}")
-        
-        if self.risk_metrics['current_drawdown'] > 5:
-            print("⚠️  WARNING: Current drawdown exceeds 5%")
-        
-        if self.risk_metrics['sharpe_ratio'] < 1.0:
-            print("⚠️  WARNING: Sharpe ratio below 1.0")
-        
-        if self.risk_metrics['win_rate'] < 50:
-            print("⚠️  WARNING: Win rate below 50%")
-        
-        print("=" * 60)
-
-# Utility function to generate sample data
-def generate_sample_portfolio_data(days: int = 252) -> pd.DataFrame:
-    """Generate sample portfolio data for dashboard testing"""
-    
-    np.random.seed(42)
-    dates = pd.date_range(start='2023-01-01', periods=days, freq='D')
-    
-    # Simulate portfolio with volatility selling characteristics
-    # Positive skew, occasional larger losses
-    base_return = 0.0008  # Positive expected return
-    vol = 0.015  # Moderate volatility
-    
-    returns = np.random.normal(base_return, vol, days)
-    
-    # Add occasional larger losses (tail events)
-    tail_events = np.random.random(days) < 0.02  # 2% chance
-    returns[tail_events] = np.random.normal(-0.05, 0.02, np.sum(tail_events))
-    
-    # Calculate portfolio values
-    portfolio_values = [100000]  # Starting value
-    for ret in returns[1:]:
-        portfolio_values.append(portfolio_values[-1] * (1 + ret))
-    
-    portfolio_data = pd.DataFrame({
-        'portfolio_value': portfolio_values,
-        'returns': returns
-    }, index=dates)
-    
-    return portfolio_data
-
-def generate_sample_positions_data(n_positions: int = 100) -> pd.DataFrame:
-    """Generate sample positions data for analysis"""
-    
-    np.random.seed(42)
-    
-    # Generate random position data
-    entry_dates = pd.date_range(start='2023-01-01', periods=n_positions, freq='3D')
-    holding_days = np.random.randint(1, 30, n_positions)
-    
-    # P&L with positive skew (characteristic of volatility selling)
-    pnl_pct = np.random.beta(2, 5, n_positions) * 15 - 2  # Slightly positive bias
-    pnl_dollars = pnl_pct * np.random.uniform(1000, 5000, n_positions) / 100
-    
-    # Other characteristics
-    iv_rank = np.random.uniform(20, 90, n_positions)
-    vix_at_entry = np.random.gamma(2, 8, n_positions) + 12  # VIX-like distribution
-    
-    positions_data = pd.DataFrame({
-        'entry_date': entry_dates,
-        'holding_days': holding_days,
-        'pnl_pct': pnl_pct,
-        'pnl_dollars': pnl_dollars,
-        'iv_rank': iv_rank,
-        'vix_at_entry': vix_at_entry
-    })
-    
-    return positions_data
-
-# Example usage
-if __name__ == "__main__":
-    # Generate sample data
-    portfolio_data = generate_sample_portfolio_data(365)
-    positions_data = generate_sample_positions_data(150)
-    
-    # Create dashboard
-    dashboard = RiskManagementDashboard(portfolio_data)
-    
-    # Generate risk report
-    dashboard.generate_risk_report()
-    
-    # Create interactive dashboard (requires plotly)
-    # fig = dashboard.create_performance_dashboard()
-    # fig.show()
-    
-    # Create position analysis
-    dashboard.plot_position_level_analysis(positions_data)
-```
-
-### Kelly Criterion Position Sizing Implementation
-
-```python
-import numpy as np
-import pandas as pd
-import matplotlib.pyplot as plt
-from scipy.optimize import minimize_scalar
-from typing import Tuple, Optional
-
-class KellyOptimizer:
-    """Kelly Criterion position sizing for options strategies"""
-    
-    def __init__(self, returns_data: pd.Series):
-        self.returns_data = returns_data
-        self.kelly_results = {}
-        
-    def calculate_empirical_kelly(self, fractional: float = 0.25) -> dict:
-        """Calculate Kelly fraction using empirical return distribution"""
-        
-        returns = self.returns_data.dropna()
-        
-        if len(returns) < 10:
-            return {'kelly_fraction': 0, 'fractional_kelly': 0, 'valid': False}
-        
-        # Estimate parameters from data
-        win_rate = (returns > 0).mean()
-        avg_win = returns[returns > 0].mean() if win_rate > 0 else 0
-        avg_loss = abs(returns[returns < 0].mean()) if win_rate < 1 else 0
-        
-        # Classical Kelly for binary outcomes
-        if avg_loss > 0:
-            b = avg_win / avg_loss  # Win/loss ratio
-            kelly_fraction = (win_rate * b - (1 - win_rate)) / b
-        else:
-            kelly_fraction = 0
-        
-        # Ensure non-negative
-        kelly_fraction = max(0, kelly_fraction)
-        
-        # Apply fractional sizing
-        fractional_kelly = kelly_fraction * fractional
-        
-        return {
-            'kelly_fraction': kelly_fraction,
-            'fractional_kelly': fractional_kelly,
-            'win_rate': win_rate,
-            'avg_win': avg_win,
-            'avg_loss': avg_loss,
-            'win_loss_ratio': avg_win / avg_loss if avg_loss > 0 else 0,
-            'valid': True
-        }
-    
-    def optimize_continuous_kelly(self) -> dict:
-        """Optimize Kelly fraction for continuous return distribution"""
-        
-        def negative_log_utility(f):
-            """Negative expected log utility for minimization"""
-            if f <= 0 or f >= 1:
-                return 1e6  # Penalty for invalid fractions
-            
-            log_utilities = np.log(1 + f * self.returns_data)
-            
-            # Check for negative values (bankruptcy)
-            if np.any(1 + f * self.returns_data <= 0):
-                return 1e6
-            
-            return -np.mean(log_utilities)
-        
-        # Optimize over reasonable range
-        result = minimize_scalar(negative_log_utility, bounds=(0.001, 0.999), method='bounded')
-        
-        if result.success:
-            optimal_f = result.x
-            expected_log_utility = -result.fun
-        else:
-            optimal_f = 0
-            expected_log_utility = 0
-        
-        return {
-            'optimal_fraction': optimal_f,
-            'expected_log_utility': expected_log_utility,
-            'optimization_success': result.success
-        }
-    
-    def simulate_kelly_performance(self, fractions: list, n_simulations: int = 1000) -> pd.DataFrame:
-        """Simulate portfolio growth under different Kelly fractions"""
-        
-        results = []
-        
-        for f in fractions:
-            final_values = []
-            
-            for _ in range(n_simulations):
-                # Bootstrap sample from returns
-                simulated_returns = np.random.choice(self.returns_data, len(self.returns_data), replace=True)
-                
-                # Calculate final portfolio value
-                portfolio_value = 1.0
-                for ret in simulated_returns:
-                    portfolio_value *= (1 + f * ret)
-                    if portfolio_value <= 0:  # Bankruptcy
-                        portfolio_value = 0
-                        break
-                
-                final_values.append(portfolio_value)
-            
-            # Calculate statistics
-            final_values = np.array(final_values)
-            bankruptcy_rate = np.mean(final_values == 0)
-            
-            if bankruptcy_rate < 1.0:  # Exclude bankrupt scenarios for statistics
-                non_bankrupt = final_values[final_values > 0]
-                geometric_mean = np.exp(np.mean(np.log(non_bankrupt))) if len(non_bankrupt) > 0 else 0
-                median_return = np.median(non_bankrupt) if len(non_bankrupt) > 0 else 0
-                percentile_5 = np.percentile(non_bankrupt, 5) if len(non_bankrupt) > 0 else 0
-            else:
-                geometric_mean = 0
-                median_return = 0
-                percentile_5 = 0
-            
-            results.append({
-                'fraction': f,
-                'geometric_mean': geometric_mean,
-                'median_return': median_return,
-                'percentile_5': percentile_5,
-                'bankruptcy_rate': bankruptcy_rate,
-                'max_return': np.max(final_values),
-                'min_return': np.min(final_values[final_values > 0]) if np.any(final_values > 0) else 0
-            })
-        
-        return pd.DataFrame(results)
-    
-    def plot_kelly_analysis(self):
-        """Create comprehensive Kelly analysis visualization"""
-        
-        # Calculate Kelly metrics
-        empirical_kelly = self.calculate_empirical_kelly()
-        continuous_kelly = self.optimize_continuous_kelly()
-        
-        # Test different fractions
-        test_fractions = np.linspace(0.01, 0.8, 20)
-        simulation_results = self.simulate_kelly_performance(test_fractions, 1000)
-        
-        # Create subplots
-        fig, axes = plt.subplots(2, 2, figsize=(15, 12))
-        fig.suptitle('Kelly Criterion Analysis for Sunny Algorithm', fontsize=16, fontweight='bold')
-        
-        # Plot 1: Geometric mean return vs fraction
-        axes[0, 0].plot(simulation_results['fraction'], simulation_results['geometric_mean'], 
-                       'b-', linewidth=2, label='Geometric Mean Return')
-        axes[0, 0].axvline(x=empirical_kelly['kelly_fraction'], color='red', linestyle='--', 
-                          label=f'Empirical Kelly: {empirical_kelly["kelly_fraction"]:.3f}')
-        axes[0, 0].axvline(x=empirical_kelly['fractional_kelly'], color='orange', linestyle='--', 
-                          label=f'Fractional Kelly (25%): {empirical_kelly["fractional_kelly"]:.3f}')
-        axes[0, 0].set_xlabel('Position Fraction')
-        axes[0, 0].set_ylabel('Geometric Mean Return')
-        axes[0, 0].set_title('Optimal Position Sizing')
-        axes[0, 0].legend()
-        axes[0, 0].grid(True, alpha=0.3)
-        
-        # Plot 2: Bankruptcy risk
-        axes[0, 1].plot(simulation_results['fraction'], simulation_results['bankruptcy_rate'] * 100, 
-                       'r-', linewidth=2)
-        axes[0, 1].set_xlabel('Position Fraction')
-        axes[0, 1].set_ylabel('Bankruptcy Rate (%)')
-        axes[0, 1].set_title('Risk of Ruin')
-        axes[0, 1].grid(True, alpha=0.3)
-        
-        # Plot 3: Return distribution for different fractions
-        key_fractions = [0.1, empirical_kelly['fractional_kelly'], empirical_kelly['kelly_fraction']]
-        colors = ['blue', 'orange', 'red']
-        labels = ['Conservative (10%)', 'Fractional Kelly', 'Full Kelly']
-        
-        for i, (f, color, label) in enumerate(zip(key_fractions, colors, labels)):
-            if f > 0:
-                # Simulate returns for this fraction
-                portfolio_values = []
-                for _ in range(1000):
-                    simulated_returns = np.random.choice(self.returns_data, len(self.returns_data), replace=True)
-                    portfolio_value = 1.0
-                    for ret in simulated_returns:
-                        portfolio_value *= (1 + f * ret)
-                        if portfolio_value <= 0:
-                            portfolio_value = 0
-                            break
-                    portfolio_values.append(portfolio_value)
-                
-                # Plot distribution
-                portfolio_values = np.array(portfolio_values)
-                portfolio_values = portfolio_values[portfolio_values > 0]  # Remove bankruptcies
-                
-                if len(portfolio_values) > 0:
-                    axes[1, 0].hist(portfolio_values, bins=50, alpha=0.6, color=color, 
-                                   label=f'{label} (f={f:.3f})', density=True)
-        
-        axes[1, 0].set_xlabel('Final Portfolio Value')
-        axes[1, 0].set_ylabel('Density')
-        axes[1, 0].set_title('Final Portfolio Value Distributions')
-        axes[1, 0].legend()
-        axes[1, 0].grid(True, alpha=0.3)
-        
-        # Plot 4: Risk-return tradeoff
-        axes[1, 1].scatter(simulation_results['bankruptcy_rate'] * 100, 
-                          simulation_results['geometric_mean'], 
-                          c=simulation_results['fraction'], cmap='viridis', s=50)
-        
-        # Highlight key points
-        optimal_idx = simulation_results['geometric_mean'].idxmax()
-        axes[1, 1].scatter(simulation_results.loc[optimal_idx, 'bankruptcy_rate'] * 100,
-                          simulation_results.loc[optimal_idx, 'geometric_mean'],
-                          color='red', s=100, marker='*', label='Optimal Kelly')
-        
-        axes[1, 1].set_xlabel('Bankruptcy Rate (%)')
-        axes[1, 1].set_ylabel('Geometric Mean Return')
-        axes[1, 1].set_title('Risk-Return Tradeoff')
-        axes[1, 1].legend()
-        axes[1, 1].grid(True, alpha=0.3)
-        
-        # Add colorbar
-        cbar = plt.colorbar(axes[1, 1].collections[0], ax=axes[1, 1])
-        cbar.set_label('Position Fraction')
-        
-        plt.tight_layout()
-        plt.show()
-        
-        # Print summary
-        print("\nKELLY CRITERION ANALYSIS SUMMARY")
-        print("=" * 40)
-        print(f"Empirical Kelly Fraction:    {empirical_kelly['kelly_fraction']:.4f}")
-        print(f"Recommended Fractional Kelly: {empirical_kelly['fractional_kelly']:.4f}")
-        print(f"Win Rate:                    {empirical_kelly['win_rate']:.1%}")
-        print(f"Average Win:                 {empirical_kelly['avg_win']:.2%}")
-        print(f"Average Loss:                {empirical_kelly['avg_loss']:.2%}")
-        print(f"Win/Loss Ratio:              {empirical_kelly['win_loss_ratio']:.2f}")
-        
-        return empirical_kelly, simulation_results
-
-# Position sizing implementation for Sunny algorithm
-class SunnyPositionSizer:
-    """Position sizing implementation for Sunny algorithm"""
-    
-    def __init__(self, portfolio_value: float, allocation_fraction: float = 0.06):
-        self.portfolio_value = portfolio_value
-        self.allocation_fraction = allocation_fraction
-        self.commission_per_contract = 0.65
-        self.min_commission = 1.00
-        self.slippage_factor = 0.01
-        
-    def calculate_position_size(self, calendar_debit: float, 
-                              option_multiplier: int = 100) -> dict:
-        """Calculate optimal position size for calendar spread"""
-        
-        # Maximum risk amount per trade
-        max_risk = self.portfolio_value * self.allocation_fraction
-        
-        # Estimate total transaction costs per contract
-        total_commission = max(4 * self.commission_per_contract, 2 * self.min_commission)
-        
-        # Estimate slippage (percentage of spread)
-        estimated_slippage = calendar_debit * self.slippage_factor
-        
-        # Total cost per contract
-        cost_per_contract = (calendar_debit * option_multiplier + 
-                           total_commission + 
-                           estimated_slippage * option_multiplier)
-        
-        # Calculate maximum quantity
-        if cost_per_contract > 0:
-            max_quantity = int(max_risk / cost_per_contract)
-        else:
-            max_quantity = 0
-        
-        # Minimum position size for commission efficiency
-        min_efficient_quantity = 5 if self.portfolio_value > 50000 else 1
-        
-        # Final position size
-        position_size = max(min_efficient_quantity, max_quantity) if max_quantity >= min_efficient_quantity else 0
-        
-        # Ensure we have enough cash (with buffer)
-        required_cash = cost_per_contract * position_size
-        available_cash = self.portfolio_value * 0.8  # 80% utilization limit
-        
-        if required_cash > available_cash:
-            position_size = int(available_cash / cost_per_contract)
-        
-        return {
-            'position_size': position_size,
-            'cost_per_contract': cost_per_contract,
-            'total_cost': cost_per_contract * position_size,
-            'portfolio_allocation': (cost_per_contract * position_size) / self.portfolio_value * 100,
-            'commission_per_contract': total_commission,
-            'slippage_estimate': estimated_slippage * option_multiplier,
-            'efficient_sizing': position_size >= min_efficient_quantity
-        }
-    
-    def plot_position_sizing_analysis(self, debit_range: np.array):
-        """Analyze position sizing across different debit levels"""
-        
-        results = []
-        for debit in debit_range:
-            sizing = self.calculate_position_size(debit)
-            results.append({
-                'debit': debit,
-                'position_size': sizing['position_size'],
-                'total_cost': sizing['total_cost'],
-                'allocation_pct': sizing['portfolio_allocation'],
-                'cost_per_contract': sizing['cost_per_contract']
-            })
-        
-        df = pd.DataFrame(results)
-        
-        # Create visualization
-        fig, axes = plt.subplots(2, 2, figsize=(15, 10))
-        fig.suptitle('Position Sizing Analysis', fontsize=16, fontweight='bold')
-        
-        # Position size vs debit
-        axes[0, 0].plot(df['debit'], df['position_size'], 'b-', linewidth=2)
-        axes[0, 0].set_xlabel('Calendar Spread Debit ($)')
-        axes[0, 0].set_ylabel('Position Size (Contracts)')
-        axes[0, 0].set_title('Position Size vs Debit Cost')
-        axes[0, 0].grid(True, alpha=0.3)
-        
-        # Total allocation vs debit
-        axes[0, 1].plot(df['debit'], df['allocation_pct'], 'g-', linewidth=2)
-        axes[0, 1].axhline(y=self.allocation_fraction * 100, color='red', linestyle='--', 
-                          label=f'Target: {self.allocation_fraction*100:.1f}%')
-        axes[0, 1].set_xlabel('Calendar Spread Debit ($)')
-        axes[0, 1].set_ylabel('Portfolio Allocation (%)')
-        axes[0, 1].set_title('Actual vs Target Allocation')
-        axes[0, 1].legend()
-        axes[0, 1].grid(True, alpha=0.3)
-        
-        # Cost breakdown
-        sample_debit = debit_range[len(debit_range)//2]
-        sample_sizing = self.calculate_position_size(sample_debit)
-        
-        costs = [
-            sample_debit * 100,  # Premium cost
-            sample_sizing['commission_per_contract'],  # Commission
-            sample_sizing['slippage_estimate']  # Slippage
-        ]
-        labels = ['Premium', 'Commission', 'Slippage']
-        colors = ['blue', 'orange', 'red']
-        
-        axes[1, 0].pie(costs, labels=labels, colors=colors, autopct='%1.1f%%', startangle=90)
-        axes[1, 0].set_title(f'Cost Breakdown (${sample_debit:.2f} debit)')
-        
-        # Efficiency analysis
-        efficiency_threshold = 5  # Minimum contracts for efficiency
-        efficient_mask = df['position_size'] >= efficiency_threshold
-        
-        axes[1, 1].scatter(df.loc[efficient_mask, 'debit'], 
-                          df.loc[efficient_mask, 'position_size'], 
-                          color='green', alpha=0.7, label='Efficient')
-        axes[1, 1].scatter(df.loc[~efficient_mask, 'debit'], 
-                          df.loc[~efficient_mask, 'position_size'], 
-                          color='red', alpha=0.7, label='Inefficient')
-        axes[1, 1].axhline(y=efficiency_threshold, color='orange', linestyle='--', 
-                          label=f'Efficiency Threshold: {efficiency_threshold}')
-        axes[1, 1].set_xlabel('Calendar Spread Debit ($)')
-        axes[1, 1].set_ylabel('Position Size (Contracts)')
-        axes[1, 1].set_title('Position Sizing Efficiency')
-        axes[1, 1].legend()
-        axes[1, 1].grid(True, alpha=0.3)
-        
-        plt.tight_layout()
-        plt.show()
-        
-        return df
-
-# Example usage
-if __name__ == "__main__":
-    # Generate sample returns data (volatility selling characteristics)
-    np.random.seed(42)
-    n_trades = 200
-    
-    # Simulate positive skew returns typical of volatility selling
-    base_return = 0.02  # 2% average return
-    vol = 0.15  # 15% volatility
-    
-    returns = np.random.normal(base_return, vol, n_trades)
-    
-    # Add some tail losses (characteristic of volatility selling)
-    tail_prob = 0.05  # 5% chance of tail event
-    tail_events = np.random.random(n_trades) < tail_prob
-    returns[tail_events] = np.random.normal(-0.4, 0.1, np.sum(tail_events))
-    
-    returns_series = pd.Series(returns)
-    
-    # Kelly analysis
-    kelly_optimizer = KellyOptimizer(returns_series)
-    empirical_kelly, simulation_results = kelly_optimizer.plot_kelly_analysis()
-    
-    # Position sizing analysis
-    portfolio_value = 100000
-    position_sizer = SunnyPositionSizer(portfolio_value, allocation_fraction=0.06)
-    
-    debit_range = np.linspace(0.5, 5.0, 50)
-    sizing_analysis = position_sizer.plot_position_sizing_analysis(debit_range)
-    
-    print(f"\nRecommended fractional Kelly: {empirical_kelly['fractional_kelly']:.1%}")
-    print(f"Current allocation setting: {position_sizer.allocation_fraction:.1%}")
-```
