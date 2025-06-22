@@ -1549,8 +1549,7 @@ returns, and the denominator captures tracking error. This metric proves
 particularly valuable for evaluating systematic strategies that target
 specific risk premiums rather than broad market exposure.
 
-Maximum drawdown analysis identifies worst-case scenarios and provides
-insight into strategy resilience during adverse periods:
+Maximum drawdown analysis identifies worst-case scenarios:
 
 \[\text{Maximum Drawdown} = \max_{t \in [0,T]} \left[\max_{s \in [0,t]} P_s - P_t\right] / \max_{s \in [0,t]} P_s\]
 
@@ -2027,14 +2026,6 @@ methodology for systematic volatility risk premium harvesting that
 advances both academic understanding and practical application in
 quantitative finance.
 
-The integration of sophisticated mathematical frameworks with practical
-risk management creates a methodology suitable for institutional
-implementation while maintaining the theoretical rigor necessary for
-academic validation. The systematic approach provides a template for
-developing additional quantitative strategies while demonstrating the
-value of comprehensive theoretical foundations in practical trading
-applications.
-
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
 \section{References}\label{references}
@@ -2243,15 +2234,15 @@ strike.
     samples=100
 ]
 % Payoff at entry (30 DTE)
-\addplot[red, thick] {
+\addplot[red, thick, smooth] {
     -2.5 + 0.8*exp(-0.5*((x-100)/8)^2) + 0.3*sin(deg(0.2*(x-100)))
 };
 % Payoff at 7 DTE (maximum time decay benefit)
-\addplot[green!60!black, thick] {
+\addplot[green!60!black, thick, smooth] {
     -1.8 + 1.5*exp(-0.5*((x-100)/5)^2) + 0.2*sin(deg(0.3*(x-100)))
 };
 % Payoff at expiration
-\addplot[blue, thick] {
+\addplot[blue, thick, smooth] {
     max(0, min(x-100, 0)) + max(0, min(100-x, 0)) - 2.5
 };
 % Mark maximum profit zone
@@ -2569,9 +2560,10 @@ market microstructure:
 where \(dW_t^S dW_t^V = \rho dt\)
 
 \textbf{Parameter Estimation Results:} - \textbf{Mean Reversion Rate
-(κ):} 2.34 (annualized) - \textbf{Long-term Variance (θ):} 0.048 (22\%
-annualized volatility) - \textbf{Volatility of Volatility (σᵥ):} 0.31 -
-\textbf{Correlation (ρ):} -0.42 (negative leverage effect)
+(\(\kappa\)):} 2.34 (annualized) - \textbf{Long-term Variance
+(\(\theta\)):} 0.048 (22\% annualized volatility) - \textbf{Volatility
+of Volatility (\(\sigma_v\)):} 0.31 - \textbf{Correlation (\(\rho\)):}
+-0.42 (negative leverage effect)
 
 \textbf{Yang-Zhang Estimator Enhanced Formula:}
 
@@ -2607,7 +2599,7 @@ multiple risk dimensions:
 \[\text{Portfolio Risk}^2 = w^T F \Omega F^T w + w^T D w\]
 
 where: - \(w\) = position weight vector - \(F\) = factor loading matrix
-- \(Ω\) = factor covariance matrix\\
+- \(\Omega\) = factor covariance matrix\\
 - \(D\) = idiosyncratic risk diagonal matrix
 
 This mathematical framework ensures robust position sizing,
