@@ -836,7 +836,7 @@ $$\text{Information Ratio} = \frac{E[R_p - R_b]}{\sigma(R_p - R_b)}$$
 
 where $R_p$ represents portfolio returns, $R_b$ denotes benchmark returns, and the denominator captures tracking error. This metric proves particularly valuable for evaluating systematic strategies that target specific risk premiums rather than broad market exposure.
 
-Maximum drawdown analysis identifies worst-case scenarios and provides insight into strategy resilience during adverse periods:
+Maximum drawdown analysis identifies worst-case scenarios:
 
 $$\text{Maximum Drawdown} = \max_{t \in [0,T]} \left[\max_{s \in [0,t]} P_s - P_t\right] / \max_{s \in [0,t]} P_s$$
 
@@ -1104,8 +1104,6 @@ Future developments offer substantial opportunities for enhancement through mach
 
 The Sunny algorithm ultimately demonstrates how academic rigor enhances practical trading applications while providing the discipline necessary for consistent execution. The comprehensive framework addresses both theoretical foundations and implementation challenges, creating a robust methodology for systematic volatility risk premium harvesting that advances both academic understanding and practical application in quantitative finance.
 
-The integration of sophisticated mathematical frameworks with practical risk management creates a methodology suitable for institutional implementation while maintaining the theoretical rigor necessary for academic validation. The systematic approach provides a template for developing additional quantitative strategies while demonstrating the value of comprehensive theoretical foundations in practical trading applications.
-
 ---
 
 ## References
@@ -1223,14 +1221,14 @@ Comparison of volatility estimators showing Yang-Zhang superior stability and ac
         <h3 style="color: #856404; margin-bottom: 15px;">📈 Implied Volatility Term Structure</h3>
         <div style="background: white; padding: 15px; border-radius: 6px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); margin-bottom: 15px;">
             <p style="margin: 5px 0;"><span style="color: #007bff; font-weight: bold;">●</span> <strong>Market Data Points:</strong> Observed IV levels</p>
-            <p style="margin: 5px 0;"><span style="color: #dc3545; font-weight: bold;">—</span> <strong>Regression Fit:</strong> β₁ = -0.0022 (Backwardation)</p>
+            <p style="margin: 5px 0;"><span style="color: #dc3545; font-weight: bold;">—</span> <strong>Regression Fit:</strong> $\beta_1$ = -0.0022 (Backwardation)</p>
             <p style="margin: 5px 0; color: #28a745;"><strong>R² = 0.94</strong> - High explanatory power</p>
             <div style="background: #e8f5e8; padding: 8px; border-radius: 4px; margin-top: 10px;">
                 <strong style="color: #155724;">SIGNAL: BACKWARDATION DETECTED</strong>
             </div>
         </div>
         <p style="color: #856404; font-size: 14px; margin: 10px 0;"><em>Detailed curve analysis available in PDF version</em></p>
-        <p style="color: #495057; font-size: 13px;">Slope β₁ ≤ -0.00406 indicates favorable conditions for calendar spread implementation</p>
+        <p style="color: #495057; font-size: 13px;">Slope $\beta_1 \leq -0.00406$ indicates favorable conditions for calendar spread implementation</p>
     </div>
 </div>
 ```
@@ -1327,15 +1325,15 @@ Implied volatility term structure exhibiting backwardation ($\beta_1 \leq -0.004
     samples=100
 ]
 % Payoff at entry (30 DTE)
-\addplot[red, thick] {
+\addplot[red, thick, smooth] {
     -2.5 + 0.8*exp(-0.5*((x-100)/8)^2) + 0.3*sin(deg(0.2*(x-100)))
 };
 % Payoff at 7 DTE (maximum time decay benefit)
-\addplot[green!60!black, thick] {
+\addplot[green!60!black, thick, smooth] {
     -1.8 + 1.5*exp(-0.5*((x-100)/5)^2) + 0.2*sin(deg(0.3*(x-100)))
 };
 % Payoff at expiration
-\addplot[blue, thick] {
+\addplot[blue, thick, smooth] {
     max(0, min(x-100, 0)) + max(0, min(100-x, 0)) - 2.5
 };
 % Mark maximum profit zone
@@ -1456,16 +1454,16 @@ This appendix provides detailed technical frameworks and algorithmic implementat
         <h3 style="color: #383d41; margin-bottom: 15px;">⚖️ Kelly Criterion Optimization Surface</h3>
         <div style="background: white; padding: 15px; border-radius: 6px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); margin-bottom: 15px;">
             <div style="text-align: left;">
-                <p style="margin: 5px 0;"><strong>Formula:</strong> f* = μ/σ² (simplified case)</p>
+                <p style="margin: 5px 0;"><strong>Formula:</strong> $f^* = \mu/\sigma^2$ (simplified case)</p>
                 <p style="margin: 5px 0;"><strong>Constraints:</strong> 0 ≤ f* ≤ 0.25 (max 25% allocation)</p>
                 <p style="margin: 5px 0;"><strong>Variables:</strong></p>
                 <ul style="margin: 5px 0 5px 20px; padding: 0;">
-                    <li>Expected Return (μ): -10% to +20%</li>
-                    <li>Volatility (σ): 10% to 50%</li>
+                    <li>Expected Return ($\mu$): -10% to +20%</li>
+                    <li>Volatility ($\sigma$): 10% to 50%</li>
                 </ul>
             </div>
             <div style="background: #fff3cd; padding: 8px; border-radius: 4px; margin-top: 10px;">
-                <strong style="color: #856404;">Optimal Zone: μ/σ² ratio maximization</strong>
+                <strong style="color: #856404;">Optimal Zone: $\mu/\sigma^2$ ratio maximization</strong>
             </div>
         </div>
         <p style="color: #383d41; font-size: 14px; margin: 10px 0;"><em>3D optimization surface available in PDF version</em></p>
@@ -1682,10 +1680,10 @@ $$dV_t = \kappa(\theta - V_t)dt + \sigma_v\sqrt{V_t}dW_t^V$$
 where $dW_t^S dW_t^V = \rho dt$
 
 **Parameter Estimation Results:**
-- **Mean Reversion Rate (κ):** 2.34 (annualized)
-- **Long-term Variance (θ):** 0.048 (22% annualized volatility)
-- **Volatility of Volatility (σᵥ):** 0.31
-- **Correlation (ρ):** -0.42 (negative leverage effect)
+- **Mean Reversion Rate ($\kappa$):** 2.34 (annualized)
+- **Long-term Variance ($\theta$):** 0.048 (22% annualized volatility)
+- **Volatility of Volatility ($\sigma_v$):** 0.31
+- **Correlation ($\rho$):** -0.42 (negative leverage effect)
 
 **Yang-Zhang Estimator Enhanced Formula:**
 
@@ -1719,7 +1717,7 @@ $$\text{Portfolio Risk}^2 = w^T F \Omega F^T w + w^T D w$$
 where:
 - $w$ = position weight vector
 - $F$ = factor loading matrix
-- $Ω$ = factor covariance matrix  
+- $\Omega$ = factor covariance matrix  
 - $D$ = idiosyncratic risk diagonal matrix
 
 This mathematical framework ensures robust position sizing, comprehensive risk management, and optimal portfolio construction while maintaining the theoretical foundations that drive calendar spread profitability under varying market conditions.
