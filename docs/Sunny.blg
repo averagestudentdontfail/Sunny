@@ -1,0 +1,9 @@
+[0] Config.pm:307> INFO - This is Biber 2.19
+[0] Config.pm:310> INFO - Logfile is 'Sunny.blg'
+[54] biber:340> INFO - === Sun Jun 22, 2025, 12:54:47
+[64] Biber.pm:419> INFO - Reading 'Sunny.bcf'
+[102] Biber.pm:979> INFO - Found 0 citekeys in bib section 0
+[110] bbl.pm:660> INFO - Writing 'Sunny.bbl' with encoding 'UTF-8'
+[111] bbl.pm:763> INFO - Output to Sunny.bbl
+[111] Biber.pm:131> WARN - The file 'Sunny.bcf' does not contain any citations!
+[111] Biber.pm:133> INFO - WARNINGS: 1

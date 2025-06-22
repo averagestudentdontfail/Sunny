@@ -123,7 +123,6 @@
 \addbibresource{References.bib}
 
 
-% Essential packages for document structure
 \usepackage{booktabs}
 \usepackage{longtable}
 \usepackage{array}
@@ -148,14 +147,6 @@
 \usepackage{fancyhdr}
 \usepackage{titlesec}
 \usepackage{caption}
-
-% TikZ packages for graphics
-\usepackage{tikz}
-\usepackage{pgfplots}
-\pgfplotsset{compat=1.18}
-\usetikzlibrary{shapes,arrows,positioning,calc,intersections}
-\usetikzlibrary{decorations.pathreplacing}
-\usetikzlibrary{patterns}
 
 % Table and figure captions
 \captionsetup[table]{skip=12pt, font=small, labelfont=bf}
@@ -296,7 +287,7 @@ conditions.
 
 
 \setstretch{1.5}
-\subsection{Introduction}\label{introduction}
+\section{Introduction}\label{introduction}
 
 The volatility risk premium represents one of the most persistent and
 well-documented anomalies in modern financial markets, yet its
@@ -353,7 +344,7 @@ signal generation process, demonstrating how each component contributes
 to the overall efficacy of the strategy while maintaining independence
 from market timing or directional bias.
 
-\subsection{Literature Review and Theoretical
+\section{Literature Review and Theoretical
 Foundation}\label{literature-review-and-theoretical-foundation}
 
 The theoretical foundation for volatility risk premium exploitation
@@ -435,7 +426,7 @@ concerns through sophisticated order management protocols and liquidity
 filtering that ensure practical implementability across diverse market
 conditions.
 
-\subsection{Mathematical Framework and Signal
+\section{Mathematical Framework and Signal
 Generation}\label{mathematical-framework-and-signal-generation}
 
 The mathematical foundation of the Sunny algorithm rests upon three
@@ -445,7 +436,7 @@ validation. Each component addresses specific aspects of the volatility
 forecasting problem, creating a robust multi-factor model that
 transcends the limitations of single-indicator approaches.
 
-\subsubsection{The Yang-Zhang Realized Volatility
+\subsection{The Yang-Zhang Realized Volatility
 Estimator}\label{the-yang-zhang-realized-volatility-estimator}
 
 The accurate measurement of historical volatility forms the cornerstone
@@ -510,7 +501,7 @@ where the factor of 252 reflects the typical number of trading days per
 year, converting daily variance to annualized terms for comparison with
 market-quoted implied volatilities.
 
-\subsubsection{Implied Volatility Term Structure
+\subsection{Implied Volatility Term Structure
 Analysis}\label{implied-volatility-term-structure-analysis}
 
 The term structure of implied volatility contains rich information about
@@ -562,7 +553,7 @@ High \(R^2\) values indicate that the linear term structure relationship
 explains substantial variance in implied volatility patterns, enhancing
 confidence in the derived slope estimate.
 
-\subsubsection{The IV/RV Ratio Signal}\label{the-ivrv-ratio-signal}
+\subsection{The IV/RV Ratio Signal}\label{the-ivrv-ratio-signal}
 
 The fundamental driver of volatility risk premium exploitation emerges
 through systematic comparison of market-implied volatility expectations
@@ -609,7 +600,7 @@ where the partial derivatives evaluate to:
 This uncertainty quantification enables robust hypothesis testing and
 confidence interval construction around the fundamental trading signal.
 
-\subsubsection{Multi-Factor Signal
+\subsection{Multi-Factor Signal
 Integration}\label{multi-factor-signal-integration}
 
 The three fundamental signals combine through a hierarchical decision
@@ -633,7 +624,7 @@ borderline cases that satisfy critical criteria. The volume threshold of
 while the dual-factor requirement for ``CONSIDER'' signals maintains
 strategy selectivity.
 
-\subsection{Calendar Spread Strategy
+\section{Calendar Spread Strategy
 Implementation}\label{calendar-spread-strategy-implementation}
 
 The implementation of calendar spread strategies within the Sunny
@@ -645,7 +636,7 @@ identical strike prices, provide defined-risk exposure to volatility
 risk premium while maintaining predictable profit and loss
 characteristics.
 
-\subsubsection{Calendar Spread Mathematics and Payoff
+\subsection{Calendar Spread Mathematics and Payoff
 Analysis}\label{calendar-spread-mathematics-and-payoff-analysis}
 
 The profit and loss structure of a long call calendar spread at the
@@ -682,7 +673,7 @@ depends critically on the time value decay differential between front
 and back month options, with volatility levels playing secondary roles
 when positions are held to front-month expiration.
 
-\subsubsection{Forward Volatility
+\subsection{Forward Volatility
 Framework}\label{forward-volatility-framework}
 
 Calendar spreads fundamentally represent trades on forward volatility,
@@ -713,7 +704,7 @@ risk premium harvesting. The Sunny framework primarily targets the
 second component, seeking to avoid reliance on volatility forecasting
 skill.
 
-\subsubsection{Greeks Analysis and Risk
+\subsection{Greeks Analysis and Risk
 Decomposition}\label{greeks-analysis-and-risk-decomposition}
 
 Comprehensive risk management of calendar spread portfolios requires
@@ -764,7 +755,7 @@ generate losses despite favorable time decay. The Sunny framework
 specifically targets environments where volatility decline appears
 probable based on historical patterns.
 
-\subsubsection{Optimal Strike Selection and
+\subsection{Optimal Strike Selection and
 Timing}\label{optimal-strike-selection-and-timing}
 
 The selection of appropriate strike prices and expiration dates
@@ -799,7 +790,7 @@ differentials but expose positions to extended market risk, while
 shorter durations may not provide sufficient profit potential to justify
 transaction costs.
 
-\subsection{Position Sizing and Risk
+\section{Position Sizing and Risk
 Management}\label{position-sizing-and-risk-management}
 
 The systematic exploitation of volatility risk premiums requires
@@ -810,7 +801,7 @@ employs information-theoretic optimization principles derived from the
 Kelly criterion while incorporating practical modifications necessary
 for institutional implementation.
 
-\subsubsection{Kelly Criterion Foundation and
+\subsection{Kelly Criterion Foundation and
 Modifications}\label{kelly-criterion-foundation-and-modifications}
 
 The Kelly criterion provides the mathematical foundation for optimal
@@ -849,7 +840,7 @@ acceptable drawdown levels. The Sunny framework employs
 \(\gamma = 0.25\), reflecting conservative institutional risk
 preferences.
 
-\subsubsection{Fixed Fractional Position Sizing
+\subsection{Fixed Fractional Position Sizing
 Implementation}\label{fixed-fractional-position-sizing-implementation}
 
 The practical implementation of Kelly-inspired position sizing within
@@ -884,7 +875,7 @@ commissions, \(C_{min} = \$1.00\) denotes minimum order commissions, and
 slippage estimates assume 1\% of the bid-ask spread for limit order
 execution.
 
-\subsubsection{Portfolio-Level Risk
+\subsection{Portfolio-Level Risk
 Controls}\label{portfolio-level-risk-controls}
 
 Beyond individual position sizing, the Sunny framework implements
@@ -928,7 +919,7 @@ These thresholds ensure that positions can be established and liquidated
 efficiently without significant market impact or adverse selection
 costs.
 
-\subsubsection{Dynamic Risk Monitoring and Position
+\subsection{Dynamic Risk Monitoring and Position
 Management}\label{dynamic-risk-monitoring-and-position-management}
 
 The systematic nature of the Sunny framework requires continuous
@@ -975,7 +966,7 @@ High volatility environments may warrant position size reductions or
 strategy suspension, while low volatility periods might support
 increased allocation to capture enhanced risk premiums.
 
-\subsubsection{Stress Testing and Scenario
+\subsection{Stress Testing and Scenario
 Analysis}\label{stress-testing-and-scenario-analysis}
 
 Robust risk management requires comprehensive stress testing across
@@ -1008,7 +999,7 @@ Regular monitoring of realized versus predicted VaR enables ongoing
 model validation and risk control adjustment as market conditions
 evolve.
 
-\subsection{Empirical Implementation and Backtesting
+\section{Empirical Implementation and Backtesting
 Framework}\label{empirical-implementation-and-backtesting-framework}
 
 The translation of theoretical concepts into practical implementation
@@ -1019,7 +1010,7 @@ employs comprehensive backtesting methodologies that address the unique
 challenges of options strategy evaluation including data quality
 requirements, execution modeling, and statistical validation protocols.
 
-\subsubsection{Data Requirements and Quality
+\subsection{Data Requirements and Quality
 Assurance}\label{data-requirements-and-quality-assurance}
 
 Options strategy backtesting demands high-quality data across multiple
@@ -1066,7 +1057,7 @@ volume spikes unrelated to earnings or fundamental developments receive
 investigation and potential exclusion to prevent distorted backtesting
 results.
 
-\subsubsection{Execution Modeling and Transaction
+\subsection{Execution Modeling and Transaction
 Costs}\label{execution-modeling-and-transaction-costs}
 
 Realistic execution modeling represents perhaps the greatest challenge
@@ -1115,7 +1106,7 @@ requires both legs to execute within reasonable time windows, with
 conditional probabilities reflecting the practical challenges of
 simultaneous order management.
 
-\subsubsection{Performance Evaluation
+\subsection{Performance Evaluation
 Metrics}\label{performance-evaluation-metrics}
 
 Comprehensive strategy evaluation requires metrics that capture both
@@ -1169,7 +1160,7 @@ strategy characteristics:
 These metrics illuminate the fundamental trade-off between win rate and
 win/loss ratios that characterizes most systematic trading strategies.
 
-\subsubsection{Statistical Validation and Robustness
+\subsection{Statistical Validation and Robustness
 Testing}\label{statistical-validation-and-robustness-testing}
 
 Rigorous strategy evaluation requires comprehensive statistical testing
@@ -1229,7 +1220,7 @@ Consistent performance across these dimensions provides evidence for
 genuine alpha generation rather than regime-specific or sector-specific
 advantages that may not persist.
 
-\subsection{Advanced Risk Management
+\section{Advanced Risk Management
 Protocols}\label{advanced-risk-management-protocols}
 
 The sophisticated nature of systematic volatility trading requires risk
@@ -1240,7 +1231,7 @@ incorporates multiple layers of risk control designed to preserve
 capital while maintaining systematic discipline during various market
 environments.
 
-\subsubsection{Multi-Dimensional Risk
+\subsection{Multi-Dimensional Risk
 Decomposition}\label{multi-dimensional-risk-decomposition}
 
 Effective risk management for calendar spread strategies requires
@@ -1309,7 +1300,7 @@ common factors such as market returns or volatility changes, and
 loadings across positions indicate concentration risk requiring
 diversification attention.
 
-\subsubsection{Dynamic Hedging and Exposure
+\subsection{Dynamic Hedging and Exposure
 Management}\label{dynamic-hedging-and-exposure-management}
 
 The time-varying nature of options exposures necessitates dynamic
@@ -1356,7 +1347,7 @@ The correlation factor adjusts for imperfect correlation between
 individual stock volatility and broad market volatility measures,
 ensuring appropriate hedge ratios.
 
-\subsubsection{Systematic Stop-Loss and
+\subsection{Systematic Stop-Loss and
 Profit-Taking}\label{systematic-stop-loss-and-profit-taking}
 
 Disciplined exit protocols prevent emotional decision-making while
@@ -1402,7 +1393,7 @@ Significant implied volatility increases may indicate changing market
 conditions that reduce calendar spread attractiveness, triggering
 systematic position closure.
 
-\subsubsection{Stress Testing and Tail Risk
+\subsection{Stress Testing and Tail Risk
 Management}\label{stress-testing-and-tail-risk-management}
 
 Comprehensive risk management requires understanding and preparing for
@@ -1459,7 +1450,7 @@ excessive downside potential:
 These thresholds trigger systematic position reduction or strategy
 suspension to preserve capital during extreme risk scenarios.
 
-\subsubsection{Regulatory and Operational Risk
+\subsection{Regulatory and Operational Risk
 Considerations}\label{regulatory-and-operational-risk-considerations}
 
 Systematic options trading strategies must address regulatory
@@ -1503,7 +1494,7 @@ Significant deviations between realized and expected performance trigger
 model review and potential recalibration to address changing market
 conditions or model inadequacies.
 
-\subsection{Results Analysis and Performance
+\section{Results Analysis and Performance
 Attribution}\label{results-analysis-and-performance-attribution}
 
 The comprehensive evaluation of systematic trading strategies requires
@@ -1514,7 +1505,7 @@ perspectives including absolute returns, risk-adjusted metrics, factor
 attribution, and regime-dependent analysis to provide complete
 understanding of strategy mechanics and effectiveness.
 
-\subsubsection{Historical Performance
+\subsection{Historical Performance
 Metrics}\label{historical-performance-metrics}
 
 The foundational performance analysis examines absolute and
@@ -1563,7 +1554,7 @@ This metric captures the largest peak-to-trough decline in portfolio
 value, providing essential information for risk assessment and investor
 suitability evaluation.
 
-\subsubsection{Factor Attribution and Risk
+\subsection{Factor Attribution and Risk
 Decomposition}\label{factor-attribution-and-risk-decomposition}
 
 Understanding the sources of strategy returns enables optimization of
@@ -1610,7 +1601,7 @@ This measurement validates the strategy's intended focus on
 earnings-related volatility patterns while identifying any unintended
 exposures to broader earnings announcement effects.
 
-\subsubsection{Trade-Level Analysis and Pattern
+\subsection{Trade-Level Analysis and Pattern
 Recognition}\label{trade-level-analysis-and-pattern-recognition}
 
 Detailed examination of individual trade characteristics provides
@@ -1656,7 +1647,7 @@ This decomposition reveals strategy robustness while identifying
 potential regime-dependent characteristics that might require adaptive
 implementation.
 
-\subsubsection{Benchmark Comparison and Relative
+\subsection{Benchmark Comparison and Relative
 Performance}\label{benchmark-comparison-and-relative-performance}
 
 Meaningful performance evaluation requires comparison with appropriate
@@ -1692,7 +1683,7 @@ This comparison provides context for the strategy's risk-adjusted
 performance relative to diversified alternatives operating at similar
 risk levels.
 
-\subsubsection{Statistical Significance and Robustness
+\subsection{Statistical Significance and Robustness
 Validation}\label{statistical-significance-and-robustness-validation}
 
 Rigorous performance evaluation requires statistical testing to
@@ -1738,7 +1729,7 @@ This approach generates thousands of random trading sequences with
 similar characteristics to assess whether observed performance could
 reasonably result from chance rather than systematic skill.
 
-\subsection{Advanced Theoretical Extensions and Future
+\section{Advanced Theoretical Extensions and Future
 Developments}\label{advanced-theoretical-extensions-and-future-developments}
 
 The systematic exploitation of volatility risk premiums through calendar
@@ -1748,7 +1739,7 @@ algorithm provides a foundation for numerous extensions and enhancements
 that could further improve performance while addressing emerging market
 conditions and regulatory requirements.
 
-\subsubsection{Machine Learning Integration and Adaptive
+\subsection{Machine Learning Integration and Adaptive
 Optimization}\label{machine-learning-integration-and-adaptive-optimization}
 
 The integration of machine learning methodologies offers significant
@@ -1795,7 +1786,7 @@ where individual models \(\hat{y}_m\) receive weights \(w_m\) based on
 historical performance and uncertainty measures. This approach leverages
 diverse modeling approaches while maintaining interpretability.
 
-\subsubsection{Multi-Asset and Cross-Market
+\subsection{Multi-Asset and Cross-Market
 Extensions}\label{multi-asset-and-cross-market-extensions}
 
 The fundamental principles underlying the Sunny algorithm extend
@@ -1836,7 +1827,7 @@ systemic events:
 \vdots & \vdots & \ddots
 \end{bmatrix}\]
 
-\subsubsection{Alternative Strategy Structures and Risk
+\subsection{Alternative Strategy Structures and Risk
 Profiles}\label{alternative-strategy-structures-and-risk-profiles}
 
 The calendar spread structure represents one of many possible
@@ -1870,7 +1861,7 @@ These structures require enhanced risk management due to undefined risk
 characteristics but could provide superior returns under favorable
 conditions.
 
-\subsubsection{Regulatory Evolution and Compliance
+\subsection{Regulatory Evolution and Compliance
 Framework}\label{regulatory-evolution-and-compliance-framework}
 
 The evolving regulatory landscape for systematic trading strategies
@@ -1904,7 +1895,7 @@ risk measurement requirements:
 The framework must accommodate these enhanced risk measurement
 requirements while maintaining operational efficiency.
 
-\subsubsection{Technology Infrastructure and Execution
+\subsection{Technology Infrastructure and Execution
 Enhancement}\label{technology-infrastructure-and-execution-enhancement}
 
 The successful implementation of systematic trading strategies
@@ -1941,7 +1932,7 @@ minimizing market impact:
 These algorithms must balance speed, cost, and market impact
 considerations while adapting to changing liquidity conditions.
 
-\subsection{Conclusion}\label{conclusion}
+\section{Conclusion}\label{conclusion}
 
 The Sunny algorithm represents a comprehensive synthesis of academic
 financial theory and practical trading implementation, demonstrating how
@@ -2024,7 +2015,7 @@ applications.
 
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
-\subsection{References}\label{references}
+\section{References}\label{references}
 
 Ball, R., \& Brown, P. (1968). An empirical evaluation of accounting
 income numbers. \emph{Journal of Accounting Research}, 6(2), 159-178.
@@ -2069,644 +2060,6 @@ based on high, low, open, and close prices. \emph{Journal of Business},
 73(3), 477-492.
 
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
-
-\section{Appendix: Graphical Representations and Visual
-Analysis}\label{appendix-graphical-representations-and-visual-analysis}
-
-This appendix provides visual representations of the key mathematical
-and analytical concepts discussed throughout the paper. All graphics are
-generated using TikZ/PGFplots to ensure publication-quality presentation
-and mathematical accuracy.
-
-\subsection{Yang-Zhang Volatility Estimator
-Comparison}\label{yang-zhang-volatility-estimator-comparison}
-
-Figure~\ref{fig-volatility-comparison} demonstrates the superiority of
-the Yang-Zhang estimator over traditional close-to-close methods,
-particularly during periods of overnight gaps and intraday volatility
-clustering.
-
-\begin{figure}[H]
-
-\centering{
-
-\begin{tikzpicture}[scale=0.8]
-\begin{axis}[
-    width=14cm,
-    height=8cm,
-    xlabel={Trading Days},
-    ylabel={Annualized Volatility},
-    title={Volatility Estimator Comparison: Yang-Zhang vs Close-to-Close},
-    legend pos=north west,
-    grid=major,
-    grid style={gray!30},
-    line width=1.2pt,
-    mark size=0pt,
-    xlabel style={font=\small},
-    ylabel style={font=\small},
-    title style={font=\small\bfseries},
-    legend style={font=\footnotesize}
-]
-
-% Close-to-Close Volatility (more volatile, less smooth)
-\addplot[blue, thick, smooth] coordinates {
-(1,0.18) (5,0.22) (10,0.28) (15,0.31) (20,0.27) (25,0.24) (30,0.29) 
-(35,0.33) (40,0.28) (45,0.25) (50,0.31) (55,0.35) (60,0.29) (65,0.26) 
-(70,0.32) (75,0.28) (80,0.24) (85,0.27) (90,0.30) (95,0.26) (100,0.23)
-(105,0.28) (110,0.32) (115,0.29) (120,0.25) (125,0.27) (130,0.24) 
-(135,0.26) (140,0.28) (145,0.25) (150,0.22)
-};
-
-% Yang-Zhang Volatility (smoother, more stable)
-\addplot[red, thick, smooth] coordinates {
-(1,0.19) (5,0.21) (10,0.25) (15,0.28) (20,0.26) (25,0.24) (30,0.27) 
-(35,0.30) (40,0.27) (45,0.25) (50,0.28) (55,0.31) (60,0.28) (65,0.26) 
-(70,0.29) (75,0.27) (80,0.25) (85,0.26) (90,0.28) (95,0.26) (100,0.24)
-(105,0.27) (110,0.29) (115,0.28) (120,0.26) (125,0.26) (130,0.25) 
-(135,0.25) (140,0.26) (145,0.25) (150,0.23)
-};
-
-% Earnings announcement markers
-\addplot[mark=*, mark size=3pt, green!70!black, only marks] coordinates {
-(30,0.27) (60,0.28) (90,0.28) (120,0.26)
-};
-
-\legend{Close-to-Close, Yang-Zhang, Earnings Events}
-\end{axis}
-\end{tikzpicture}
-
-}
-
-\caption{\label{fig-volatility-comparison}Comparison of volatility
-estimators showing Yang-Zhang superior stability and accuracy,
-particularly around earnings events (green markers).}
-
-\end{figure}%
-
-\subsection{Implied Volatility Term Structure
-Analysis}\label{implied-volatility-term-structure-analysis-1}
-
-Figure~\ref{fig-term-structure} illustrates the backwardation pattern
-that the Sunny algorithm specifically targets, where near-term implied
-volatility exceeds longer-term expectations.
-
-\begin{figure}[H]
-
-\centering{
-
-\begin{tikzpicture}[scale=0.9]
-\begin{axis}[
-    width=12cm,
-    height=8cm,
-    xlabel={Days to Expiration},
-    ylabel={Implied Volatility},
-    title={Implied Volatility Term Structure: Backwardation Signal},
-    legend pos=north east,
-    grid=major,
-    grid style={gray!30},
-    line width=1.2pt,
-    xlabel style={font=\small},
-    ylabel style={font=\small},
-    title style={font=\small\bfseries},
-    legend style={font=\footnotesize}
-]
-
-% Market data points
-\addplot[mark=o, mark size=3pt, blue!70, only marks] coordinates {
-(7,0.45) (14,0.42) (21,0.38) (30,0.35) (45,0.32) (60,0.30) (90,0.28)
-};
-
-% Regression line (backwardation)
-\addplot[red, thick, domain=7:90, samples=100] {0.48 - 0.00220*x};
-
-% Confidence bands
-\addplot[red!30, fill, domain=7:90, samples=100] {0.50 - 0.00220*x} 
-    \closedcycle;
-\addplot[red!30, fill, domain=7:90, samples=100] {0.46 - 0.00220*x} 
-    \closedcycle;
-
-% Add slope annotation
-\node[draw, fill=white, font=\footnotesize] at (axis cs:50,0.40) {
-    \begin{tabular}{c}
-    Slope: $\beta_1 = -0.0022$ \\
-    $R^2 = 0.94$ \\
-    Signal: BACKWARDATION
-    \end{tabular}
-};
-
-\legend{Market Data, Regression Fit, 95\% Confidence}
-\end{axis}
-\end{tikzpicture}
-
-}
-
-\caption{\label{fig-term-structure}Implied volatility term structure
-exhibiting backwardation (\(\beta_1 \leq -0.00406\)) indicating
-favorable conditions for calendar spread implementation.}
-
-\end{figure}%
-
-\subsection{Calendar Spread Payoff
-Analysis}\label{calendar-spread-payoff-analysis}
-
-Figure~\ref{fig-calendar-payoff} demonstrates the profit and loss
-characteristics of the long calendar spread strategy at front-month
-expiration.
-
-\begin{figure}[H]
-
-\centering{
-
-\begin{tikzpicture}[scale=0.9]
-\begin{axis}[
-    width=14cm,
-    height=8cm,
-    xlabel={Stock Price at Front Month Expiration (\$)},
-    ylabel={Profit/Loss (\$)},
-    title={Calendar Spread Payoff Diagram (Strike = \$100)},
-    legend pos=north west,
-    grid=major,
-    grid style={gray!30},
-    line width=1.5pt,
-    xlabel style={font=\small},
-    ylabel style={font=\small},
-    title style={font=\small\bfseries},
-    legend style={font=\footnotesize},
-    xmin=85, xmax=115,
-    ymin=-300, ymax=200
-]
-
-% Calendar spread payoff curve
-\addplot[blue, thick, smooth, samples=100, domain=85:115] {
-    -250 + 150*exp(-0.5*((x-100)/5)^2)
-};
-
-% Break-even lines
-\addplot[gray, dashed] coordinates {(92,-250) (92,200)};
-\addplot[gray, dashed] coordinates {(108,-250) (108,200)};
-
-% Zero line
-\addplot[black, thin] coordinates {(85,0) (115,0)};
-
-% Strike price line
-\addplot[red, dashed, thick] coordinates {(100,-250) (100,200)};
-
-% Maximum profit point
-\addplot[mark=*, mark size=4pt, red, only marks] coordinates {(100,120)};
-
-% Annotations
-\node[font=\footnotesize] at (axis cs:100,140) {Max Profit: \$120};
-\node[font=\footnotesize] at (axis cs:88,-200) {Lower B/E: \$92};
-\node[font=\footnotesize] at (axis cs:112,-200) {Upper B/E: \$108};
-\node[font=\footnotesize] at (axis cs:87,-100) {Max Loss: \$250};
-
-\legend{Calendar Spread P\&L, Break-even Points, Strike Price}
-\end{axis}
-\end{tikzpicture}
-
-}
-
-\caption{\label{fig-calendar-payoff}Calendar spread payoff profile
-showing optimal profit at strike price with limited, defined maximum
-loss.}
-
-\end{figure}%
-
-\subsection{Greeks Evolution Analysis}\label{greeks-evolution-analysis}
-
-Figure~\ref{fig-greeks-evolution} illustrates how the key option Greeks
-evolve as the position approaches expiration and the underlying price
-changes.
-
-\begin{figure}[H]
-
-\centering{
-
-\begin{tikzpicture}[scale=0.7]
-\begin{axis}[
-    width=7cm,
-    height=5cm,
-    xlabel={Days to Expiration},
-    ylabel={Delta},
-    title={Delta Evolution},
-    grid=major,
-    grid style={gray!30},
-    line width=1.2pt,
-    xlabel style={font=\small},
-    ylabel style={font=\small},
-    title style={font=\small\bfseries}
-]
-
-% Delta at different moneyness levels
-\addplot[blue, thick] coordinates {
-(30,0.02) (25,0.03) (20,0.04) (15,0.06) (10,0.10) (5,0.18) (1,0.35)
-};
-\addplot[red, thick] coordinates {
-(30,-0.08) (25,-0.10) (20,-0.12) (15,-0.15) (10,-0.20) (5,-0.28) (1,-0.42)
-};
-\addplot[green, thick] coordinates {
-(30,0.08) (25,0.09) (20,0.11) (15,0.14) (10,0.19) (5,0.27) (1,0.38)
-};
-
-\end{axis}
-\end{tikzpicture}
-\quad
-\begin{tikzpicture}[scale=0.7]
-\begin{axis}[
-    width=7cm,
-    height=5cm,
-    xlabel={Days to Expiration},
-    ylabel={Theta},
-    title={Theta Evolution},
-    grid=major,
-    grid style={gray!30},
-    line width=1.2pt,
-    xlabel style={font=\small},
-    ylabel style={font=\small},
-    title style={font=\small\bfseries}
-]
-
-% Theta evolution (time decay acceleration)
-\addplot[blue, thick] coordinates {
-(30,2.5) (25,3.2) (20,4.1) (15,5.5) (10,7.8) (5,12.3) (1,22.1)
-};
-
-\end{axis}
-\end{tikzpicture}
-
-\vspace{1cm}
-
-\begin{tikzpicture}[scale=0.7]
-\begin{axis}[
-    width=7cm,
-    height=5cm,
-    xlabel={Stock Price (\$)},
-    ylabel={Gamma},
-    title={Gamma Profile},
-    grid=major,
-    grid style={gray!30},
-    line width=1.2pt,
-    xlabel style={font=\small},
-    ylabel style={font=\small},
-    title style={font=\small\bfseries},
-    xmin=90, xmax=110
-]
-
-% Gamma profile (bell curve centered at strike)
-\addplot[blue, thick, smooth, samples=100, domain=90:110] {
-    0.15*exp(-0.5*((x-100)/3)^2)
-};
-
-\end{axis}
-\end{tikzpicture}
-\quad
-\begin{tikzpicture}[scale=0.7]
-\begin{axis}[
-    width=7cm,
-    height=5cm,
-    xlabel={Volatility Change (\%)},
-    ylabel={Vega P\&L (\$)},
-    title={Vega Sensitivity},
-    grid=major,
-    grid style={gray!30},
-    line width=1.2pt,
-    xlabel style={font=\small},
-    ylabel style={font=\small},
-    title style={font=\small\bfseries}
-]
-
-% Vega sensitivity (negative for calendar spreads)
-\addplot[red, thick] coordinates {
-(-10,180) (-5,85) (0,0) (5,-75) (10,-140) (15,-195)
-};
-
-\end{axis}
-\end{tikzpicture}
-
-}
-
-\caption{\label{fig-greeks-evolution}Evolution of option Greeks for
-calendar spread positions showing risk characteristics across time and
-market parameters.}
-
-\end{figure}%
-
-\subsection{Kelly Criterion
-Optimization}\label{kelly-criterion-optimization}
-
-Figure~\ref{fig-kelly-optimization} demonstrates the application of
-Kelly criterion principles to position sizing, showing the trade-off
-between growth rate and bankruptcy risk.
-
-\begin{figure}[H]
-
-\centering{
-
-\begin{tikzpicture}[scale=0.9]
-\begin{axis}[
-    width=14cm,
-    height=8cm,
-    xlabel={Position Fraction},
-    ylabel={Geometric Mean Return / Bankruptcy Rate (\%)},
-    title={Kelly Criterion Optimization for Volatility Selling},
-    legend pos=north west,
-    grid=major,
-    grid style={gray!30},
-    line width=1.2pt,
-    xlabel style={font=\small},
-    ylabel style={font=\small},
-    title style={font=\small\bfseries},
-    legend style={font=\footnotesize}
-]
-
-% Geometric mean return curve
-\addplot[blue, thick, smooth, samples=100, domain=0.01:0.8] {
-    12*x*exp(-8*x)
-};
-
-% Bankruptcy rate curve
-\addplot[red, thick, smooth, samples=100, domain=0.01:0.8] {
-    100*(1-exp(-15*x^2))
-};
-
-% Optimal Kelly point
-\addplot[mark=*, mark size=4pt, green!70!black, only marks] coordinates {(0.125,8.2)};
-
-% Fractional Kelly point (25% of optimal)
-\addplot[mark=square*, mark size=4pt, orange, only marks] coordinates {(0.031,6.8)};
-
-% Vertical lines for reference
-\addplot[green!70!black, dashed] coordinates {(0.125,0) (0.125,8.2)};
-\addplot[orange, dashed] coordinates {(0.031,0) (0.031,6.8)};
-
-% Annotations
-\node[font=\footnotesize] at (axis cs:0.15,10) {Optimal Kelly: 12.5\%};
-\node[font=\footnotesize] at (axis cs:0.08,5) {Fractional Kelly: 3.1\%};
-
-\legend{Geometric Mean Return, Bankruptcy Rate, Optimal Kelly, Fractional Kelly}
-\end{axis}
-\end{tikzpicture}
-
-}
-
-\caption{\label{fig-kelly-optimization}Kelly criterion optimization
-showing optimal position sizing at 12.5\% with fractional implementation
-at 3.1\% for reduced risk.}
-
-\end{figure}%
-
-\subsection{Multi-Factor Signal Generation
-Framework}\label{multi-factor-signal-generation-framework}
-
-Figure~\ref{fig-signal-framework} presents a flowchart of the
-three-factor signal generation process used by the Sunny algorithm.
-
-\begin{figure}[H]
-
-\centering{
-
-\begin{tikzpicture}[
-    node distance=1.5cm,
-    auto,
-    thick,
-    main node/.style={circle,fill=blue!20,draw,font=\small\bfseries},
-    decision node/.style={diamond,fill=yellow!20,draw,font=\footnotesize},
-    process node/.style={rectangle,fill=green!20,draw,font=\footnotesize},
-    terminal node/.style={rectangle,rounded corners,fill=red!20,draw,font=\footnotesize\bfseries}
-]
-
-% Input nodes
-\node[main node] (input) {Market Data};
-
-% Processing nodes
-\node[process node, below left=of input] (yangzhang) {
-    Yang-Zhang\\
-    Volatility\\
-    Estimator
-};
-
-\node[process node, below=of input] (termstruct) {
-    Term Structure\\
-    Regression\\
-    Analysis
-};
-
-\node[process node, below right=of input] (ivrv) {
-    IV/RV Ratio\\
-    Calculation
-};
-
-% Decision diamonds
-\node[decision node, below=2cm of yangzhang] (vol-check) {
-    Volume\\
-    $\geq 1.5M$?
-};
-
-\node[decision node, below=2cm of termstruct] (slope-check) {
-    $\beta_1 \leq$\\
-    $-0.00406$?
-};
-
-\node[decision node, below=2cm of ivrv] (ratio-check) {
-    IV/RV\\
-    $\geq 1.25$?
-};
-
-% Final decision
-\node[decision node, below=3cm of input] (final-decision) {
-    All Conditions\\
-    Met?
-};
-
-% Output nodes
-\node[terminal node, below left=of final-decision] (recommend) {RECOMMENDED};
-\node[terminal node, below=of final-decision] (consider) {CONSIDER};
-\node[terminal node, below right=of final-decision] (avoid) {AVOID};
-
-% Arrows
-\draw[->] (input) -- (yangzhang);
-\draw[->] (input) -- (termstruct);
-\draw[->] (input) -- (ivrv);
-
-\draw[->] (yangzhang) -- (vol-check);
-\draw[->] (termstruct) -- (slope-check);
-\draw[->] (ivrv) -- (ratio-check);
-
-\draw[->] (vol-check) -- (final-decision);
-\draw[->] (slope-check) -- (final-decision);
-\draw[->] (ratio-check) -- (final-decision);
-
-\draw[->] (final-decision) -- node[left] {Yes} (recommend);
-\draw[->] (final-decision) -- node[right] {Partial} (consider);
-\draw[->] (final-decision) -- node[right] {No} (avoid);
-
-\end{tikzpicture}
-
-}
-
-\caption{\label{fig-signal-framework}Multi-factor signal generation
-framework integrating Yang-Zhang volatility, term structure analysis,
-and IV/RV ratio for systematic trade selection.}
-
-\end{figure}%
-
-\subsection{Risk Management Dashboard}\label{risk-management-dashboard}
-
-Figure~\ref{fig-risk-dashboard} provides a comprehensive view of
-portfolio risk metrics and performance characteristics.
-
-\begin{figure}[H]
-
-\centering{
-
-\begin{tikzpicture}[scale=0.7]
-\begin{axis}[
-    width=7cm,
-    height=5cm,
-    xlabel={Trading Days},
-    ylabel={Portfolio Value (\$)},
-    title={Portfolio Growth},
-    grid=major,
-    grid style={gray!30},
-    line width=1.2pt,
-    xlabel style={font=\small},
-    ylabel style={font=\small},
-    title style={font=\small\bfseries}
-]
-
-% Portfolio value growth with some volatility
-\addplot[blue, thick, smooth] coordinates {
-(0,100000) (30,102500) (60,104800) (90,106200) (120,108900) 
-(150,107200) (180,109800) (210,112400) (240,114100) (270,116800)
-(300,115300) (330,118200) (360,121500)
-};
-
-\end{axis}
-\end{tikzpicture}
-\quad
-\begin{tikzpicture}[scale=0.7]
-\begin{axis}[
-    width=7cm,
-    height=5cm,
-    xlabel={Trading Days},
-    ylabel={Drawdown (\%)},
-    title={Maximum Drawdown Analysis},
-    grid=major,
-    grid style={gray!30},
-    line width=1.2pt,
-    xlabel style={font=\small},
-    ylabel style={font=\small},
-    title style={font=\small\bfseries},
-    ymin=-8, ymax=1
-]
-
-% Drawdown analysis
-\addplot[red, thick, fill=red!20, smooth] coordinates {
-(0,0) (30,0) (60,0) (90,0) (120,0) (150,-1.5) (180,0) 
-(210,0) (240,0) (270,0) (300,-1.3) (330,0) (360,0)
-} \closedcycle;
-
-% Maximum drawdown line
-\addplot[red, dashed] coordinates {(0,-1.5) (360,-1.5)};
-
-\end{axis}
-\end{tikzpicture}
-
-\vspace{1cm}
-
-\begin{tikzpicture}[scale=0.7]
-\begin{axis}[
-    width=7cm,
-    height=5cm,
-    xlabel={Daily Return (\%)},
-    ylabel={Frequency},
-    title={Return Distribution},
-    grid=major,
-    grid style={gray!30},
-    line width=1.2pt,
-    xlabel style={font=\small},
-    ylabel style={font=\small},
-    title style={font=\small\bfseries},
-    ybar,
-    bar width=0.8
-]
-
-% Histogram data (positive skew typical of volatility selling)
-\addplot coordinates {
-(-3,2) (-2,5) (-1,15) (0,45) (1,65) (2,35) (3,18) (4,8) (5,3)
-};
-
-\end{axis}
-\end{tikzpicture}
-\quad
-\begin{tikzpicture}[scale=0.7]
-\begin{axis}[
-    width=7cm,
-    height=5cm,
-    xlabel={VIX Level},
-    ylabel={Strategy Performance (\%)},
-    title={Performance by Volatility Regime},
-    grid=major,
-    grid style={gray!30},
-    line width=1.2pt,
-    xlabel style={font=\small},
-    ylabel style={font=\small},
-    title style={font=\small\bfseries},
-    ybar,
-    bar width=15
-]
-
-% Performance by VIX regime
-\addplot[fill=green!60] coordinates {(12,3.2)};
-\addplot[fill=blue!60] coordinates {(18,2.8)};
-\addplot[fill=yellow!60] coordinates {(25,1.9)};
-\addplot[fill=orange!60] coordinates {(35,0.8)};
-\addplot[fill=red!60] coordinates {(45,-1.2)};
-
-\end{axis}
-\end{tikzpicture}
-
-}
-
-\caption{\label{fig-risk-dashboard}Comprehensive risk management
-dashboard showing portfolio evolution, drawdown characteristics, return
-distribution (positive skew), and performance across volatility
-regimes.}
-
-\end{figure}%
-
-\subsection{Strategy Performance Metrics
-Summary}\label{strategy-performance-metrics-summary}
-
-Table~\ref{tbl-performance-summary} provides a quantitative summary of
-the key performance and risk metrics for the Sunny algorithm
-implementation.
-
-\begin{longtable}[]{@{}lcc@{}}
-\caption{Sunny Algorithm Performance
-Summary}\label{tbl-performance-summary}\tabularnewline
-\toprule\noalign{}
-\textbf{Metric} & \textbf{Value} & \textbf{Benchmark} \\
-\midrule\noalign{}
-\endfirsthead
-\toprule\noalign{}
-\textbf{Metric} & \textbf{Value} & \textbf{Benchmark} \\
-\midrule\noalign{}
-\endhead
-\bottomrule\noalign{}
-\endlastfoot
-Annual Return & 18.2\% & 8.5\% \\
-Volatility & 12.4\% & 16.8\% \\
-Sharpe Ratio & 1.47 & 0.51 \\
-Maximum Drawdown & 3.2\% & 12.8\% \\
-Calmar Ratio & 5.69 & 0.66 \\
-Win Rate & 72.3\% & 52.1\% \\
-Average Win & 2.8\% & 1.9\% \\
-Average Loss & -3.1\% & -4.7\% \\
-Win/Loss Ratio & 0.90 & 0.40 \\
-VaR (95\%) & 1.8\% & 3.2\% \\
-Information Ratio & 2.14 & -- \\
-\end{longtable}
 
 
 \printbibliography
