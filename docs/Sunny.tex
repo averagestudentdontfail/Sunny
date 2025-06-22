@@ -2243,15 +2243,15 @@ strike.
     samples=100
 ]
 % Payoff at entry (30 DTE)
-\addplot[red, thick] {
+\addplot[red, thick, smooth] {
     -2.5 + 0.8*exp(-0.5*((x-100)/8)^2) + 0.3*sin(deg(0.2*(x-100)))
 };
 % Payoff at 7 DTE (maximum time decay benefit)
-\addplot[green!60!black, thick] {
+\addplot[green!60!black, thick, smooth] {
     -1.8 + 1.5*exp(-0.5*((x-100)/5)^2) + 0.2*sin(deg(0.3*(x-100)))
 };
 % Payoff at expiration
-\addplot[blue, thick] {
+\addplot[blue, thick, smooth] {
     max(0, min(x-100, 0)) + max(0, min(100-x, 0)) - 2.5
 };
 % Mark maximum profit zone
