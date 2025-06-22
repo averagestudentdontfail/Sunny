@@ -23,7 +23,26 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="Sunny_files/libs/quarto-html/quarto.js" type="module"></script>
@@ -149,6 +168,7 @@ window.Quarto = {
   </ul></li>
   <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion"><span class="header-section-number">10</span> Conclusion</a></li>
   <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references"><span class="header-section-number">11</span> References</a></li>
+  <li><a href="#bibliography" id="toc-bibliography" class="nav-link" data-scroll-target="#bibliography">References</a></li>
   </ul>
 <div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="Sunny.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
 </div>
@@ -210,13 +230,13 @@ window.Quarto = {
 </section>
 <section id="literature-review-and-theoretical-foundation" class="level2" data-number="2">
 <h2 data-number="2" class="anchored" data-anchor-id="literature-review-and-theoretical-foundation"><span class="header-section-number">2</span> Literature Review and Theoretical Foundation</h2>
-<p>The theoretical foundation for volatility risk premium exploitation traces its origins to the seminal work of Carr and Wu (2009), who established the mathematical framework for decomposing variance risk premiums through model-free implied volatility extraction. Their methodology demonstrated that the difference between risk-neutral and physical expectations of variance represents a systematic premium that compensation theory alone cannot fully explain. Subsequent research by Bollerslev, Tauchen, and Zhou (2009) extended this framework by introducing the VIX-based variance risk premium measure, documenting average premiums of approximately 30% that persist across various market regimes.</p>
-<p>The earnings announcement literature provides critical context for understanding why volatility risk premiums become particularly acute during scheduled information events. Patell and Wolfson (1979) first documented the concentration of return volatility around earnings announcements, establishing that approximately 30% of annual return variance occurs during the three-day earnings announcement window. This finding has been consistently replicated across international markets and extended through the work of Beaver (1968) and Ball and Brown (1968), who demonstrated the information content and market response patterns that create the underlying uncertainty driving option demand.</p>
-<p>Bollerslev and Todorov (2011) advanced the theoretical understanding of jump versus diffusive components in variance risk premiums, demonstrating that tail risk compensation constitutes a significant portion of the observed premium. Their “fear index” methodology, which isolates jump risk from diffusive variance, reveals that earnings announcements concentrate both types of risk, making them particularly attractive targets for volatility selling strategies. The systematic nature of these patterns suggests that sophisticated algorithms can exploit predictable aspects of market behavior while avoiding the idiosyncratic risks associated with individual earnings outcomes.</p>
-<p>Recent developments in the volatility estimation literature have emphasized the superiority of range-based estimators over traditional close-to-close methods. Yang and Zhang (2000) introduced their drift-independent volatility estimator, demonstrating efficiency gains of up to 14 times relative to conventional methods. The Yang-Zhang estimator addresses critical limitations of earlier approaches by properly handling overnight gaps, drift bias, and microstructure effects that can distort volatility measurements. This methodological advance proves essential for accurate realized volatility calculation in systematic trading applications.</p>
-<p>The term structure of implied volatility has received extensive theoretical treatment in the options literature, with particular emphasis on the information content embedded in the slope and curvature of volatility across expiration dates. Christoffersen, Heston, and Jacobs (2013) established that term structure shapes contain predictive information about future volatility realizations, while Trolle and Schwartz (2009) demonstrated that systematic patterns in term structure evolution create exploitable trading opportunities. The Sunny framework builds upon these insights by implementing robust regression methodologies to extract term structure signals that complement traditional volatility level measures.</p>
-<p>Position sizing in options strategies has historically relied on ad hoc rules or simple percentage-of-capital approaches that fail to optimize risk-adjusted returns. The Kelly criterion, derived from information theory by Kelly (1956), provides a mathematically optimal framework for position sizing when return distributions and probabilities are known. MacLean, Thorp, and Ziemba (2010) extended Kelly criterion applications to options trading, demonstrating how information-theoretic optimization principles can enhance long-term capital growth while controlling drawdown risk. The Sunny implementation incorporates these insights through fractional Kelly sizing that balances growth optimization with practical risk management requirements.</p>
-<p>The systematic exploitation of earnings volatility patterns requires careful consideration of market microstructure effects and execution challenges. Chordia, Roll, and Subrahmanyam (2002) documented the concentration of trading volume and bid-ask spreads around earnings announcements, creating execution challenges that must be incorporated into systematic trading frameworks. The Sunny algorithm addresses these concerns through sophisticated order management protocols and liquidity filtering that ensure practical implementability across diverse market conditions.</p>
+<p>The theoretical foundation for volatility risk premium exploitation traces its origins to the seminal work of <span class="citation" data-cites="carr2009">Carr and Wu <a href="#ref-carr2009" role="doc-biblioref">(2009)</a></span>, who established the mathematical framework for decomposing variance risk premiums through model-free implied volatility extraction. Their methodology demonstrated that the difference between risk-neutral and physical expectations of variance represents a systematic premium that compensation theory alone cannot fully explain. Subsequent research by <span class="citation" data-cites="bollerslev2009">Bollerslev, Tauchen, and Zhou <a href="#ref-bollerslev2009" role="doc-biblioref">(2009)</a></span> extended this framework by introducing the VIX-based variance risk premium measure, documenting average premiums of approximately 30% that persist across various market regimes.</p>
+<p>The earnings announcement literature provides critical context for understanding why volatility risk premiums become particularly acute during scheduled information events. <span class="citation" data-cites="patell1979">Patell and Wolfson <a href="#ref-patell1979" role="doc-biblioref">(1979)</a></span> first documented the concentration of return volatility around earnings announcements, establishing that approximately 30% of annual return variance occurs during the three-day earnings announcement window. This finding has been consistently replicated across international markets and extended through the work of <span class="citation" data-cites="beaver1968">Beaver <a href="#ref-beaver1968" role="doc-biblioref">(1968)</a></span> and <span class="citation" data-cites="ball1968">Ball and Brown <a href="#ref-ball1968" role="doc-biblioref">(1968)</a></span>, who demonstrated the information content and market response patterns that create the underlying uncertainty driving option demand.</p>
+<p><span class="citation" data-cites="bollerslev2011">Bollerslev and Todorov <a href="#ref-bollerslev2011" role="doc-biblioref">(2011)</a></span> advanced the theoretical understanding of jump versus diffusive components in variance risk premiums, demonstrating that tail risk compensation constitutes a significant portion of the observed premium. Their “fear index” methodology, which isolates jump risk from diffusive variance, reveals that earnings announcements concentrate both types of risk, making them particularly attractive targets for volatility selling strategies. The systematic nature of these patterns suggests that sophisticated algorithms can exploit predictable aspects of market behavior while avoiding the idiosyncratic risks associated with individual earnings outcomes.</p>
+<p>Recent developments in the volatility estimation literature have emphasized the superiority of range-based estimators over traditional close-to-close methods. <span class="citation" data-cites="yang2000">Yang and Zhang <a href="#ref-yang2000" role="doc-biblioref">(2000)</a></span> introduced their drift-independent volatility estimator, demonstrating efficiency gains of up to 14 times relative to conventional methods. The Yang-Zhang estimator addresses critical limitations of earlier approaches by properly handling overnight gaps, drift bias, and microstructure effects that can distort volatility measurements. This methodological advance proves essential for accurate realized volatility calculation in systematic trading applications.</p>
+<p>The term structure of implied volatility has received extensive theoretical treatment in the options literature, with particular emphasis on the information content embedded in the slope and curvature of volatility across expiration dates. <span class="citation" data-cites="christoffersen2013">Christoffersen, Heston, and Jacobs <a href="#ref-christoffersen2013" role="doc-biblioref">(2013)</a></span> established that term structure shapes contain predictive information about future volatility realizations, while <span class="citation" data-cites="trolle2009">Trolle and Schwartz <a href="#ref-trolle2009" role="doc-biblioref">(2009)</a></span> demonstrated that systematic patterns in term structure evolution create exploitable trading opportunities. The Sunny framework builds upon these insights by implementing robust regression methodologies to extract term structure signals that complement traditional volatility level measures.</p>
+<p>Position sizing in options strategies has historically relied on ad hoc rules or simple percentage-of-capital approaches that fail to optimize risk-adjusted returns. The Kelly criterion, derived from information theory by <span class="citation" data-cites="kelly1956">Kelly Jr <a href="#ref-kelly1956" role="doc-biblioref">(1956)</a></span>, provides a mathematically optimal framework for position sizing when return distributions and probabilities are known. <span class="citation" data-cites="maclean2010">MacLean, Thorp, and Ziemba <a href="#ref-maclean2010" role="doc-biblioref">(2010)</a></span> extended Kelly criterion applications to options trading, demonstrating how information-theoretic optimization principles can enhance long-term capital growth while controlling drawdown risk. The Sunny implementation incorporates these insights through fractional Kelly sizing that balances growth optimization with practical risk management requirements.</p>
+<p>The systematic exploitation of earnings volatility patterns requires careful consideration of market microstructure effects and execution challenges. <span class="citation" data-cites="chordia2002">Chordia, Roll, and Subrahmanyam <a href="#ref-chordia2002" role="doc-biblioref">(2002)</a></span> documented the concentration of trading volume and bid-ask spreads around earnings announcements, creating execution challenges that must be incorporated into systematic trading frameworks. The Sunny algorithm addresses these concerns through sophisticated order management protocols and liquidity filtering that ensure practical implementability across diverse market conditions.</p>
 </section>
 <section id="mathematical-framework-and-signal-generation" class="level2" data-number="3">
 <h2 data-number="3" class="anchored" data-anchor-id="mathematical-framework-and-signal-generation"><span class="header-section-number">3</span> Mathematical Framework and Signal Generation</h2>
@@ -777,8 +797,49 @@ window.Quarto = {
 <p>Yang, D., &amp; Zhang, Q. (2000). Drift-independent volatility estimation based on high, low, open, and close prices. <em>Journal of Business</em>, 73(3), 477-492.</p>
 <hr>
 </section>
+<section id="bibliography" class="level1 unnumbered">
 
-</main>
+
+</section>
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body" role="list">
+<div id="ref-ball1968" class="csl-entry" role="listitem">
+Ball, Ray, and Philip Brown, 1968, An empirical evaluation of accounting income numbers, <em>Journal of Accounting Research</em> 6, 159–178.
+</div>
+<div id="ref-beaver1968" class="csl-entry" role="listitem">
+Beaver, William H, 1968, The information content of annual earnings announcements, <em>Journal of Accounting Research</em> 6, 67–92.
+</div>
+<div id="ref-bollerslev2009" class="csl-entry" role="listitem">
+Bollerslev, Tim, George Tauchen, and Hao Zhou, 2009, Expected stock returns and variance risk premia, <em>Review of Financial Studies</em> 22, 4463–4492.
+</div>
+<div id="ref-bollerslev2011" class="csl-entry" role="listitem">
+Bollerslev, Tim, and Viktor Todorov, 2011, Tails, fears, and risk premia, <em>Journal of Finance</em> 66, 2165–2211.
+</div>
+<div id="ref-carr2009" class="csl-entry" role="listitem">
+Carr, Peter, and Liuren Wu, 2009, Variance risk premiums, <em>Review of Financial Studies</em> 22, 1311–1341.
+</div>
+<div id="ref-chordia2002" class="csl-entry" role="listitem">
+Chordia, Tarun, Richard Roll, and Avanidhar Subrahmanyam, 2002, Order imbalance, liquidity, and market returns, <em>Journal of Financial Economics</em> 65, 111–130.
+</div>
+<div id="ref-christoffersen2013" class="csl-entry" role="listitem">
+Christoffersen, Peter, Steven Heston, and Kris Jacobs, 2013, Capturing option anomalies with a variance-dependent pricing kernel, <em>Review of Financial Studies</em> 26, 1963–2006.
+</div>
+<div id="ref-kelly1956" class="csl-entry" role="listitem">
+Kelly Jr, John L, 1956, A new interpretation of information rate, <em>Bell System Technical Journal</em> 35, 917–926.
+</div>
+<div id="ref-maclean2010" class="csl-entry" role="listitem">
+MacLean, Leonard C, Edward O Thorp, and William T Ziemba, 2010, <em>Kelly Capital Growth Investment Criterion</em> (World Scientific, Singapore).
+</div>
+<div id="ref-patell1979" class="csl-entry" role="listitem">
+Patell, James M, and Mark A Wolfson, 1979, Anticipated information releases reflected in call option prices, <em>Journal of Accounting and Economics</em> 1, 117–140.
+</div>
+<div id="ref-trolle2009" class="csl-entry" role="listitem">
+Trolle, Anders B, and Eduardo S Schwartz, 2009, Unspanned stochastic volatility and the pricing of commodity derivatives, <em>Review of Financial Studies</em> 22, 4423–4461.
+</div>
+<div id="ref-yang2000" class="csl-entry" role="listitem">
+Yang, Dennis, and Qiang Zhang, 2000, Drift-independent volatility estimation based on high, low, open, and close prices, <em>Journal of Business</em> 73, 477–492.
+</div>
+</div></section></div></main>
 <!-- /main column -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
