@@ -149,24 +149,6 @@ window.Quarto = {
   </ul></li>
   <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion"><span class="header-section-number">10</span> Conclusion</a></li>
   <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references"><span class="header-section-number">11</span> References</a></li>
-  <li><a href="#appendix-graphical-representations" id="toc-appendix-graphical-representations" class="nav-link" data-scroll-target="#appendix-graphical-representations"><span class="header-section-number">12</span> Appendix: Graphical Representations</a>
-  <ul>
-  <li><a href="#yang-zhang-volatility-estimator-comparison" id="toc-yang-zhang-volatility-estimator-comparison" class="nav-link" data-scroll-target="#yang-zhang-volatility-estimator-comparison"><span class="header-section-number">12.1</span> Yang-Zhang Volatility Estimator Comparison</a></li>
-  <li><a href="#implied-volatility-term-structure-analysis-1" id="toc-implied-volatility-term-structure-analysis-1" class="nav-link" data-scroll-target="#implied-volatility-term-structure-analysis-1"><span class="header-section-number">12.2</span> Implied Volatility Term Structure Analysis</a></li>
-  <li><a href="#calendar-spread-payoff-visualization" id="toc-calendar-spread-payoff-visualization" class="nav-link" data-scroll-target="#calendar-spread-payoff-visualization"><span class="header-section-number">12.3</span> Calendar Spread Payoff Visualization</a></li>
-  <li><a href="#option-greeks-evolution-analysis" id="toc-option-greeks-evolution-analysis" class="nav-link" data-scroll-target="#option-greeks-evolution-analysis"><span class="header-section-number">12.4</span> Option Greeks Evolution Analysis</a></li>
-  </ul></li>
-  <li><a href="#appendix-technical-implementation-details" id="toc-appendix-technical-implementation-details" class="nav-link" data-scroll-target="#appendix-technical-implementation-details"><span class="header-section-number">13</span> Appendix: Technical Implementation Details</a>
-  <ul>
-  <li><a href="#kelly-criterion-optimization-methodology" id="toc-kelly-criterion-optimization-methodology" class="nav-link" data-scroll-target="#kelly-criterion-optimization-methodology"><span class="header-section-number">13.1</span> Kelly Criterion Optimization Methodology</a></li>
-  <li><a href="#multi-factor-signal-generation-framework" id="toc-multi-factor-signal-generation-framework" class="nav-link" data-scroll-target="#multi-factor-signal-generation-framework"><span class="header-section-number">13.2</span> Multi-Factor Signal Generation Framework</a></li>
-  </ul></li>
-  <li><a href="#appendix-statistical-validation" id="toc-appendix-statistical-validation" class="nav-link" data-scroll-target="#appendix-statistical-validation"><span class="header-section-number">14</span> Appendix: Statistical Validation</a>
-  <ul>
-  <li><a href="#robustness-testing-framework" id="toc-robustness-testing-framework" class="nav-link" data-scroll-target="#robustness-testing-framework"><span class="header-section-number">14.1</span> Robustness Testing Framework</a></li>
-  <li><a href="#performance-attribution-analysis" id="toc-performance-attribution-analysis" class="nav-link" data-scroll-target="#performance-attribution-analysis"><span class="header-section-number">14.2</span> Performance Attribution Analysis</a></li>
-  <li><a href="#advanced-mathematical-formulations" id="toc-advanced-mathematical-formulations" class="nav-link" data-scroll-target="#advanced-mathematical-formulations"><span class="header-section-number">14.3</span> Advanced Mathematical Formulations</a></li>
-  </ul></li>
   </ul>
 <div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="Sunny.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
 </div>
@@ -622,16 +604,9 @@ window.Quarto = {
 <p>The information ratio provides risk-adjusted performance measurement relative to tracking error:</p>
 <p><span class="math display">\text{Information Ratio} = \frac{E[R_p - R_b]}{\sigma(R_p - R_b)}</span></p>
 <p>where <span class="math inline">R_p</span> represents portfolio returns, <span class="math inline">R_b</span> denotes benchmark returns, and the denominator captures tracking error. This metric proves particularly valuable for evaluating systematic strategies that target specific risk premiums rather than broad market exposure.</p>
-<p>Maximum drawdown analysis identifies worst-case scenarios:</p>
+<p>Maximum drawdown analysis identifies worst-case scenarios and provides insight into strategy resilience during adverse periods:</p>
 <p><span class="math display">\text{Maximum Drawdown} = \max_{t \in [0,T]} \left[\max_{s \in [0,t]} P_s - P_t\right] / \max_{s \in [0,t]} P_s</span></p>
 <p>This metric captures the largest peak-to-trough decline in portfolio value, providing essential information for risk assessment and investor suitability evaluation.</p>
-<p>The Calmar ratio combines return and drawdown considerations:</p>
-<p><span class="math display">\text{Calmar Ratio} = \frac{\text{Annual Return}}{\text{Maximum Drawdown}}</span></p>
-<p>This metric proves particularly valuable for evaluating strategies with asymmetric risk profiles, rewarding strategies that generate consistent returns while avoiding large losses.</p>
-<p>Win rate and average win/loss analysis provide additional insight into strategy characteristics:</p>
-<p><span class="math display">\text{Win Rate} = \frac{\text{Number of Winning Trades}}{\text{Total Number of Trades}}</span></p>
-<p><span class="math display">\text{Win/Loss Ratio} = \frac{\text{Average Winning Trade}}{\text{Average Losing Trade}}</span></p>
-<p>These metrics illuminate the fundamental trade-off between win rate and win/loss ratios that characterizes most systematic trading strategies.</p>
 </section>
 <section id="factor-attribution-and-risk-decomposition" class="level3" data-number="8.2">
 <h3 data-number="8.2" class="anchored" data-anchor-id="factor-attribution-and-risk-decomposition"><span class="header-section-number">8.2</span> Factor Attribution and Risk Decomposition</h3>
@@ -783,6 +758,7 @@ window.Quarto = {
 <p>The systematic approach removes emotional decision-making while ensuring repeatable execution across diverse market conditions. The algorithm successfully addresses persistent institutional challenges including hedging demand, retail speculation, and information asymmetries that create systematic pricing distortions around earnings announcements. The resulting framework provides sustainable alpha generation through disciplined exploitation of these market inefficiencies.</p>
 <p>Future developments offer substantial opportunities for enhancement through machine learning integration, multi-asset extensions, and alternative strategy structures. The regulatory landscape continues evolving, requiring adaptive compliance frameworks that ensure continued viability while meeting enhanced disclosure and risk management requirements. Technology infrastructure developments enable increasingly sophisticated implementation capabilities while maintaining operational efficiency.</p>
 <p>The Sunny algorithm ultimately demonstrates how academic rigor enhances practical trading applications while providing the discipline necessary for consistent execution. The comprehensive framework addresses both theoretical foundations and implementation challenges, creating a robust methodology for systematic volatility risk premium harvesting that advances both academic understanding and practical application in quantitative finance.</p>
+<p>The integration of sophisticated mathematical frameworks with practical risk management creates a methodology suitable for institutional implementation while maintaining the theoretical rigor necessary for academic validation. The systematic approach provides a template for developing additional quantitative strategies while demonstrating the value of comprehensive theoretical foundations in practical trading applications.</p>
 <hr>
 </section>
 <section id="references" class="level2" data-number="11">
@@ -800,251 +776,6 @@ window.Quarto = {
 <p>Trolle, A. B., &amp; Schwartz, E. S. (2009). Unspanned stochastic volatility and the pricing of commodity derivatives. <em>Review of Financial Studies</em>, 22(11), 4423-4461.</p>
 <p>Yang, D., &amp; Zhang, Q. (2000). Drift-independent volatility estimation based on high, low, open, and close prices. <em>Journal of Business</em>, 73(3), 477-492.</p>
 <hr>
-</section>
-<section id="appendix-graphical-representations" class="level2" data-number="12">
-<h2 data-number="12" class="anchored" data-anchor-id="appendix-graphical-representations"><span class="header-section-number">12</span> Appendix: Graphical Representations</h2>
-<p>This appendix provides visual representations of the key mathematical and analytical concepts discussed throughout the paper.</p>
-<section id="yang-zhang-volatility-estimator-comparison" class="level3" data-number="12.1">
-<h3 data-number="12.1" class="anchored" data-anchor-id="yang-zhang-volatility-estimator-comparison"><span class="header-section-number">12.1</span> Yang-Zhang Volatility Estimator Comparison</h3>
-<p><a href="#fig-volatility-comparison" class="quarto-xref">Figure&nbsp;1</a> demonstrates the superiority of the Yang-Zhang estimator over traditional close-to-close methods, particularly during periods of overnight gaps and intraday volatility clustering.</p>
-<div id="fig-volatility-comparison" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-volatility-comparison-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div style="width: 100%; height: 450px; border: 2px solid #ddd; display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%); border-radius: 8px; margin: 20px 0;">
-    <div style="text-align: center; padding: 20px;">
-        <h3 style="color: #495057; margin-bottom: 15px;" class="anchored">📊 Volatility Estimator Comparison</h3>
-        <div style="background: white; padding: 15px; border-radius: 6px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); margin-bottom: 15px;">
-            <p style="margin: 5px 0;"><span style="color: #007bff; font-weight: bold;">■</span> <strong>Close-to-Close:</strong> Higher volatility, less stability</p>
-            <p style="margin: 5px 0;"><span style="color: #dc3545; font-weight: bold;">■</span> <strong>Yang-Zhang:</strong> Superior stability and accuracy</p>
-            <p style="margin: 5px 0;"><span style="color: #28a745; font-weight: bold;">●</span> <strong>Earnings Events:</strong> Critical measurement points</p>
-        </div>
-        <p style="color: #6c757d; font-size: 14px; margin: 10px 0;"><em>Interactive visualization available in PDF version</em></p>
-        <p style="color: #495057; font-size: 13px;">Yang-Zhang estimator demonstrates 15-20% lower volatility noise and improved accuracy during earnings announcements</p>
-    </div>
-</div>
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-volatility-comparison-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;1: Comparison of volatility estimators showing Yang-Zhang superior stability and accuracy, particularly around earnings events (green markers).
-</figcaption>
-</figure>
-</div>
-</section>
-<section id="implied-volatility-term-structure-analysis-1" class="level3" data-number="12.2">
-<h3 data-number="12.2" class="anchored" data-anchor-id="implied-volatility-term-structure-analysis-1"><span class="header-section-number">12.2</span> Implied Volatility Term Structure Analysis</h3>
-<p><a href="#fig-term-structure" class="quarto-xref">Figure&nbsp;2</a> illustrates the backwardation pattern that the Sunny algorithm specifically targets, where near-term implied volatility exceeds longer-term expectations.</p>
-<div id="fig-term-structure" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-term-structure-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div style="width: 100%; height: 450px; border: 2px solid #ddd; display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, #fff3cd 0%, #ffeaa7 100%); border-radius: 8px; margin: 20px 0;">
-    <div style="text-align: center; padding: 20px;">
-        <h3 style="color: #856404; margin-bottom: 15px;" class="anchored">📈 Implied Volatility Term Structure</h3>
-        <div style="background: white; padding: 15px; border-radius: 6px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); margin-bottom: 15px;">
-            <p style="margin: 5px 0;"><span style="color: #007bff; font-weight: bold;">●</span> <strong>Market Data Points:</strong> Observed IV levels</p>
-            <p style="margin: 5px 0;"><span style="color: #dc3545; font-weight: bold;">—</span> <strong>Regression Fit:</strong> $\beta_1$ = -0.0022 (Backwardation)</p>
-            <p style="margin: 5px 0; color: #28a745;"><strong>R² = 0.94</strong> - High explanatory power</p>
-            <div style="background: #e8f5e8; padding: 8px; border-radius: 4px; margin-top: 10px;">
-                <strong style="color: #155724;">SIGNAL: BACKWARDATION DETECTED</strong>
-            </div>
-        </div>
-        <p style="color: #856404; font-size: 14px; margin: 10px 0;"><em>Detailed curve analysis available in PDF version</em></p>
-        <p style="color: #495057; font-size: 13px;">Slope $\beta_1 \leq -0.00406$ indicates favorable conditions for calendar spread implementation</p>
-    </div>
-</div>
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-term-structure-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;2: Implied volatility term structure exhibiting backwardation (<span class="math inline">\beta_1 \leq -0.00406</span>) indicating favorable conditions for calendar spread implementation.
-</figcaption>
-</figure>
-</div>
-</section>
-<section id="calendar-spread-payoff-visualization" class="level3" data-number="12.3">
-<h3 data-number="12.3" class="anchored" data-anchor-id="calendar-spread-payoff-visualization"><span class="header-section-number">12.3</span> Calendar Spread Payoff Visualization</h3>
-<p><a href="#fig-calendar-payoff" class="quarto-xref">Figure&nbsp;3</a> demonstrates the asymmetric payoff profile that makes calendar spreads particularly attractive under specific market conditions, with maximum profit occurring near the short strike.</p>
-<div id="fig-calendar-payoff" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-calendar-payoff-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div style="width: 100%; height: 450px; border: 2px solid #ddd; display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, #d1ecf1 0%, #bee5eb 100%); border-radius: 8px; margin: 20px 0;">
-    <div style="text-align: center; padding: 20px;">
-        <h3 style="color: #0c5460; margin-bottom: 15px;" class="anchored">💰 Calendar Spread Payoff Structure</h3>
-        <div style="background: white; padding: 15px; border-radius: 6px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); margin-bottom: 15px;">
-            <p style="margin: 5px 0;"><span style="color: #dc3545; font-weight: bold;">—</span> <strong>At Entry:</strong> Initial spread value and risk profile</p>
-            <p style="margin: 5px 0;"><span style="color: #28a745; font-weight: bold;">—</span> <strong>At 7 DTE:</strong> Time decay benefit maximized</p>
-            <p style="margin: 5px 0;"><span style="color: #007bff; font-weight: bold;">—</span> <strong>At Expiration:</strong> Final profit/loss structure</p>
-            <div style="background: #fff3cd; padding: 8px; border-radius: 4px; margin-top: 10px;">
-                <strong style="color: #856404;">Max Profit Zone: $98-$102 (Near ATM)</strong>
-            </div>
-        </div>
-        <p style="color: #0c5460; font-size: 14px; margin: 10px 0;"><em>Interactive payoff curves available in PDF version</em></p>
-        <p style="color: #495057; font-size: 13px;">Optimal profit occurs when underlying remains near $100 strike with accelerated time decay</p>
-    </div>
-</div>
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-calendar-payoff-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;3: Calendar spread payoff evolution showing optimal profit extraction through time decay, with maximum profitability when underlying remains near the strike price.
-</figcaption>
-</figure>
-</div>
-</section>
-<section id="option-greeks-evolution-analysis" class="level3" data-number="12.4">
-<h3 data-number="12.4" class="anchored" data-anchor-id="option-greeks-evolution-analysis"><span class="header-section-number">12.4</span> Option Greeks Evolution Analysis</h3>
-<p><a href="#fig-greeks-evolution" class="quarto-xref">Figure&nbsp;4</a> illustrates how the key option Greeks evolve throughout the trade lifecycle, providing crucial insights for dynamic hedging and position management.</p>
-<div id="fig-greeks-evolution" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-greeks-evolution-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div style="width: 100%; height: 450px; border: 2px solid #ddd; display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, #f8d7da 0%, #f5c6cb 100%); border-radius: 8px; margin: 20px 0;">
-    <div style="text-align: center; padding: 20px;">
-        <h3 style="color: #721c24; margin-bottom: 15px;" class="anchored">🎯 Option Greeks Evolution</h3>
-        <div style="background: white; padding: 15px; border-radius: 6px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); margin-bottom: 15px;">
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; text-align: left;">
-                <div>
-                    <p style="margin: 3px 0;"><span style="color: #007bff; font-weight: bold;">—</span> <strong>Delta:</strong> Directional exposure</p>
-                    <p style="margin: 3px 0;"><span style="color: #28a745; font-weight: bold;">—</span> <strong>Gamma:</strong> Delta sensitivity</p>
-                </div>
-                <div>
-                    <p style="margin: 3px 0;"><span style="color: #dc3545; font-weight: bold;">—</span> <strong>Theta:</strong> Time decay benefit</p>
-                    <p style="margin: 3px 0;"><span style="color: #ffc107; font-weight: bold;">—</span> <strong>Vega:</strong> Volatility risk</p>
-                </div>
-            </div>
-            <div style="background: #d4edda; padding: 8px; border-radius: 4px; margin-top: 10px;">
-                <strong style="color: #155724;">Key Insight: Theta acceleration near 7-14 DTE</strong>
-            </div>
-        </div>
-        <p style="color: #721c24; font-size: 14px; margin: 10px 0;"><em>Detailed Greeks analysis available in PDF version</em></p>
-        <p style="color: #495057; font-size: 13px;">Critical decision points: Delta neutral maintenance, Gamma risk management, Theta maximization</p>
-    </div>
-</div>
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-greeks-evolution-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;4: Option Greeks evolution demonstrating the critical inflection points for position management, with accelerated time decay benefit and increased gamma risk approaching expiration.
-</figcaption>
-</figure>
-</div>
-</section>
-</section>
-<section id="appendix-technical-implementation-details" class="level2" data-number="13">
-<h2 data-number="13" class="anchored" data-anchor-id="appendix-technical-implementation-details"><span class="header-section-number">13</span> Appendix: Technical Implementation Details</h2>
-<p>This appendix provides detailed technical frameworks and algorithmic implementations for the analytical concepts presented in the main text.</p>
-<section id="kelly-criterion-optimization-methodology" class="level3" data-number="13.1">
-<h3 data-number="13.1" class="anchored" data-anchor-id="kelly-criterion-optimization-methodology"><span class="header-section-number">13.1</span> Kelly Criterion Optimization Methodology</h3>
-<p><a href="#fig-kelly-optimization" class="quarto-xref">Figure&nbsp;5</a> demonstrates the optimization surface for Kelly fraction sizing under varying expected return and volatility scenarios, crucial for position sizing in the Sunny strategy.</p>
-<div id="fig-kelly-optimization" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-kelly-optimization-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div style="width: 100%; height: 450px; border: 2px solid #ddd; display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, #e2e3e5 0%, #d6d8db 100%); border-radius: 8px; margin: 20px 0;">
-    <div style="text-align: center; padding: 20px;">
-        <h3 style="color: #383d41; margin-bottom: 15px;" class="anchored">⚖️ Kelly Criterion Optimization Surface</h3>
-        <div style="background: white; padding: 15px; border-radius: 6px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); margin-bottom: 15px;">
-            <div style="text-align: left;">
-                <p style="margin: 5px 0;"><strong>Formula:</strong> $f^* = \mu/\sigma^2$ (simplified case)</p>
-                <p style="margin: 5px 0;"><strong>Constraints:</strong> 0 ≤ f* ≤ 0.25 (max 25% allocation)</p>
-                <p style="margin: 5px 0;"><strong>Variables:</strong></p>
-                <ul style="margin: 5px 0 5px 20px; padding: 0;">
-                    <li>Expected Return ($\mu$): -10% to +20%</li>
-                    <li>Volatility ($\sigma$): 10% to 50%</li>
-                </ul>
-            </div>
-            <div style="background: #fff3cd; padding: 8px; border-radius: 4px; margin-top: 10px;">
-                <strong style="color: #856404;">Optimal Zone: $\mu/\sigma^2$ ratio maximization</strong>
-            </div>
-        </div>
-        <p style="color: #383d41; font-size: 14px; margin: 10px 0;"><em>3D optimization surface available in PDF version</em></p>
-        <p style="color: #495057; font-size: 13px;">Critical for dynamic position sizing based on real-time market conditions and strategy performance</p>
-    </div>
-</div>
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-kelly-optimization-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;5: Kelly optimization surface showing the relationship between expected returns, volatility, and optimal position sizing, with red markers indicating historically optimal parameter combinations.
-</figcaption>
-</figure>
-</div>
-</section>
-<section id="multi-factor-signal-generation-framework" class="level3" data-number="13.2">
-<h3 data-number="13.2" class="anchored" data-anchor-id="multi-factor-signal-generation-framework"><span class="header-section-number">13.2</span> Multi-Factor Signal Generation Framework</h3>
-<p><a href="#fig-signal-framework" class="quarto-xref">Figure&nbsp;6</a> illustrates the comprehensive signal generation and integration process that combines multiple market factors into actionable trading decisions.</p>
-<div id="fig-signal-framework" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-signal-framework-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div style="width: 100%; height: 500px; border: 2px solid #ddd; display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, #d1ecf1 0%, #bee5eb 100%); border-radius: 8px; margin: 20px 0;">
-    <div style="text-align: center; padding: 20px;">
-        <h3 style="color: #0c5460; margin-bottom: 15px;" class="anchored">🔄 Multi-Factor Signal Generation</h3>
-        <div style="background: white; padding: 15px; border-radius: 6px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); margin-bottom: 15px;">
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; text-align: left;">
-                <div>
-                    <h4 style="margin: 0 0 10px 0; color: #495057;" class="anchored">Input Factors:</h4>
-                    <p style="margin: 3px 0;">📊 Yang-Zhang Volatility</p>
-                    <p style="margin: 3px 0;">📈 Term Structure Slope</p>
-                    <p style="margin: 3px 0;">🎯 Moneyness Analysis</p>
-                    <p style="margin: 3px 0;">⏰ Time Decay Profiles</p>
-                </div>
-                <div>
-                    <h4 style="margin: 0 0 10px 0; color: #495057;" class="anchored">Processing:</h4>
-                    <p style="margin: 3px 0;">⚖️ Weight Assignment</p>
-                    <p style="margin: 3px 0;">🔄 Signal Combination</p>
-                    <p style="margin: 3px 0;">🎛️ Threshold Application</p>
-                    <p style="margin: 3px 0;">✅ Final Decision</p>
-                </div>
-            </div>
-            <div style="background: #d4edda; padding: 8px; border-radius: 4px; margin-top: 10px;">
-                <strong style="color: #155724;">Output: BUY/SELL/HOLD with confidence scores</strong>
-            </div>
-        </div>
-        <p style="color: #0c5460; font-size: 14px; margin: 10px 0;"><em>Complete flowchart available in PDF version</em></p>
-        <p style="color: #495057; font-size: 13px;">Systematic approach ensuring robust signal generation with proper factor weighting and risk controls</p>
-    </div>
-</div>
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-signal-framework-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;6: Multi-factor signal generation framework showing the systematic integration of volatility, term structure, moneyness, and time decay factors into actionable trading decisions with weighted scoring methodology.
-</figcaption>
-</figure>
-</div>
-</section>
-</section>
-<section id="appendix-statistical-validation" class="level2" data-number="14">
-<h2 data-number="14" class="anchored" data-anchor-id="appendix-statistical-validation"><span class="header-section-number">14</span> Appendix: Statistical Validation</h2>
-<p>This appendix presents the comprehensive statistical frameworks used to validate the Sunny algorithm’s performance and robustness across various market conditions.</p>
-<section id="robustness-testing-framework" class="level3" data-number="14.1">
-<h3 data-number="14.1" class="anchored" data-anchor-id="robustness-testing-framework"><span class="header-section-number">14.1</span> Robustness Testing Framework</h3>
-<p>The following framework demonstrates the systematic approach to testing strategy performance across multiple market regimes, ensuring statistical significance and practical applicability.</p>
-<p><strong>Monte Carlo Simulation Results:</strong> - <strong>Iterations:</strong> 10,000 simulations - <strong>Market Regimes:</strong> Bull, Bear, Sideways, High Volatility - <strong>Confidence Intervals:</strong> 95% and 99% levels - <strong>Performance Metrics:</strong> Sharpe ratio, maximum drawdown, win rate</p>
-<p><strong>Key Statistical Tests:</strong> 1. <strong>Kolmogorov-Smirnov Test:</strong> Distribution normality (p-value: 0.023) 2. <strong>Augmented Dickey-Fuller:</strong> Return stationarity (p-value: 0.001) 3. <strong>Ljung-Box Test:</strong> Serial correlation absence (p-value: 0.234) 4. <strong>ARCH-LM Test:</strong> Heteroscedasticity detection (p-value: 0.045)</p>
-<p><strong>Cross-Validation Results:</strong> - <strong>Time-Series CV:</strong> 12-fold cross-validation with expanding window - <strong>Walk-Forward Analysis:</strong> 36-month rolling optimization periods - <strong>Out-of-Sample Performance:</strong> 18-month forward testing periods - <strong>Stability Metrics:</strong> Information coefficient consistency across periods</p>
-<p>The robustness framework ensures that the Sunny algorithm maintains consistent performance characteristics across varying market conditions, with particular attention to regime changes and volatility clustering effects that could impact calendar spread strategies. Statistical significance testing confirms that observed performance differences are not attributable to random chance, providing confidence in the strategy’s systematic edge over benchmark results.</p>
-</section>
-<section id="performance-attribution-analysis" class="level3" data-number="14.2">
-<h3 data-number="14.2" class="anchored" data-anchor-id="performance-attribution-analysis"><span class="header-section-number">14.2</span> Performance Attribution Analysis</h3>
-<p><strong>Factor Decomposition Results:</strong></p>
-<p>The performance attribution analysis reveals the following contribution breakdown:</p>
-<p><span class="math display">\text{Total Return} = \alpha + \beta_{\text{market}} \cdot R_{\text{market}} + \beta_{\text{vol}} \cdot R_{\text{vol}} + \beta_{\text{term}} \cdot R_{\text{term}} + \epsilon</span></p>
-<p><strong>Attribution Components:</strong> - <strong>Market Beta:</strong> 0.15 (15% market exposure) - <strong>Volatility Factor:</strong> 0.68 (68% volatility timing) - <strong>Term Structure Factor:</strong> 0.12 (12% curve positioning) - <strong>Alpha Generation:</strong> 0.05 (5% pure strategy alpha)</p>
-<p><strong>Risk-Adjusted Metrics:</strong> - <strong>Information Ratio:</strong> 1.24 (vs benchmark 0.31) - <strong>Calmar Ratio:</strong> 2.18 (return/max drawdown) - <strong>Sortino Ratio:</strong> 1.89 (downside risk adjustment) - <strong>Omega Ratio:</strong> 1.34 (probability-weighted returns)</p>
-<p><strong>Factor Loading Stability:</strong> The factor loadings demonstrate remarkable stability across different market regimes, with volatility factor maintaining significance (t-stat &gt; 3.0) in 94% of rolling regression windows. This consistency supports the theoretical foundation that calendar spreads primarily derive returns from volatility mean reversion and time decay rather than directional market movements.</p>
-<p><strong>Sector and Market Cap Analysis:</strong> Performance attribution across different underlying characteristics shows consistent results across large-cap equities (R² = 0.89), with slight performance degradation in small-cap names (R² = 0.76) due to increased bid-ask spreads and lower liquidity in options markets. Technology sector underlyings show the highest strategy effectiveness due to elevated volatility levels and active options markets, while utility sectors demonstrate lower but more consistent returns reflecting reduced volatility ranges.</p>
-<p>The attribution analysis confirms that the Sunny algorithm’s primary value generation stems from its ability to identify and capitalize on volatility term structure inefficiencies, rather than relying on directional market timing or sector rotation effects. This factor purity enhances the strategy’s diversification benefits when incorporated into broader portfolio construction frameworks.</p>
-</section>
-<section id="advanced-mathematical-formulations" class="level3" data-number="14.3">
-<h3 data-number="14.3" class="anchored" data-anchor-id="advanced-mathematical-formulations"><span class="header-section-number">14.3</span> Advanced Mathematical Formulations</h3>
-<p><strong>Stochastic Volatility Model Implementation:</strong></p>
-<p>The Sunny algorithm incorporates a sophisticated stochastic volatility framework based on the Heston model with modifications for options market microstructure:</p>
-<p><span class="math display">dS_t = rS_t dt + \sqrt{V_t}S_t dW_t^S</span> <span class="math display">dV_t = \kappa(\theta - V_t)dt + \sigma_v\sqrt{V_t}dW_t^V</span></p>
-<p>where <span class="math inline">dW_t^S dW_t^V = \rho dt</span></p>
-<p><strong>Parameter Estimation Results:</strong> - <strong>Mean Reversion Rate (<span class="math inline">\kappa</span>):</strong> 2.34 (annualized) - <strong>Long-term Variance (<span class="math inline">\theta</span>):</strong> 0.048 (22% annualized volatility) - <strong>Volatility of Volatility (<span class="math inline">\sigma_v</span>):</strong> 0.31 - <strong>Correlation (<span class="math inline">\rho</span>):</strong> -0.42 (negative leverage effect)</p>
-<p><strong>Yang-Zhang Estimator Enhanced Formula:</strong></p>
-<p><span class="math display">\hat{\sigma}_{YZ}^2 = \hat{\sigma}_{OC}^2 + k\hat{\sigma}_{CC}^2 + (1-k)\hat{\sigma}_{RS}^2</span></p>
-<p>where: - <span class="math inline">\hat{\sigma}_{OC}^2 = \ln\frac{O_t}{C_{t-1}}</span> (overnight component) - <span class="math inline">\hat{\sigma}_{CC}^2 = \ln\frac{C_t}{C_{t-1}}</span> (close-to-close component)<br>
-- <span class="math inline">\hat{\sigma}_{RS}^2 = \ln\frac{H_t}{C_t}\ln\frac{H_t}{O_t} + \ln\frac{L_t}{C_t}\ln\frac{L_t}{O_t}</span> (Rogers-Satchell) - <span class="math inline">k = \frac{0.34}{1.34 + \frac{N+1}{N-1}}</span> (bias correction factor)</p>
-<p><strong>Calendar Spread Pricing Model:</strong></p>
-<p>The theoretical calendar spread value incorporates both time decay differentials and volatility surface dynamics:</p>
-<p><span class="math display">V_{\text{calendar}} = C(S,K,T_2,\sigma_2) - C(S,K,T_1,\sigma_1) + \text{Carry} + \text{Convexity}</span></p>
-<p><strong>Greeks Calculation Framework:</strong></p>
-<p><span class="math display">\Delta_{\text{calendar}} = \frac{\partial V_{\text{calendar}}}{\partial S} = \Delta_2 - \Delta_1</span> <span class="math display">\Gamma_{\text{calendar}} = \frac{\partial^2 V_{\text{calendar}}}{\partial S^2} = \Gamma_2 - \Gamma_1</span> <span class="math display">\Theta_{\text{calendar}} = \frac{\partial V_{\text{calendar}}}{\partial t} = \Theta_2 - \Theta_1</span> <span class="math display">\text{Vega}_{\text{calendar}} = \frac{\partial V_{\text{calendar}}}{\partial \sigma} = \text{Vega}_2 - \text{Vega}_1</span></p>
-<p><strong>Risk Model Integration:</strong></p>
-<p>The comprehensive risk model incorporates factor loadings across multiple risk dimensions:</p>
-<p><span class="math display">\text{Portfolio Risk}^2 = w^T F \Omega F^T w + w^T D w</span></p>
-<p>where: - <span class="math inline">w</span> = position weight vector - <span class="math inline">F</span> = factor loading matrix - <span class="math inline">\Omega</span> = factor covariance matrix<br>
-- <span class="math inline">D</span> = idiosyncratic risk diagonal matrix</p>
-<p>This mathematical framework ensures robust position sizing, comprehensive risk management, and optimal portfolio construction while maintaining the theoretical foundations that drive calendar spread profitability under varying market conditions.</p>
-</section>
 </section>
 
 </main>
