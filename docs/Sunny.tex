@@ -291,7 +291,7 @@ conditions.
 
 
 \setstretch{1.5}
-\subsection{Introduction}\label{introduction}
+\section{Introduction}\label{introduction}
 
 The volatility risk premium represents one of the most persistent and
 well-documented anomalies in modern financial markets, yet its
@@ -348,7 +348,7 @@ signal generation process, demonstrating how each component contributes
 to the overall efficacy of the strategy while maintaining independence
 from market timing or directional bias.
 
-\subsection{Literature Review and Theoretical
+\section{Literature Review and Theoretical
 Foundation}\label{literature-review-and-theoretical-foundation}
 
 The theoretical foundation for volatility risk premium exploitation
@@ -430,7 +430,7 @@ concerns through sophisticated order management protocols and liquidity
 filtering that ensure practical implementability across diverse market
 conditions.
 
-\subsection{Mathematical Framework and Signal
+\section{Mathematical Framework and Signal
 Generation}\label{mathematical-framework-and-signal-generation}
 
 The mathematical foundation of the Sunny algorithm rests upon three
@@ -440,7 +440,7 @@ validation. Each component addresses specific aspects of the volatility
 forecasting problem, creating a robust multi-factor model that
 transcends the limitations of single-indicator approaches.
 
-\subsubsection{The Yang-Zhang Realized Volatility
+\subsection{The Yang-Zhang Realized Volatility
 Estimator}\label{the-yang-zhang-realized-volatility-estimator}
 
 The accurate measurement of historical volatility forms the cornerstone
@@ -505,7 +505,7 @@ where the factor of 252 reflects the typical number of trading days per
 year, converting daily variance to annualized terms for comparison with
 market-quoted implied volatilities.
 
-\subsubsection{Implied Volatility Term Structure
+\subsection{Implied Volatility Term Structure
 Analysis}\label{implied-volatility-term-structure-analysis}
 
 The term structure of implied volatility contains rich information about
@@ -557,7 +557,7 @@ High \(R^2\) values indicate that the linear term structure relationship
 explains substantial variance in implied volatility patterns, enhancing
 confidence in the derived slope estimate.
 
-\subsubsection{The IV/RV Ratio Signal}\label{the-ivrv-ratio-signal}
+\subsection{The IV/RV Ratio Signal}\label{the-ivrv-ratio-signal}
 
 The fundamental driver of volatility risk premium exploitation emerges
 through systematic comparison of market-implied volatility expectations
@@ -604,7 +604,7 @@ where the partial derivatives evaluate to:
 This uncertainty quantification enables robust hypothesis testing and
 confidence interval construction around the fundamental trading signal.
 
-\subsubsection{Multi-Factor Signal
+\subsection{Multi-Factor Signal
 Integration}\label{multi-factor-signal-integration}
 
 The three fundamental signals combine through a hierarchical decision
@@ -628,7 +628,7 @@ borderline cases that satisfy critical criteria. The volume threshold of
 while the dual-factor requirement for ``CONSIDER'' signals maintains
 strategy selectivity.
 
-\subsection{Calendar Spread Strategy
+\section{Calendar Spread Strategy
 Implementation}\label{calendar-spread-strategy-implementation}
 
 The implementation of calendar spread strategies within the Sunny
@@ -640,7 +640,7 @@ identical strike prices, provide defined-risk exposure to volatility
 risk premium while maintaining predictable profit and loss
 characteristics.
 
-\subsubsection{Calendar Spread Mathematics and Payoff
+\subsection{Calendar Spread Mathematics and Payoff
 Analysis}\label{calendar-spread-mathematics-and-payoff-analysis}
 
 The profit and loss structure of a long call calendar spread at the
@@ -677,7 +677,7 @@ depends critically on the time value decay differential between front
 and back month options, with volatility levels playing secondary roles
 when positions are held to front-month expiration.
 
-\subsubsection{Forward Volatility
+\subsection{Forward Volatility
 Framework}\label{forward-volatility-framework}
 
 Calendar spreads fundamentally represent trades on forward volatility,
@@ -708,7 +708,7 @@ risk premium harvesting. The Sunny framework primarily targets the
 second component, seeking to avoid reliance on volatility forecasting
 skill.
 
-\subsubsection{Greeks Analysis and Risk
+\subsection{Greeks Analysis and Risk
 Decomposition}\label{greeks-analysis-and-risk-decomposition}
 
 Comprehensive risk management of calendar spread portfolios requires
@@ -759,7 +759,7 @@ generate losses despite favorable time decay. The Sunny framework
 specifically targets environments where volatility decline appears
 probable based on historical patterns.
 
-\subsubsection{Optimal Strike Selection and
+\subsection{Optimal Strike Selection and
 Timing}\label{optimal-strike-selection-and-timing}
 
 The selection of appropriate strike prices and expiration dates
@@ -794,7 +794,7 @@ differentials but expose positions to extended market risk, while
 shorter durations may not provide sufficient profit potential to justify
 transaction costs.
 
-\subsection{Position Sizing and Risk
+\section{Position Sizing and Risk
 Management}\label{position-sizing-and-risk-management}
 
 The systematic exploitation of volatility risk premiums requires
@@ -805,7 +805,7 @@ employs information-theoretic optimization principles derived from the
 Kelly criterion while incorporating practical modifications necessary
 for institutional implementation.
 
-\subsubsection{Kelly Criterion Foundation and
+\subsection{Kelly Criterion Foundation and
 Modifications}\label{kelly-criterion-foundation-and-modifications}
 
 The Kelly criterion provides the mathematical foundation for optimal
@@ -844,7 +844,7 @@ acceptable drawdown levels. The Sunny framework employs
 \(\gamma = 0.25\), reflecting conservative institutional risk
 preferences.
 
-\subsubsection{Fixed Fractional Position Sizing
+\subsection{Fixed Fractional Position Sizing
 Implementation}\label{fixed-fractional-position-sizing-implementation}
 
 The practical implementation of Kelly-inspired position sizing within
@@ -879,7 +879,7 @@ commissions, \(C_{min} = \$1.00\) denotes minimum order commissions, and
 slippage estimates assume 1\% of the bid-ask spread for limit order
 execution.
 
-\subsubsection{Portfolio-Level Risk
+\subsection{Portfolio-Level Risk
 Controls}\label{portfolio-level-risk-controls}
 
 Beyond individual position sizing, the Sunny framework implements
@@ -923,7 +923,7 @@ These thresholds ensure that positions can be established and liquidated
 efficiently without significant market impact or adverse selection
 costs.
 
-\subsubsection{Dynamic Risk Monitoring and Position
+\subsection{Dynamic Risk Monitoring and Position
 Management}\label{dynamic-risk-monitoring-and-position-management}
 
 The systematic nature of the Sunny framework requires continuous
@@ -970,7 +970,7 @@ High volatility environments may warrant position size reductions or
 strategy suspension, while low volatility periods might support
 increased allocation to capture enhanced risk premiums.
 
-\subsubsection{Stress Testing and Scenario
+\subsection{Stress Testing and Scenario
 Analysis}\label{stress-testing-and-scenario-analysis}
 
 Robust risk management requires comprehensive stress testing across
@@ -1003,7 +1003,7 @@ Regular monitoring of realized versus predicted VaR enables ongoing
 model validation and risk control adjustment as market conditions
 evolve.
 
-\subsection{Empirical Implementation and Backtesting
+\section{Empirical Implementation and Backtesting
 Framework}\label{empirical-implementation-and-backtesting-framework}
 
 The translation of theoretical concepts into practical implementation
@@ -1014,7 +1014,7 @@ employs comprehensive backtesting methodologies that address the unique
 challenges of options strategy evaluation including data quality
 requirements, execution modeling, and statistical validation protocols.
 
-\subsubsection{Data Requirements and Quality
+\subsection{Data Requirements and Quality
 Assurance}\label{data-requirements-and-quality-assurance}
 
 Options strategy backtesting demands high-quality data across multiple
@@ -1061,7 +1061,7 @@ volume spikes unrelated to earnings or fundamental developments receive
 investigation and potential exclusion to prevent distorted backtesting
 results.
 
-\subsubsection{Execution Modeling and Transaction
+\subsection{Execution Modeling and Transaction
 Costs}\label{execution-modeling-and-transaction-costs}
 
 Realistic execution modeling represents perhaps the greatest challenge
@@ -1110,7 +1110,7 @@ requires both legs to execute within reasonable time windows, with
 conditional probabilities reflecting the practical challenges of
 simultaneous order management.
 
-\subsubsection{Performance Evaluation
+\subsection{Performance Evaluation
 Metrics}\label{performance-evaluation-metrics}
 
 Comprehensive strategy evaluation requires metrics that capture both
@@ -1164,7 +1164,7 @@ strategy characteristics:
 These metrics illuminate the fundamental trade-off between win rate and
 win/loss ratios that characterizes most systematic trading strategies.
 
-\subsubsection{Statistical Validation and Robustness
+\subsection{Statistical Validation and Robustness
 Testing}\label{statistical-validation-and-robustness-testing}
 
 Rigorous strategy evaluation requires comprehensive statistical testing
@@ -1224,7 +1224,7 @@ Consistent performance across these dimensions provides evidence for
 genuine alpha generation rather than regime-specific or sector-specific
 advantages that may not persist.
 
-\subsection{Advanced Risk Management
+\section{Advanced Risk Management
 Protocols}\label{advanced-risk-management-protocols}
 
 The sophisticated nature of systematic volatility trading requires risk
@@ -1235,7 +1235,7 @@ incorporates multiple layers of risk control designed to preserve
 capital while maintaining systematic discipline during various market
 environments.
 
-\subsubsection{Multi-Dimensional Risk
+\subsection{Multi-Dimensional Risk
 Decomposition}\label{multi-dimensional-risk-decomposition}
 
 Effective risk management for calendar spread strategies requires
@@ -1304,7 +1304,7 @@ common factors such as market returns or volatility changes, and
 loadings across positions indicate concentration risk requiring
 diversification attention.
 
-\subsubsection{Dynamic Hedging and Exposure
+\subsection{Dynamic Hedging and Exposure
 Management}\label{dynamic-hedging-and-exposure-management}
 
 The time-varying nature of options exposures necessitates dynamic
@@ -1351,7 +1351,7 @@ The correlation factor adjusts for imperfect correlation between
 individual stock volatility and broad market volatility measures,
 ensuring appropriate hedge ratios.
 
-\subsubsection{Systematic Stop-Loss and
+\subsection{Systematic Stop-Loss and
 Profit-Taking}\label{systematic-stop-loss-and-profit-taking}
 
 Disciplined exit protocols prevent emotional decision-making while
@@ -1397,7 +1397,7 @@ Significant implied volatility increases may indicate changing market
 conditions that reduce calendar spread attractiveness, triggering
 systematic position closure.
 
-\subsubsection{Stress Testing and Tail Risk
+\subsection{Stress Testing and Tail Risk
 Management}\label{stress-testing-and-tail-risk-management}
 
 Comprehensive risk management requires understanding and preparing for
@@ -1454,7 +1454,7 @@ excessive downside potential:
 These thresholds trigger systematic position reduction or strategy
 suspension to preserve capital during extreme risk scenarios.
 
-\subsubsection{Regulatory and Operational Risk
+\subsection{Regulatory and Operational Risk
 Considerations}\label{regulatory-and-operational-risk-considerations}
 
 Systematic options trading strategies must address regulatory
@@ -1498,7 +1498,7 @@ Significant deviations between realized and expected performance trigger
 model review and potential recalibration to address changing market
 conditions or model inadequacies.
 
-\subsection{Results Analysis and Performance
+\section{Results Analysis and Performance
 Attribution}\label{results-analysis-and-performance-attribution}
 
 The comprehensive evaluation of systematic trading strategies requires
@@ -1509,7 +1509,7 @@ perspectives including absolute returns, risk-adjusted metrics, factor
 attribution, and regime-dependent analysis to provide complete
 understanding of strategy mechanics and effectiveness.
 
-\subsubsection{Historical Performance
+\subsection{Historical Performance
 Metrics}\label{historical-performance-metrics}
 
 The foundational performance analysis examines absolute and
@@ -1576,7 +1576,7 @@ strategy characteristics:
 These metrics illuminate the fundamental trade-off between win rate and
 win/loss ratios that characterizes most systematic trading strategies.
 
-\subsubsection{Factor Attribution and Risk
+\subsection{Factor Attribution and Risk
 Decomposition}\label{factor-attribution-and-risk-decomposition}
 
 Understanding the sources of strategy returns enables optimization of
@@ -1623,7 +1623,7 @@ This measurement validates the strategy's intended focus on
 earnings-related volatility patterns while identifying any unintended
 exposures to broader earnings announcement effects.
 
-\subsubsection{Trade-Level Analysis and Pattern
+\subsection{Trade-Level Analysis and Pattern
 Recognition}\label{trade-level-analysis-and-pattern-recognition}
 
 Detailed examination of individual trade characteristics provides
@@ -1669,7 +1669,7 @@ This decomposition reveals strategy robustness while identifying
 potential regime-dependent characteristics that might require adaptive
 implementation.
 
-\subsubsection{Benchmark Comparison and Relative
+\subsection{Benchmark Comparison and Relative
 Performance}\label{benchmark-comparison-and-relative-performance}
 
 Meaningful performance evaluation requires comparison with appropriate
@@ -1705,7 +1705,7 @@ This comparison provides context for the strategy's risk-adjusted
 performance relative to diversified alternatives operating at similar
 risk levels.
 
-\subsubsection{Statistical Significance and Robustness
+\subsection{Statistical Significance and Robustness
 Validation}\label{statistical-significance-and-robustness-validation}
 
 Rigorous performance evaluation requires statistical testing to
@@ -1751,7 +1751,7 @@ This approach generates thousands of random trading sequences with
 similar characteristics to assess whether observed performance could
 reasonably result from chance rather than systematic skill.
 
-\subsection{Advanced Theoretical Extensions and Future
+\section{Advanced Theoretical Extensions and Future
 Developments}\label{advanced-theoretical-extensions-and-future-developments}
 
 The systematic exploitation of volatility risk premiums through calendar
@@ -1761,7 +1761,7 @@ algorithm provides a foundation for numerous extensions and enhancements
 that could further improve performance while addressing emerging market
 conditions and regulatory requirements.
 
-\subsubsection{Machine Learning Integration and Adaptive
+\subsection{Machine Learning Integration and Adaptive
 Optimization}\label{machine-learning-integration-and-adaptive-optimization}
 
 The integration of machine learning methodologies offers significant
@@ -1808,7 +1808,7 @@ where individual models \(\hat{y}_m\) receive weights \(w_m\) based on
 historical performance and uncertainty measures. This approach leverages
 diverse modeling approaches while maintaining interpretability.
 
-\subsubsection{Multi-Asset and Cross-Market
+\subsection{Multi-Asset and Cross-Market
 Extensions}\label{multi-asset-and-cross-market-extensions}
 
 The fundamental principles underlying the Sunny algorithm extend
@@ -1849,7 +1849,7 @@ systemic events:
 \vdots & \vdots & \ddots
 \end{bmatrix}\]
 
-\subsubsection{Alternative Strategy Structures and Risk
+\subsection{Alternative Strategy Structures and Risk
 Profiles}\label{alternative-strategy-structures-and-risk-profiles}
 
 The calendar spread structure represents one of many possible
@@ -1883,7 +1883,7 @@ These structures require enhanced risk management due to undefined risk
 characteristics but could provide superior returns under favorable
 conditions.
 
-\subsubsection{Regulatory Evolution and Compliance
+\subsection{Regulatory Evolution and Compliance
 Framework}\label{regulatory-evolution-and-compliance-framework}
 
 The evolving regulatory landscape for systematic trading strategies
@@ -1917,7 +1917,7 @@ risk measurement requirements:
 The framework must accommodate these enhanced risk measurement
 requirements while maintaining operational efficiency.
 
-\subsubsection{Technology Infrastructure and Execution
+\subsection{Technology Infrastructure and Execution
 Enhancement}\label{technology-infrastructure-and-execution-enhancement}
 
 The successful implementation of systematic trading strategies
@@ -1954,7 +1954,7 @@ minimizing market impact:
 These algorithms must balance speed, cost, and market impact
 considerations while adapting to changing liquidity conditions.
 
-\subsection{Conclusion}\label{conclusion}
+\section{Conclusion}\label{conclusion}
 
 The Sunny algorithm represents a comprehensive synthesis of academic
 financial theory and practical trading implementation, demonstrating how
@@ -2037,7 +2037,7 @@ applications.
 
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
-\subsection{References}\label{references}
+\section{References}\label{references}
 
 Ball, R., \& Brown, P. (1968). An empirical evaluation of accounting
 income numbers. \emph{Journal of Accounting Research}, 6(2), 159-178.
@@ -2243,15 +2243,15 @@ strike.
     samples=100
 ]
 % Payoff at entry (30 DTE)
-\addplot[red, thick, smooth] {
+\addplot[red, thick] {
     -2.5 + 0.8*exp(-0.5*((x-100)/8)^2) + 0.3*sin(deg(0.2*(x-100)))
 };
 % Payoff at 7 DTE (maximum time decay benefit)
-\addplot[green!60!black, thick, smooth] {
+\addplot[green!60!black, thick] {
     -1.8 + 1.5*exp(-0.5*((x-100)/5)^2) + 0.2*sin(deg(0.3*(x-100)))
 };
 % Payoff at expiration
-\addplot[blue, thick, smooth] {
+\addplot[blue, thick] {
     max(0, min(x-100, 0)) + max(0, min(100-x, 0)) - 2.5
 };
 % Mark maximum profit zone
@@ -2368,7 +2368,7 @@ volatility scenarios, crucial for position sizing in the Sunny strategy.
     grid=major,
     grid style={gray!30},
     view={60}{30},
-    colormap/hot,
+    colormap/viridis,
     xlabel style={font=\small},
     ylabel style={font=\small},
     zlabel style={font=\small},
@@ -2376,10 +2376,6 @@ volatility scenarios, crucial for position sizing in the Sunny strategy.
 ]
 % Create optimization surface
 \addplot3[surf, shader=flat, samples=20, domain=-10:20, y domain=10:50] {
-    min(0.25, max(0, x/(y*y/10000)))
-};
-% Add contour lines at base
-\addplot3[contour gnuplot={levels={0.05,0.10,0.15,0.20}}, samples=25, domain=-10:20, y domain=10:50] {
     min(0.25, max(0, x/(y*y/10000)))
 };
 % Mark optimal regions

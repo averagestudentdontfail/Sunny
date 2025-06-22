@@ -1136,11 +1136,11 @@ Yang, D., & Zhang, Q. (2000). Drift-independent volatility estimation based on h
 
 ---
 
-# Appendix: Graphical Representations
+## Appendix: Graphical Representations
 
 This appendix provides visual representations of the key mathematical and analytical concepts discussed throughout the paper.
 
-## Yang-Zhang Volatility Estimator Comparison
+### Yang-Zhang Volatility Estimator Comparison
 
 @fig-volatility-comparison demonstrates the superiority of the Yang-Zhang estimator over traditional close-to-close methods, particularly during periods of overnight gaps and intraday volatility clustering.
 
@@ -1211,7 +1211,7 @@ Comparison of volatility estimators showing Yang-Zhang superior stability and ac
 \newpage
 ```
 
-## Implied Volatility Term Structure Analysis
+### Implied Volatility Term Structure Analysis
 
 @fig-term-structure illustrates the backwardation pattern that the Sunny algorithm specifically targets, where near-term implied volatility exceeds longer-term expectations.
 
@@ -1283,7 +1283,7 @@ Implied volatility term structure exhibiting backwardation ($\beta_1 \leq -0.004
 \newpage
 ```
 
-## Calendar Spread Payoff Visualization
+### Calendar Spread Payoff Visualization
 
 @fig-calendar-payoff demonstrates the asymmetric payoff profile that makes calendar spreads particularly attractive under specific market conditions, with maximum profit occurring near the short strike.
 
@@ -1327,15 +1327,15 @@ Implied volatility term structure exhibiting backwardation ($\beta_1 \leq -0.004
     samples=100
 ]
 % Payoff at entry (30 DTE)
-\addplot[red, thick, smooth] {
+\addplot[red, thick] {
     -2.5 + 0.8*exp(-0.5*((x-100)/8)^2) + 0.3*sin(deg(0.2*(x-100)))
 };
 % Payoff at 7 DTE (maximum time decay benefit)
-\addplot[green!60!black, thick, smooth] {
+\addplot[green!60!black, thick] {
     -1.8 + 1.5*exp(-0.5*((x-100)/5)^2) + 0.2*sin(deg(0.3*(x-100)))
 };
 % Payoff at expiration
-\addplot[blue, thick, smooth] {
+\addplot[blue, thick] {
     max(0, min(x-100, 0)) + max(0, min(100-x, 0)) - 2.5
 };
 % Mark maximum profit zone
@@ -1358,7 +1358,7 @@ Calendar spread payoff evolution showing optimal profit extraction through time 
 \newpage
 ```
 
-## Option Greeks Evolution Analysis
+### Option Greeks Evolution Analysis
 
 @fig-greeks-evolution illustrates how the key option Greeks evolve throughout the trade lifecycle, providing crucial insights for dynamic hedging and position management.
 
@@ -1440,11 +1440,11 @@ Option Greeks evolution demonstrating the critical inflection points for positio
 \newpage
 ```
 
-# Appendix: Technical Implementation Details
+## Appendix: Technical Implementation Details
 
 This appendix provides detailed technical frameworks and algorithmic implementations for the analytical concepts presented in the main text.
 
-## Kelly Criterion Optimization Methodology
+### Kelly Criterion Optimization Methodology
 
 @fig-kelly-optimization demonstrates the optimization surface for Kelly fraction sizing under varying expected return and volatility scenarios, crucial for position sizing in the Sunny strategy.
 
@@ -1486,7 +1486,7 @@ This appendix provides detailed technical frameworks and algorithmic implementat
     grid=major,
     grid style={gray!30},
     view={60}{30},
-    colormap/hot,
+    colormap/viridis,
     xlabel style={font=\small},
     ylabel style={font=\small},
     zlabel style={font=\small},
@@ -1494,10 +1494,6 @@ This appendix provides detailed technical frameworks and algorithmic implementat
 ]
 % Create optimization surface
 \addplot3[surf, shader=flat, samples=20, domain=-10:20, y domain=10:50] {
-    min(0.25, max(0, x/(y*y/10000)))
-};
-% Add contour lines at base
-\addplot3[contour gnuplot={levels={0.05,0.10,0.15,0.20}}, samples=25, domain=-10:20, y domain=10:50] {
     min(0.25, max(0, x/(y*y/10000)))
 };
 % Mark optimal regions
@@ -1515,7 +1511,7 @@ Kelly optimization surface showing the relationship between expected returns, vo
 \newpage
 ```
 
-## Multi-Factor Signal Generation Framework
+### Multi-Factor Signal Generation Framework
 
 @fig-signal-framework illustrates the comprehensive signal generation and integration process that combines multiple market factors into actionable trading decisions.
 
@@ -1610,11 +1606,11 @@ Multi-factor signal generation framework showing the systematic integration of v
 \newpage
 ```
 
-# Appendix: Statistical Validation
+## Appendix: Statistical Validation
 
 This appendix presents the comprehensive statistical frameworks used to validate the Sunny algorithm's performance and robustness across various market conditions.
 
-## Robustness Testing Framework
+### Robustness Testing Framework
 
 The following framework demonstrates the systematic approach to testing strategy performance across multiple market regimes, ensuring statistical significance and practical applicability.
 
@@ -1642,7 +1638,7 @@ The robustness framework ensures that the Sunny algorithm maintains consistent p
 \newpage
 ```
 
-## Performance Attribution Analysis
+### Performance Attribution Analysis
 
 **Factor Decomposition Results:**
 
@@ -1674,7 +1670,7 @@ The attribution analysis confirms that the Sunny algorithm's primary value gener
 \newpage
 ```
 
-## Advanced Mathematical Formulations
+### Advanced Mathematical Formulations
 
 **Stochastic Volatility Model Implementation:**
 
