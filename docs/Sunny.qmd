@@ -842,6 +842,20 @@ $$\text{Maximum Drawdown} = \max_{t \in [0,T]} \left[\max_{s \in [0,t]} P_s - P_
 
 This metric captures the largest peak-to-trough decline in portfolio value, providing essential information for risk assessment and investor suitability evaluation.
 
+The Calmar ratio combines return and drawdown considerations:
+
+$$\text{Calmar Ratio} = \frac{\text{Annual Return}}{\text{Maximum Drawdown}}$$
+
+This metric proves particularly valuable for evaluating strategies with asymmetric risk profiles, rewarding strategies that generate consistent returns while avoiding large losses.
+
+Win rate and average win/loss analysis provide additional insight into strategy characteristics:
+
+$$\text{Win Rate} = \frac{\text{Number of Winning Trades}}{\text{Total Number of Trades}}$$
+
+$$\text{Win/Loss Ratio} = \frac{\text{Average Winning Trade}}{\text{Average Losing Trade}}$$
+
+These metrics illuminate the fundamental trade-off between win rate and win/loss ratios that characterizes most systematic trading strategies.
+
 ### Factor Attribution and Risk Decomposition
 
 Understanding the sources of strategy returns enables optimization of existing approaches while identifying potential enhancements or modifications. The factor attribution analysis decomposes returns into systematic and idiosyncratic components while examining the contribution of various risk factors.
@@ -1472,7 +1486,7 @@ This appendix provides detailed technical frameworks and algorithmic implementat
     grid=major,
     grid style={gray!30},
     view={60}{30},
-    colormap={hot},
+    colormap/hot,
     xlabel style={font=\small},
     ylabel style={font=\small},
     zlabel style={font=\small},
