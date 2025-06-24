@@ -1,7 +1,5 @@
 ---
 title: "Exam Binder: Case 1a - Peter (Panic Disorder)"
-author: "Clinical Psychology Student"
-date: "June 24, 2025"
 
 format:
   html:
@@ -74,61 +72,46 @@ The theoretical foundation rests on Barlow's conceptualization of panic as a vic
 ```{=latex}
 \begin{figure}[H]
 \centering
-\begin{tikzpicture}[scale=0.8, transform shape,
-  node distance=1.5cm and 2cm,
-  every node/.style={align=center},
-  trigger/.style={rectangle, draw, thick, fill=blue!10, minimum height=1.2cm, text width=2.4cm},
-  threat/.style={circle, draw, thick, fill=yellow!20, minimum height=1.4cm, text width=2.3cm},
+\begin{tikzpicture}[
+  scale=0.85,
+  transform shape,
+  node distance=1.8cm and 2.2cm,
+  every node/.style={align=center, font=\footnotesize},
+  trigger/.style={rectangle, draw, thick, fill=blue!10, minimum height=1.2cm, text width=2.4cm, rounded corners=2pt},
+  threat/.style={ellipse, draw, thick, fill=yellow!20, minimum height=1.2cm, text width=2.3cm},
   sensation/.style={diamond, draw, thick, fill=orange!20, minimum height=1.4cm, text width=2.4cm, aspect=1.2},
-  misinterpret/.style={circle, draw, thick, fill=red!20, minimum height=1.4cm, text width=2.3cm},
-  anxiety/.style={circle, draw, thick, fill=red!30, minimum height=1.4cm, text width=2.3cm},
-  safety/.style={rectangle, draw, thick, fill=purple!15, minimum height=1.2cm, text width=2.8cm},
-  relief/.style={circle, draw, thick, fill=green!20, minimum height=1.2cm, text width=1.8cm},
-  longterm/.style={circle, draw, thick, fill=red!40, minimum height=1.2cm, text width=1.8cm},
+  misinterpret/.style={ellipse, draw, thick, fill=red!20, minimum height=1.2cm, text width=2.3cm},
+  anxiety/.style={ellipse, draw, thick, fill=red!30, minimum height=1.2cm, text width=2.3cm},
+  safety/.style={rectangle, draw, thick, fill=purple!15, minimum height=1.2cm, text width=2.8cm, rounded corners=2pt},
+  relief/.style={ellipse, draw, thick, fill=green!20, minimum height=1.0cm, text width=1.8cm},
+  longterm/.style={ellipse, draw=black, thick, fill=red!20, minimum height=1.0cm, text width=1.8cm},
   arrow/.style={->, thick, >=stealth},
   dashed_arrow/.style={->, thick, >=stealth, dashed},
-  vicious_cycle_box/.style={draw, thick, red, dashed, rounded corners=12pt, inner sep=8pt}
+  vicious_cycle/.style={draw, thick, red, dashed, rounded corners=10pt}
 ]
 
-% A clear layout that prevents overlap
+% Nodes
 \node[trigger] (A) {Trigger\\e.g., Stress,\\Exercise, Caffeine};
 \node[threat, below=of A] (B) {Perceived Threat\\``Oh no, what's\\this feeling?''};
 \node[sensation, below=of B] (C) {Bodily Sensations\\Palpitations,\\Dizziness};
-\node[misinterpret, left=of C] (D) {Catastrophic\\Misinterpretation\\``I'm having a\\heart attack!''};
-\node[anxiety, above=of D] (E) {Anxiety/Fear\\SUDS 90/100};
+\node[misinterpret, left=2.5cm of C] (D) {Catastrophic\\Misinterpretation\\``I'm having a\\heart attack!''};
+\node[anxiety, above=1.8cm of D] (E) {Anxiety/Fear\\SUDS 90/100};
+\node[safety, right=2.5cm of C] (F) {Safety Behaviours\\and Avoidance\\e.g., Fleeing store,\\Avoiding gym};
+\node[relief, below=1.5cm of F] (G) {Short-Term Relief};
+\node[longterm, above=1.5cm of F] (H) {Long-Term:\\Fear Increases};
 
-% Safety behaviours branch
-\node[safety, right=of C] (F) {Safety Behaviours\\and Avoidance\\e.g., Fleeing store,\\Avoiding gym};
-\node[relief, below=of F] (G) {Short-Term\\Relief};
-\node[longterm, above=of F] (H) {Long-Term:\\Fear Increases};
-
-% Arrows for the main sequence and branches
+% Arrows
 \draw[arrow] (A) -- (B);
 \draw[arrow] (B) -- (C);
 \draw[arrow] (C) -- (D);
 \draw[arrow] (D) -- (E);
-
-% The critical vicious cycle feedback loop
-\draw[arrow, bend right=45] (E.east) to (C.north);
-
-% Arrows for the safety behaviour pathway
+\draw[arrow, bend right=30] (E) to (C);
 \draw[arrow] (E) -- (F);
 \draw[dashed_arrow] (F) -- (G);
 \draw[arrow] (F) -- (H);
 
-% Define vicious cycle bounding box coordinates for robust highlighting
-% Calculate the extreme points of the three cycle nodes (C, D, E)
-\coordinate (cycle_northwest) at ([xshift=-0.6cm,yshift=0.6cm]E.north west);
-\coordinate (cycle_northeast) at ([xshift=0.6cm,yshift=0.6cm]C.north east);  
-\coordinate (cycle_southwest) at ([xshift=-0.6cm,yshift=-0.6cm]D.south west);
-\coordinate (cycle_southeast) at ([xshift=0.6cm,yshift=-0.6cm]C.south east);
-
-% Draw the vicious cycle highlight box
-\draw[thick, red, dashed, rounded corners=12pt] 
-  (cycle_northwest) rectangle (cycle_southeast);
-
-% Vicious cycle label positioned relative to the cycle area
-\node[above=0.1cm of E, text=red, font=\textbf\large] {Vicious Cycle};
+% Vicious Cycle highlight using fit
+\node[vicious_cycle, fit=(C)(D)(E), label={[red, font=\bfseries]above:Vicious Cycle}] {};
 
 \end{tikzpicture}
 \caption{Barlow's Vicious Cycle of Panic: Theoretical Model}
