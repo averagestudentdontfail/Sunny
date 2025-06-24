@@ -1,116 +1,65 @@
 ---
 title: "Exam Binder: Case 1a - Peter (Panic Disorder)"
-subtitle: "Cognitive Behavioural Therapy Assessment and Intervention Framework"
 author: "Clinical Psychology Student"
 date: "June 24, 2025"
-abstract: |
-  This examination binder presents a comprehensive cognitive behavioural therapy (CBT) framework for assessing and treating panic disorder, using Peter's case as an exemplar. The document integrates the 5-Stage Functional Analysis Model with Barlow's Vicious Cycle of Panic theory to provide a systematic approach to case formulation. Key components include collaborative assessment techniques, psychoeducation strategies, interoceptive exposure protocols, cognitive restructuring methods, and structured homework assignments. The framework emphasizes evidence-based interventions designed to break the maintenance cycle of panic through both behavioural and cognitive mechanisms. Essential competencies covered include assessment skills, psychoeducation delivery, behavioural technique implementation, cognitive intervention strategies, and therapeutic homework design.
 
-keywords: [Panic Disorder, Cognitive Behavioural Therapy, Interoceptive Exposure, Functional Analysis, Case Formulation, Psychoeducation]
-
-# Document formatting
 format:
-  pdf:
-    documentclass: article
-    classoption: [11pt, letterpaper, onecolumn]
-    geometry: 
-      - top=1.2in
-      - bottom=1.2in
-      - left=1.25in
-      - right=1.25in
-    fontfamily: mathpazo
-    fontsize: 11pt
-    linestretch: 1.5
+  html:
+    theme: [cosmo, Styling.scss]
+    toc: true
     number-sections: true
-    colorlinks: true
-    linkcolor: NavyBlue
-    urlcolor: NavyBlue
-    citecolor: NavyBlue
-    toccolor: black
-    fig-pos: "H"
-    tbl-pos: "H"
-    lot: false
-    lof: false
+  pdf:
+    pdf-engine: xelatex
     keep-tex: true
-    pdf-engine: pdflatex
-    cite-method: biblatex
-    biblio-style: apa
     include-in-header:
-      - text: |
-          \usepackage{booktabs}
-          \usepackage{longtable}
-          \usepackage{array}
-          \usepackage{multirow}
-          \usepackage{float}
-          \usepackage{amsmath}
-          \usepackage{amsfonts}
-          \usepackage{amssymb}
-          \usepackage{mathtools}
-          \usepackage{bm}
-          \usepackage{microtype}
-          \usepackage{setspace}
-          \usepackage{fancyhdr}
-          \usepackage{titlesec}
-          \usepackage{caption}
-          \usepackage{tikz}
-          \usetikzlibrary{shapes.geometric,arrows,positioning,decorations.pathreplacing}
-          
-          % Custom colors
-          \definecolor{sunnyyellow}{RGB}{255, 223, 0}
-          \definecolor{sunnyblue}{RGB}{30, 144, 255}
-          \definecolor{sunnygray}{RGB}{248, 249, 250}
-          \definecolor{clinicalred}{RGB}{220, 53, 69}
-          \definecolor{clinicalgreen}{RGB}{40, 167, 69}
-          
-          % Professional section formatting
-          \titleformat{\section}{\large\bfseries\sffamily\color{NavyBlue}}{\thesection}{1em}{}
-          \titlespacing*{\section}{0pt}{24pt}{12pt}
-          
-          \titleformat{\subsection}{\normalsize\bfseries\sffamily\color{NavyBlue}}{\thesubsection}{1em}{}
-          \titlespacing*{\subsection}{0pt}{18pt}{9pt}
-          
-          \titleformat{\subsubsection}{\normalsize\bfseries\sffamily\color{NavyBlue}}{\thesubsubsection}{1em}{}
-          \titlespacing*{\subsubsection}{0pt}{12pt}{6pt}
-          
-          % Professional header and footer
-          \pagestyle{fancy}
-          \fancyhf{}
-          \rhead{\small\thepage}
-          \lhead{\small\textit{Case 1a: Peter (Panic Disorder)}}
-          \renewcommand{\headrulewidth}{0.5pt}
-          \renewcommand{\headrule}{\hbox to\headwidth{\color{NavyBlue}\leaders\hrule height \headrulewidth\hfill}}
-          \setlength{\headheight}{14pt}
+      text: |
+        \usepackage{microtype}
+        \usepackage{booktabs}
+        \usepackage{amsmath}
+        \usepackage{mathtools}
+        \usepackage{longtable}
+        \usepackage{array}
+        \usepackage{multirow}
+        \usepackage{float}
+        \usepackage{amsfonts}
+        \usepackage{amssymb}
+        \usepackage{bm}
+        \usepackage{setspace}
+        \usepackage{fancyhdr}
+        \usepackage{titlesec}
+        \usepackage{caption}
+        \usepackage{tikz}
+        \usetikzlibrary{shapes.geometric,arrows,positioning,decorations.pathreplacing,shapes}
+        % Custom colors
+        \definecolor{sunnyyellow}{RGB}{255, 223, 0}
+        \definecolor{sunnyblue}{RGB}{30, 144, 255}
+        \definecolor{sunnygray}{RGB}{248, 249, 250}
+        \definecolor{clinicalred}{RGB}{220, 53, 69}
+        \definecolor{clinicalgreen}{RGB}{40, 167, 69}
+        % Professional section formatting
+        \titleformat{\section}{\large\bfseries\sffamily\color{NavyBlue}}{\thesection}{1em}{}
+        \titlespacing*{\section}{0pt}{24pt}{12pt}
+        \titleformat{\subsection}{\normalsize\bfseries\sffamily\color{NavyBlue}}{\thesubsection}{1em}{}
+        \titlespacing*{\subsection}{0pt}{18pt}{9pt}
+        \titleformat{\subsubsection}{\normalsize\bfseries\sffamily\color{NavyBlue}}{\thesubsubsection}{1em}{}
+        \titlespacing*{\subsubsection}{0pt}{12pt}{6pt}
+        % Add formatting for paragraph and subparagraph to avoid titlesec errors
+        \titleformat{\paragraph}[runin]{\normalfont\normalsize\bfseries\sffamily\color{NavyBlue}}{\theparagraph}{1em}{}[.]
+        \titlespacing*{\paragraph}{0pt}{12pt}{1em}
+        \titleformat{\subparagraph}[runin]{\normalfont\normalsize\bfseries\sffamily\color{NavyBlue}}{\thesubparagraph}{1em}{}[.]
+        \titlespacing*{\subparagraph}{0pt}{12pt}{1em}
 
-          % Add formatting for paragraph and subparagraph to avoid titlesec errors
-          \titleformat{\paragraph}[runin]{\normalfont\normalsize\bfseries\sffamily\color{NavyBlue}}{\theparagraph}{1em}{}[.]
-          \titlespacing*{\paragraph}{0pt}{12pt}{1em}
-
-          \titleformat{\subparagraph}[runin]{\normalfont\normalsize\bfseries\sffamily\color{NavyBlue}}{\thesubparagraph}{1em}{}[.]
-          \titlespacing*{\subparagraph}{0pt}{12pt}{1em}
-
-# Cross-referencing
-crossref:
-  fig-title: "Figure"
-  tbl-title: "Table"
-  title-delim: ":"
-  fig-prefix: "Figure"
-  tbl-prefix: "Table"
-
-# Execution options
 execute:
+  freeze: auto
+  cache: true
   echo: false
   warning: false
   message: false
 
-# Language
 lang: en-US
 ---
 
-# Introduction and Overview
-
-This examination binder presents a comprehensive framework for the assessment and treatment of panic disorder using cognitive behavioural therapy (CBT) principles. The case study focuses on Peter, a client presenting with classic panic disorder symptoms, providing an exemplar for the systematic application of evidence-based interventions.
-
-The framework integrates five essential competencies: (1) comprehensive assessment using the 5-Stage Functional Analysis Model, (2) collaborative psychoeducation based on Barlow's Vicious Cycle of Panic, (3) behavioural interventions through interoceptive exposure, (4) cognitive restructuring techniques, and (5) structured homework assignments for skills consolidation.
+\newpage
 
 # CB Assessment: Functional Analysis Using the 5-Stage Model
 
@@ -120,57 +69,59 @@ The primary objective is to conduct a collaborative functional analysis of Peter
 
 ### Barlow's Vicious Cycle of Panic Model
 
-The theoretical foundation rests on Barlow's conceptualization of panic as a vicious cycle involving catastrophic misinterpretation of bodily sensations. @fig-panic-cycle illustrates this model:
+The theoretical foundation rests on Barlow's conceptualization of panic as a vicious cycle involving catastrophic misinterpretation of bodily sensations. Figure 1 illustrates this model:
 
 ```{=latex}
 \begin{figure}[H]
 \centering
 \begin{tikzpicture}[
-  node distance=2cm and 3cm,
-  every node/.style={align=center, text width=2.5cm},
-  box/.style={rectangle, draw, thick, fill=blue!10, minimum height=1.2cm},
-  cycle/.style={rectangle, draw, thick, fill=red!20, minimum height=1.2cm},
-  relief/.style={ellipse, draw, thick, fill=green!10, minimum height=1cm},
-  maintain/.style={ellipse, draw, thick, fill=red!30, minimum height=1cm},
-  arrow/.style={->, thick, >=stealth}
+  node distance=1.8cm and 2.5cm,
+  every node/.style={align=center},
+  box/.style={rectangle, draw, thick, fill=blue!10, minimum height=1.2cm, text width=2.2cm},
+  cycle/.style={rectangle, draw, thick, fill=red!20, minimum height=1.2cm, text width=2.2cm},
+  diamond/.style={diamond, draw, thick, fill=orange!20, minimum height=1.2cm, text width=2.2cm, aspect=1.5},
+  relief/.style={ellipse, draw, thick, fill=green!10, minimum height=1cm, text width=1.8cm},
+  maintain/.style={ellipse, draw, thick, fill=red!40, minimum height=1cm, text width=1.8cm},
+  arrow/.style={->, thick, >=stealth},
+  dashed_arrow/.style={->, thick, >=stealth, dashed}
 ]
 
-% Main cycle nodes
+% Main sequence
 \node[box] (trigger) {Trigger\\e.g., Stress, Exercise, Caffeine};
 \node[cycle, right=of trigger] (threat) {Perceived Threat\\``Oh no, what's this feeling?''};
-\node[cycle, below=of threat] (sensations) {Bodily Sensations\\Palpitations, Dizziness};
+\node[diamond, below=of threat] (sensations) {Bodily Sensations\\Palpitations, Dizziness};
 \node[cycle, left=of sensations] (catastrophic) {Catastrophic Misinterpretation\\``I'm having a heart attack!''};
 \node[cycle, above=of catastrophic] (anxiety) {Anxiety/Fear\\SUDS 90/100};
 
 % Safety behaviours and outcomes
-\node[box, right=3cm of sensations] (safety) {Safety Behaviours\\\& Avoidance\\e.g., Fleeing store,\\Avoiding gym};
-\node[relief, below=of safety] (shortterm) {Short-Term\\Relief};
-\node[maintain, above=of safety] (longterm) {Long-Term:\\Fear Increases};
+\node[box, right=2.5cm of sensations] (safety) {Safety Behaviours\\\\& Avoidance\\e.g., Fleeing store,\\Avoiding gym};
+\node[relief, below=1.2cm of safety] (shortterm) {Short-Term\\Relief};
+\node[maintain, above=1.2cm of safety] (longterm) {Long-Term:\\Fear Increases};
 
-% Arrows for main cycle
+% Main sequence arrows
 \draw[arrow] (trigger) -- (threat);
 \draw[arrow] (threat) -- (sensations);
 \draw[arrow] (sensations) -- (catastrophic);
 \draw[arrow] (catastrophic) -- (anxiety);
-\draw[arrow] (anxiety) -- (threat);
-\draw[arrow, bend left=20] (sensations) to (anxiety);
+
+% Vicious cycle feedback loops
+\draw[arrow, bend left=30] (anxiety) to (sensations);
+\draw[arrow, bend left=40] (anxiety) to (threat);
 
 % Safety behaviour arrows
 \draw[arrow] (anxiety) -- (safety);
-\draw[arrow] (safety) -- (shortterm);
+\draw[dashed_arrow] (safety) -- (shortterm);
 \draw[arrow] (safety) -- (longterm);
-\draw[arrow, dashed, bend right=30] (shortterm) to (longterm);
 
-% Vicious cycle highlight
+% Vicious cycle highlight box
 \draw[thick, red, dashed, rounded corners] 
-  ([xshift=-0.3cm,yshift=0.3cm]threat.north west) rectangle 
-  ([xshift=0.3cm,yshift=-0.3cm]anxiety.south east);
+  ([xshift=-0.4cm,yshift=0.4cm]threat.north west) rectangle 
+  ([xshift=0.4cm,yshift=-0.4cm]catastrophic.south east);
 
-\node[above=0.2cm of threat, text=red, font=\textbf] {Vicious Cycle};
+\node[above=0.3cm of threat, text=red, font=\textbf\large] {Vicious Cycle};
 
 \end{tikzpicture}
 \caption{Barlow's Vicious Cycle of Panic: Theoretical Model}
-\label{fig-panic-cycle}
 \end{figure}
 ```
 
@@ -296,7 +247,7 @@ After each exposure, debrief. Ask: "What did you notice? Your heart pounded, but
 
 ## Sample Hierarchy for Peter
 
-@tbl-exposure-hierarchy presents a graduated hierarchy of interoceptive exposure exercises tailored to Peter's specific feared sensations:
+Table 1 presents a graduated hierarchy of interoceptive exposure exercises tailored to Peter's specific feared sensations:
 
 | Step | Exercise | Feared Sensation | Predicted SUDS (0-100) |
 |:-----|:---------|:-----------------|:----------------------:|
@@ -306,7 +257,7 @@ After each exposure, debrief. Ask: "What did you notice? Your heart pounded, but
 | 4 | Spin in a chair for 1 minute | Dizziness, unreality | 70 |
 | 5 | Hyperventilate for 60 seconds | Breathlessness, dizziness, tingling | 80 |
 
-: Sample Interoceptive Exposure Hierarchy {#tbl-exposure-hierarchy}
+: Sample Interoceptive Exposure Hierarchy
 
 ## Critical Considerations
 
@@ -404,9 +355,3 @@ If low confidence expressed, create **Plan B**:
 > "If marching for a full minute feels like too much, what's a step back that still feels like a step forward? Perhaps 30 seconds?"
 
 **Key Principle:** "There is no such thing as unsuccessful homework, because we learn something every time." This encourages effort over perfect performance and builds self-efficacy.
-
-# Conclusion
-
-This comprehensive framework demonstrates the systematic application of CBT principles to panic disorder treatment. The integration of functional analysis, psychoeducation, behavioural interventions, cognitive techniques, and structured homework provides a evidence-based approach to breaking the vicious cycle of panic. The collaborative nature of all interventions ensures client engagement while building skills for long-term recovery and relapse prevention.
-
-The case exemplifies how understanding the maintenance mechanisms of panic disorder enables targeted interventions that address both the cognitive and behavioural components of the disorder, ultimately empowering clients to become their own therapists.
