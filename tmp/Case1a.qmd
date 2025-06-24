@@ -110,8 +110,14 @@ The theoretical foundation rests on Barlow's conceptualization of panic as a vic
 \draw[dashed_arrow] (F) -- (G);
 \draw[arrow] (F) -- (H);
 
-% Vicious Cycle highlight using fit
-\node[vicious_cycle, fit=(C)(D)(E), label={[red, font=\bfseries]above:Vicious Cycle}] {};
+% Vicious Cycle highlight using manual bounding box calculation
+\coordinate (nw) at ([xshift=-0.5cm,yshift=0.5cm]E.north west);
+\coordinate (ne) at ([xshift=0.5cm,yshift=0.5cm]C.north east);
+\coordinate (sw) at ([xshift=-0.5cm,yshift=-0.5cm]D.south west);
+\coordinate (se) at ([xshift=0.5cm,yshift=-0.5cm]C.south east);
+
+\draw[thick, red, dashed, rounded corners=10pt] (nw) rectangle (se);
+\node[above=0.1cm of E, text=red, font=\bfseries] {Vicious Cycle};
 
 \end{tikzpicture}
 \caption{Barlow's Vicious Cycle of Panic: Theoretical Model}
