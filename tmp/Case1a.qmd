@@ -116,16 +116,19 @@ The theoretical foundation rests on Barlow's conceptualization of panic as a vic
 \draw[dashed_arrow] (F) -- (G);
 \draw[arrow] (F) -- (H);
 
-% Calculate bounding box coordinates for all vicious cycle nodes (C, D, E)
-\coordinate (cycle_nw) at ([xshift=-0.7cm,yshift=0.7cm]D.north west);
-\coordinate (cycle_se) at ([xshift=0.7cm,yshift=-0.7cm]C.south east);
+% Define vicious cycle bounding box coordinates for robust highlighting
+% Calculate the extreme points of the three cycle nodes (C, D, E)
+\coordinate (cycle_northwest) at ([xshift=-0.6cm,yshift=0.6cm]E.north west);
+\coordinate (cycle_northeast) at ([xshift=0.6cm,yshift=0.6cm]C.north east);  
+\coordinate (cycle_southwest) at ([xshift=-0.6cm,yshift=-0.6cm]D.south west);
+\coordinate (cycle_southeast) at ([xshift=0.6cm,yshift=-0.6cm]C.south east);
 
-% Draw the vicious cycle highlight box to encompass C, D, and E
+% Draw the vicious cycle highlight box
 \draw[thick, red, dashed, rounded corners=12pt] 
-  (cycle_nw) rectangle (cycle_se);
+  (cycle_northwest) rectangle (cycle_southeast);
 
-% Vicious cycle label
-\node[above=0.2cm of E, text=red, font=\textbf\Large] {Vicious Cycle};
+% Vicious cycle label positioned relative to the cycle area
+\node[above=0.1cm of E, text=red, font=\textbf\large] {Vicious Cycle};
 
 \end{tikzpicture}
 \caption{Barlow's Vicious Cycle of Panic: Theoretical Model}
