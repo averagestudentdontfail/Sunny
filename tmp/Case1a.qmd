@@ -78,10 +78,10 @@ The theoretical foundation rests on Barlow's conceptualization of panic as a vic
   node distance=1.5cm and 2cm,
   every node/.style={align=center},
   trigger/.style={rectangle, draw, thick, fill=blue!10, minimum height=1.2cm, text width=2.4cm},
-  threat/.style={circle, draw, thick, fill=yellow!20, minimum height=1.4cm, text width=2.2cm},
+  threat/.style={circle, draw, thick, fill=yellow!20, minimum height=1.4cm, text width=2.3cm},
   sensation/.style={diamond, draw, thick, fill=orange!20, minimum height=1.4cm, text width=2.4cm, aspect=1.2},
-  misinterpret/.style={circle, draw, thick, fill=red!20, minimum height=1.4cm, text width=2.4cm},
-  anxiety/.style={circle, draw, thick, fill=red!30, minimum height=1.4cm, text width=2.2cm},
+  misinterpret/.style={circle, draw, thick, fill=red!20, minimum height=1.4cm, text width=2.3cm},
+  anxiety/.style={circle, draw, thick, fill=red!30, minimum height=1.4cm, text width=2.3cm},
   safety/.style={rectangle, draw, thick, fill=purple!15, minimum height=1.2cm, text width=2.8cm},
   relief/.style={circle, draw, thick, fill=green!20, minimum height=1.2cm, text width=1.8cm},
   longterm/.style={circle, draw, thick, fill=red!40, minimum height=1.2cm, text width=1.8cm},
@@ -116,10 +116,13 @@ The theoretical foundation rests on Barlow's conceptualization of panic as a vic
 \draw[dashed_arrow] (F) -- (G);
 \draw[arrow] (F) -- (H);
 
-% Draw the vicious cycle highlight box manually
+% Calculate bounding box coordinates for all vicious cycle nodes (C, D, E)
+\coordinate (cycle_nw) at ([xshift=-0.7cm,yshift=0.7cm]D.north west);
+\coordinate (cycle_se) at ([xshift=0.7cm,yshift=-0.7cm]C.south east);
+
+% Draw the vicious cycle highlight box to encompass C, D, and E
 \draw[thick, red, dashed, rounded corners=12pt] 
-  ([xshift=-0.8cm,yshift=0.8cm]E.north west) rectangle 
-  ([xshift=0.8cm,yshift=-0.8cm]C.south east);
+  (cycle_nw) rectangle (cycle_se);
 
 % Vicious cycle label
 \node[above=0.2cm of E, text=red, font=\textbf\Large] {Vicious Cycle};
