@@ -29,7 +29,7 @@ format:
         \usepackage{titlesec}
         \usepackage{caption}
         \usepackage{tikz}
-        \usetikzlibrary{shapes.geometric,arrows,positioning,decorations.pathreplacing,shapes,fit,backgrounds}
+        \usetikzlibrary{shapes.geometric,arrows,positioning,decorations.pathreplacing,shapes}
         % Custom colors
         \definecolor{sunnyyellow}{RGB}{255, 223, 0}
         \definecolor{sunnyblue}{RGB}{30, 144, 255}
@@ -116,10 +116,10 @@ The theoretical foundation rests on Barlow's conceptualization of panic as a vic
 \draw[dashed_arrow] (F) -- (G);
 \draw[arrow] (F) -- (H);
 
-% Use the "fit" library to draw a box around the vicious cycle nodes on a background layer
-\begin{scope}[on background layer]
-  \node[vicious_cycle_box, fit=(C) (D) (E)] (cycle_box) {};
-\end{scope}
+% Draw the vicious cycle highlight box manually
+\draw[thick, red, dashed, rounded corners=12pt] 
+  ([xshift=-0.8cm,yshift=0.8cm]E.north west) rectangle 
+  ([xshift=0.8cm,yshift=-0.8cm]C.south east);
 
 % Vicious cycle label
 \node[above=0.2cm of E, text=red, font=\textbf\Large] {Vicious Cycle};

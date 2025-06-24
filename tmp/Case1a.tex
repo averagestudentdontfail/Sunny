@@ -239,8 +239,8 @@ sensations. Figure 1 illustrates this model:
 
 \begin{figure}[H]
 \centering
-\begin{tikzpicture}[
-  node distance=2cm and 2.5cm,
+\begin{tikzpicture}[scale=0.8, transform shape,
+  node distance=1.5cm and 2cm,
   every node/.style={align=center},
   trigger/.style={rectangle, draw, thick, fill=blue!10, minimum height=1.2cm, text width=2.4cm},
   threat/.style={circle, draw, thick, fill=yellow!20, minimum height=1.4cm, text width=2.2cm},
@@ -251,44 +251,43 @@ sensations. Figure 1 illustrates this model:
   relief/.style={circle, draw, thick, fill=green!20, minimum height=1.2cm, text width=1.8cm},
   longterm/.style={circle, draw, thick, fill=red!40, minimum height=1.2cm, text width=1.8cm},
   arrow/.style={->, thick, >=stealth},
-  dashed_arrow/.style={->, thick, >=stealth, dashed}
+  dashed_arrow/.style={->, thick, >=stealth, dashed},
+  vicious_cycle_box/.style={draw, thick, red, dashed, rounded corners=12pt, inner sep=8pt}
 ]
 
-% Position nodes to match the Mermaid diagram's logic
+% A clear layout that prevents overlap
 \node[trigger] (A) {Trigger\\e.g., Stress,\\Exercise, Caffeine};
-\node[threat, right=of A] (B) {Perceived Threat\\``Oh no, what's\\this feeling?''};
+\node[threat, below=of A] (B) {Perceived Threat\\``Oh no, what's\\this feeling?''};
 \node[sensation, below=of B] (C) {Bodily Sensations\\Palpitations,\\Dizziness};
-\node[misinterpret, below=of A] (D) {Catastrophic\\Misinterpretation\\``I'm having a\\heart attack!''};
+\node[misinterpret, left=of C] (D) {Catastrophic\\Misinterpretation\\``I'm having a\\heart attack!''};
 \node[anxiety, above=of D] (E) {Anxiety/Fear\\SUDS 90/100};
 
-% Safety behaviours and outcomes are off to the side
+% Safety behaviours branch
 \node[safety, right=of C] (F) {Safety Behaviours\\and Avoidance\\e.g., Fleeing store,\\Avoiding gym};
 \node[relief, below=of F] (G) {Short-Term\\Relief};
 \node[longterm, above=of F] (H) {Long-Term:\\Fear Increases};
 
-% Arrows for the main sequence
+% Arrows for the main sequence and branches
 \draw[arrow] (A) -- (B);
 \draw[arrow] (B) -- (C);
 \draw[arrow] (C) -- (D);
 \draw[arrow] (D) -- (E);
 
 % The critical vicious cycle feedback loop
-\draw[arrow, bend right=45] (E.south) to (C.north);
+\draw[arrow, bend right=45] (E.east) to (C.north);
 
 % Arrows for the safety behaviour pathway
-\draw[arrow] (E) -- (F); % The cycle leads to safety behaviours
+\draw[arrow] (E) -- (F);
 \draw[dashed_arrow] (F) -- (G);
 \draw[arrow] (F) -- (H);
 
-% Vicious cycle highlight encompassing the core loop (C, D, E)
-\draw[thick, red, dashed, rounded corners=12pt]
-  ([xshift=-1.5cm, yshift=1.2cm]E.north) --
-  ([xshift=1.5cm, yshift=1.2cm]E.north) --
-  ([xshift=1.5cm, yshift=-1.2cm]D.south) --
-  ([xshift=-1.5cm, yshift=-1.2cm]D.south) -- cycle;
+% Draw the vicious cycle highlight box manually
+\draw[thick, red, dashed, rounded corners=12pt] 
+  ([xshift=-0.8cm,yshift=0.8cm]E.north west) rectangle 
+  ([xshift=0.8cm,yshift=-0.8cm]C.south east);
 
 % Vicious cycle label
-\node[above=0.2cm of E, xshift=-1cm, text=red, font=\textbf\Large] {Vicious Cycle};
+\node[above=0.2cm of E, text=red, font=\textbf\Large] {Vicious Cycle};
 
 \end{tikzpicture}
 \caption{Barlow's Vicious Cycle of Panic: Theoretical Model}
