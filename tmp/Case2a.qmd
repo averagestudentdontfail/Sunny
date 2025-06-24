@@ -1,0 +1,157 @@
+
+---
+### **Exam Binder: Case 2a - Steven (Social Anxiety Disorder)**
+
+---
+
+### **Page 1 of 5: CB Assessment (Roleplay Component)**
+*(Essential Competency 1: Coverage of relevant issues & Assessment skills)*
+
+**Objective:** To conduct a collaborative functional analysis of Steven's social anxiety. The goal is to build a shared formulation that explains how his fear of negative evaluation leads to a cycle of anticipatory anxiety, self-focused attention, safety behaviours, and post-event rumination, which maintains the disorder.
+
+**Theoretical Model: Clark & Wells' Cognitive Model of Social Phobia (1995)**
+
+```mermaid
+graph TD
+    A[Social Situation <br> e.g., Serving a customer] --> B{Activates Assumptions <br> "I must perform perfectly"};
+    B --> C(Negative Automatic Thoughts <br> "I'll sound stupid," "They'll see I'm anxious");
+    
+    subgraph Anxiety Response
+        direction LR
+        C --> D{Somatic & Cognitive Symptoms <br> e.g., Blushing, Racing Heart, Blank Mind};
+        C --> E[Behavioural Symptoms <br> e.g., Avoiding eye contact, Speaking quickly];
+    end
+
+    subgraph Processing of Self as a Social Object
+        direction TB
+        D --> F(Self-Focused Attention <br> Monitoring internal feelings & performance);
+        E --> F;
+    end
+    
+    F --> D;
+
+    style F fill:#f9f,stroke:#333,stroke-width:2px
+```
+*Note: This model illustrates that in a social situation, Steven's unhelpful assumptions are activated, leading to negative thoughts. This creates anxiety symptoms and a crucial shift to **self-focused attention**. He starts monitoring his own performance and feelings instead of the external situation. This internal focus actually *impairs* his performance and amplifies his perceived symptoms, seeming to confirm his original negative thoughts.*
+
+---
+**Step-by-Step Roleplay Procedure (integrating the 5-Stage Model):**
+
+**Stage 1: Identify the Problem Behaviours & Context (~2 mins)**
+*   **Action:** Define the problem in concrete terms, focusing on both overt avoidance and subtle in-situation behaviours.
+*   **Script:** *"Steven, thank you for coming in. It takes courage to address these things. From what you've described, it sounds like the main problem is a significant fear in social situations, particularly at work now you have to **serve customers and take calls**. This leads you to **avoid many of these interactions**, take **leave from work**, and when you can't avoid them, you experience intense discomfort. Is that a good starting point?"*
+
+**Stage 2: Clarify Antecedents (Triggers & Modifiers) (~2 mins)**
+*   **Action:** Investigate the specific types of social situations that trigger the fear.
+*   **Script:** *"Let's get more specific. We know 'social situations' is the trigger, but which ones are the most difficult? Is it one-on-one with a customer? Talking on the phone? Group meetings? Let's rank them from most to least scary."*
+*   **Probing for Modifiers:** *"Are there certain types of people that make it worse? For example, talking to your boss versus a regular customer? What about situations where you feel you're being evaluated or are the center of attention?"*
+
+**Stage 3: Clarify Consequences (The Clark & Wells Maintenance Cycle) (~4 mins)**
+*   **Action:** Uncover the core cognitions, the attentional shift, and the safety behaviours.
+*   **Script (Eliciting the Hot Thought):** *"Imagine the phone rings right now and it's a customer with a complicated question. As you reach for the phone, what is the *exact thought* that goes through your mind? What do you predict will happen?"* (Guiding for: "I'll stutter," "I won't know the answer," "They'll think I'm incompetent").
+*   **Script (Probing the Attentional Shift - CRITICAL STEP):** *"Okay, so you're on the phone, having that thought. In that moment, where does your attention go? Are you focused outward on the customer and what they're saying, or do you become very aware of yourself—your voice, your heart rate, what you're thinking?"* (This identifies **Self-Focused Attention**).
+*   **Script (Identifying Safety Behaviours):** *"When you're in that situation and feeling anxious, what do you *do* to try and cope or prevent the worst from happening? For example, do you try to speak very quickly to get it over with? Avoid eye contact? Over-prepare what you're going to say? Agree to things you don't want to?"* (These are **Safety Behaviours** that prevent disconfirmation of his fears).
+*   **Script (Post-Event Rumination):** *"And after the interaction is over, say after a difficult phone call, what happens then? Does your mind switch off, or do you find yourself replaying it over and over, picking apart what you did wrong?"*
+
+**Stage 4: Identify Strengths & Resources (~1 min)**
+*   **Action:** Look for positive factors and past successes.
+*   **Script:** *"Steven, despite this intense anxiety, you've held a job for years, you are in a long-term marriage, and you've raised three children. These are major life achievements. You also had the insight and motivation to research your symptoms and seek help. These are significant strengths we can build on."*
+
+**Stage 5: Integrate into a Preliminary Formulation (Collaborative Summary) (~1 min)**
+*   **Action:** Verbally summarise the Clark & Wells model, making it specific to Steven.
+*   **Script:** *"So, it seems we have a very clear pattern. A **Social Situation** triggers the fear of being negatively judged. This leads to a crucial **shift in attention inward**—you start monitoring yourself instead of engaging in the conversation. This self-monitoring, along with **Safety Behaviours** like speaking quickly, ironically makes your performance worse and makes you *feel* more anxious, which seems to confirm your original fear. Afterwards, you **replay the event**, focusing only on the negatives. It's a self-fuelling cycle, but the good news is that it's a very well-understood one, and we have excellent tools to break it. How does that sound to you?"*
+
+---
+### **Page 2 of 5: Psychoeducation (Viva-Voce Component)**
+
+**Objective:** To explain the Clark & Wells model of social anxiety, focusing on the concepts of self-focused attention and safety behaviours, using a clear analogy.
+
+**Key Principles (from W4 lecture notes):** Use analogies; normalise the experience; link directly to the treatment plan.
+
+**Step-by-Step Viva-Voce Script:**
+
+**Step 1: Introduce the Model & Analogy**
+*   *"Steven, what you're experiencing is very common. The model we use to understand it is like this: Imagine you're trying to walk across a narrow wooden plank. If you just look at the other side and walk, it's easy. But if you start thinking 'Don't fall!' and focus all your attention down at your own feet, you become wobbly, you second-guess every step, and you're far more likely to stumble. Social anxiety works in the exact same way."*
+
+**Step 2: Explain the Key Components**
+*   **Self-Focused Attention (Looking at your feet):** *"When you enter a social situation, your fear of being judged makes you shift your attention inwards. Instead of focusing on the customer, you start monitoring yourself: 'How does my voice sound? Am I blushing? What should I say next?'. Just like looking at your feet on the plank, this self-monitoring robs you of the mental resources you need to have a smooth conversation. It actually *causes* the awkwardness you're afraid of."*
+*   **Safety Behaviours (Gripping the handrail):** *"To cope with the anxiety, you've developed 'safety behaviours'—things like rehearsing sentences or speaking quickly to end the interaction. These might feel like they're helping, like gripping a handrail on the plank. But the problem is, you always give the credit to the safety behaviour, not yourself. You think, 'Phew, I only got through that because I rushed.' You never get to learn that you could have walked across the plank just fine on your own."*
+*   **Post-Event Rumination (Replaying the stumble):** *"After the event, you then go home and spend hours replaying the one moment you wobbled on the plank, ignoring the 99% of the time you were fine. This cements the belief that you are a 'bad plank-walker'."*
+
+**Step 3: Link Directly to the Treatment Plan**
+*   **Rationale for Behavioural Experiments:** *"So, our treatment will be like a training program for plank-walking. We will design small, safe **experiments** where you deliberately drop your safety behaviours (let go of the handrail) and shift your attention *outward* (look at the other side). This will allow you to discover, through experience, that you are a much better 'plank-walker' than you think you are."*
+*   **Rationale for Cognitive Restructuring:** *"We will also work on challenging the thoughts and predictions you make *before* you even step on the plank, testing how realistic they truly are."*
+
+---
+### **Page 3 of 5: Behavioural Techniques (Viva-Voce Component)**
+
+**Objective:** To name and provide a detailed rationale and procedural overview for the primary behavioural technique for Social Anxiety Disorder, which is often a form of graded exposure, framed as a behavioural experiment.
+
+**Primary Behavioural Technique:** **Graded Exposure (often delivered via Behavioural Experiments)**
+
+**Step-by-Step Viva-Voce Script:**
+
+**Step 1: Name the Technique and Core Rationale**
+*   *"The core behavioural component for Steven would be **Graded Exposure**, which in social anxiety is most effectively delivered through a series of **Behavioural Experiments**. The rationale is not simply to habituate to anxiety, as in other anxiety disorders, but to provide direct, experiential evidence that disconfirms his specific negative beliefs about social performance and evaluation."*
+*   *"Instead of just 'facing the fear', each exposure is designed as a scientific test of a specific prediction (e.g., 'If I ask a question, they will think I am stupid'). This directly targets the cognitive core of the disorder."*
+
+**Step 2: Explain the Detailed Procedure**
+*   **1. Hierarchy Construction:** *"First, we would collaboratively create a hierarchy of feared social tasks, from serving one customer to speaking in a group. We would order these by his predicted anxiety level."*
+*   **2. Design the First Experiment:** *"We would select a moderately difficult task, like answering a phone call. We would then design it as an experiment:"*
+    *   ***Belief Identification:*** *"What's the specific belief? e.g., 'I will stutter and the customer will think I'm incompetent'."*
+    *   ***Prediction:*** *"What is your concrete prediction? e.g., 'The customer will sound annoyed or hang up'."*
+    *   ***Dropping Safety Behaviours:*** *"Critically, what safety behaviour must we drop for this to be a fair test? e.g., 'Not over-rehearsing a greeting script'."*
+*   **3. In-Session Roleplay:** *"We would first role-play the experiment in-session to build confidence and troubleshoot."*
+*   **4. In-Vivo Experiment:** *"His homework would be to carry out the experiment in the real world."*
+*   **5. Debrief and Learning:** *"In the next session, we would review the outcome against the prediction. 'What actually happened? What does this tell you about your initial belief? What did you learn?'. This process of reflection and updating beliefs is the key therapeutic mechanism."*
+
+**Step 3: Provide a Sample First Experiment for Steven**
+*   **Task:** Answering one phone call at work.
+*   **Belief:** "I will sound anxious and flustered, and the customer will think I'm unprofessional."
+*   **Prediction:** "The customer will ask to speak to someone else or will make a complaint."
+*   **Experiment:** Answer the next phone call without a pre-written script, and focus attention outward on what the customer is asking.
+*   **Data to Collect:** What was the customer's actual reaction?
+
+---
+### **Page 4 of 5: Cognitive Techniques (Roleplay & Viva-Voce Component)**
+*(Essential Competency 4: Cognitive techniques)*
+
+**Objective:** To demonstrate Socratic Dialogue in a roleplay to guide Steven in evaluating a core socially anxious thought. To be prepared to name and describe an alternative cognitive technique.
+
+**Primary Technique (Roleplay): Socratic Dialogue**
+
+**Target Belief for Roleplay:** "If they see me looking anxious, they will think I'm weird and incompetent." (Conviction: 90%)
+
+**Step-by-Step Roleplay Procedure:**
+
+1.  **Isolate the Thought & Validate:** *"Steven, that's a very common fear. Let's put it on the table: 'If they see me look anxious, they'll think I'm weird and incompetent.' It makes sense why that would make you want to avoid these situations. Can we examine that belief for a moment?"*
+2.  **Gather Evidence For:** *"What have you seen that makes you so sure this is true? Has anyone ever actually said to you, 'You look anxious, you must be incompetent'?"*
+3.  **Gather Evidence Against:** *"Let's think about it from another angle. Have you ever been in a situation where you felt incredibly anxious, but later found out nobody even noticed?"* (This challenges the assumption that internal feelings are externally visible).
+4.  **Use the Double Standard Technique:** *"If you were talking to a new colleague and you noticed they seemed a bit nervous, what would you think about them? Would you jump to the conclusion that they were incompetent, or might you think, 'It's their first day, it's understandable' or 'They seem like a nice person who's a bit shy'?"*
+5.  **Develop a More Balanced Thought:** *"So, given that you don't judge others so harshly, and that people often don't even notice our anxiety, what's a more realistic way of thinking about this?"* (Guide towards: "Even if I feel anxious, most people probably won't notice. And even if they do, they are more likely to think it's normal than to think I'm incompetent.").
+6.  **Re-rate Conviction:** *"How believable is that new thought, from 0-100%?"*
+
+**Alternative Cognitive Technique (for Viva-Voce): Video Feedback**
+
+*   **Rationale:** *"A very powerful cognitive technique for social anxiety, especially when self-focused attention is high, is **video feedback**. It provides objective, undeniable evidence that directly contradicts the client's distorted negative self-image. Steven feels he looks intensely anxious, but this is an internal feeling, not an external reality."*
+*   **Procedure:** *"We would role-play a social interaction in-session, for example, a 2-minute conversation with me, and we would video record it. First, I would ask him to rate his performance and how anxious he thought he looked. Then, we would watch the video back together. I would instruct him to watch it as if he were watching a stranger, focusing on his actual observable behaviour. We would then compare his initial negative rating with the objective evidence on the video. This is often a profound experience that rapidly corrects the distorted self-image."*
+
+---
+### **Page 5 of 5: Learning Discovery / Homework (Viva-Voce Component)**
+*(Essential Competency 5: Choice and explanation of homework task)*
+
+**Objective:** To prescribe a clear, collaborative, and relevant homework task based on the principles of Behavioural Experiments.
+
+**Step-by-Step Viva-Voce Script:**
+
+**Step 1: State the Homework Task Clearly**
+*   **Task:** *"Steven, your homework for this week will be our first **Behavioural Experiment**. The task is to **go to a coffee shop and order a drink**. The specific experiment is to **make eye contact with the barista and ask them a simple question**, like 'Which of the pastries do you recommend?'."*
+*   **Monitoring:** *"I'd like you to use this **Behavioural Experiment worksheet**. Before you go, you'll write down your specific prediction (e.g., 'The barista will be annoyed and think I'm weird'). Afterwards, you'll write down what *actually* happened and what you learned from the experience."*
+
+**Step 2: Provide a Clear, Compelling Rationale**
+*   *"The rationale for this homework is to begin gathering real-world data to test the beliefs that are keeping you stuck. Talking about these fears is helpful, but the most powerful way to change them is to see for yourself what actually happens. This experiment is not about being comfortable; it's about being a scientist. Your mission is to collect data. This process of testing predictions and discovering that your feared outcomes don't happen is the most effective way to build lasting confidence."*
+
+**Step 3: Anticipate Barriers and Collaborate on a Plan B**
+*   **Dropping Safety Behaviours:** *"For this to be a true experiment, what is one safety behaviour we need to agree you will drop? Perhaps mentally rehearsing your order ten times in line?"*
+*   **Plan B:** *"What might get in the way of this? If asking a question feels too much for the first try, what would be a good Plan B? ... Okay, a great Plan B would be to just order the drink while making brief eye contact, without asking a question. The key is to take a step that feels challenging but achievable."*
+*   **Confidence Rating:** *"On a scale of 0-100, how confident are you that you can try either Plan A or Plan B this week?"*

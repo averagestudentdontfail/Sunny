@@ -1,0 +1,156 @@
+
+---
+### **Exam Binder: Case 2b - Saba (Social Anxiety Disorder - Performance Only)**
+
+---
+
+### **Page 1 of 5: CB Assessment (Roleplay Component)**
+*(Essential Competency 1: Coverage of relevant issues & Assessment skills)*
+
+**Objective:** To conduct a collaborative functional analysis of Saba's performance anxiety. The goal is to build a shared formulation that explains how her fear of negative evaluation in performance situations (presentations, seminars) triggers a maintenance cycle of anticipatory anxiety, self-focused attention, avoidance/subtle safety behaviours, and post-event rumination.
+
+**Theoretical Model: Clark & Wells' Cognitive Model of Social Phobia (1995)**
+
+```mermaid
+graph TD
+    A[Performance Situation <br> e.g., University Presentation] --> B{Activates Assumptions <br> "I must be perfect," "Showing anxiety is weak"};
+    B --> C(Negative Automatic Thoughts <br> "They'll see I'm anxious," "They'll think I'm boring/incompetent");
+    
+    subgraph Anxiety Response
+        direction LR
+        C --> D{Somatic & Cognitive Symptoms <br> e.g., Shaking voice, Blank mind, Dry mouth};
+        C --> E[Behavioural Symptoms <br> e.g., Gripping lectern, Reading from notes, Sipping water];
+    end
+
+    subgraph Processing of Self as a Social Object
+        direction TB
+        D --> F(Self-Focused Attention <br> Monitoring internal feelings & voice tremors);
+        E --> F;
+    end
+    
+    F --> D;
+
+    style F fill:#f9f,stroke:#333,stroke-width:2px
+```
+*Note: This model illustrates that for Saba, a performance situation triggers negative thoughts about her ability and how she will be perceived. This leads to a critical shift to **self-focused attention**, where she intensely monitors her own feelings and perceived flaws (e.g., voice shaking). This internal focus robs her of cognitive resources, impairs her fluency, and seems to confirm her fear that she is performing poorly. Her safety behaviours (sipping water, over-relying on notes) prevent her from learning that she can cope without them.*
+
+---
+**Step-by-Step Roleplay Procedure (integrating the 5-Stage Model):**
+
+**Stage 1: Identify the Problem Behaviours & Context (~2 mins)**
+*   **Action:** Define the problem's specific performance-related nature.
+*   **Script:** *"Saba, thank you for coming in. Your tutor's suggestion shows they see your commitment. From what you've described, it sounds like the anxiety is very specific: it becomes a major problem when you have to **give presentations or speak up in small groups** at university. In those moments, you experience high anxiety, have difficulty speaking, and feel a need to take a break. In the past, you've managed by **avoiding these tasks**, but now, in your OT course, that's no longer an option. Is that an accurate picture?"*
+
+**Stage 2: Clarify Antecedents (Triggers & Modifiers) (~2 mins)**
+*   **Action:** Investigate the specific features of the performance situations that heighten the fear.
+*   **Script:** *"Let's zoom in on these presentations. What is it about them that's most frightening? Is it the number of people? The topic? Knowing you're being formally assessed? What makes a seminar more anxiety-provoking than, say, a one-on-one conversation?"*
+*   **Probing Historical/Cultural Context:** *"You mentioned the teasing you experienced in high school after moving schools. How do you think that experience might be influencing your fear of being 'judged' or 'picked on' in front of a group now?"* (This validates her experience and links past to present).
+
+**Stage 3: Clarify Consequences (The Clark & Wells Maintenance Cycle) (~4 mins)**
+*   **Action:** Uncover the core cognitions, the attentional shift, and the safety behaviours.
+*   **Script (Anticipatory Anxiety):** *"Tell me about the week leading up to a presentation. What goes through your mind? What are you worrying about?"* (Probing for: "I'll mess up," "I'll have another episode like last time").
+*   **Script (The In-Situation Hot Thought):** *"Okay, now you're standing up to present. The room is quiet. What is the *exact thought* that runs through your head?"* (Guiding for: "Everyone is staring at me," "My voice is going to shake," "They'll think I'm incompetent").
+*   **Script (The Attentional Shift):** *"In that moment, where does your attention go? Are you focused on the faces in the audience and the material you're presenting, or does your focus shift inward, to the feeling of your heart racing, the dryness in your mouth, or the sound of your own voice?"* (This identifies **Self-Focused Attention**).
+*   **Script (Identifying Safety Behaviours):** *"What do you do to try and get through it or prevent the worst from happening? You mentioned sipping water. Do you also find yourself gripping the lectern, reading word-for-word from your notes, or avoiding eye contact with the audience?"* (These are **Safety Behaviours**).
+
+**Stage 4: Identify Strengths & Resources (~1 min)**
+*   **Action:** Highlight her academic competence and deep commitment to her career.
+*   **Script:** *"Saba, what's incredibly clear to me is your deep commitment to becoming an OT. You excel in your written work, which shows you are highly capable and intelligent. The fact that you are facing this fear head-on, even though it's terrifying, speaks volumes about your strength and determination. Your career aspiration is a powerful motivator we will use to drive this therapy forward."*
+
+**Stage 5: Integrate into a Preliminary Formulation (Collaborative Summary) (~1 min)**
+*   **Action:** Verbally summarise the Clark & Wells model, making it specific to Saba.
+*   **Script:** *"So, it seems we have a clear cycle. The thought of a **Presentation** triggers a fear of being judged negatively. When you get up to speak, your **attention shifts inward**, and you start monitoring yourself for any sign of anxiety. This self-monitoring, along with **safety behaviours** like sipping water, actually makes it harder to speak smoothly. This seems to 'prove' your fear is correct, creating a self-fulfilling prophecy. This is a very common pattern in performance anxiety, and the great news is we can break this cycle by shifting your attention and testing your beliefs. How does that sound to you?"*
+
+---
+### **Page 2 of 5: Psychoeducation (Viva-Voce Component)**
+
+**Objective:** To explain the Clark & Wells model of social anxiety, using an analogy relevant to performance and focusing on the roles of self-focused attention and safety behaviours.
+
+**Key Principles (from W4 lecture notes):** Use analogies; normalise; link to treatment.
+
+**Step-by-Step Viva-Voce Script:**
+
+**Step 1: Introduce the Model & Analogy**
+*   *"Saba, what you're experiencing is like being a skilled musician who can play a piece of music perfectly when they are alone. But the moment you put them on a stage with an audience, they start thinking, 'What if I hit a wrong note? Everyone will notice!'. Suddenly, instead of focusing on the music, they start focusing on their fingers—'Are my fingers shaking? Am I pressing the right key?'. By focusing on their fingers, they disrupt their natural rhythm and are far more likely to make a mistake. This is exactly what is happening in your presentations."*
+
+**Step 2: Explain the Key Components**
+*   **Self-Focused Attention (Focusing on the fingers):** *"When you stand up to present, your fear of judgment makes you shift your attention away from your material and the audience, and inward onto yourself. You're monitoring your voice, your hands, your breathing. This starves your brain of the focus it needs to present your material, which you know so well. It causes the very 'blank mind' feeling you fear."*
+*   **Safety Behaviours (Relying on sheet music):** *"To cope, you've developed 'safety behaviours'—like sipping water or maybe over-relying on your notes. These feel like they save you, but they prevent you from ever discovering that you can perform fluently without them. You always credit the water or the notes for your success, not your own ability."*
+*   **Distorted Self-Image:** *"Because your attention is all internal, you have a very exaggerated and distorted image of how you appear to others. You *feel* like your anxiety is a 10/10, so you *believe* you must look like a complete mess to the audience. In reality, what people see on the outside is usually far less than what we feel on the inside."*
+
+**Step 3: Link Directly to the Treatment Plan**
+*   **Rationale for Behavioural Experiments & Exposure:** *"So, our treatment will be like a series of practice recitals. We will use **graded exposure** and **behavioural experiments** to help you systematically drop the safety behaviours and, most importantly, re-train your attention to focus *outward*—on your audience and your message—instead of inward on your anxiety. This will break the cycle and allow your natural competence to shine through."*
+
+---
+### **Page 3 of 5: Behavioural Techniques (Viva-Voce Component)**
+
+**Objective:** To name and provide a detailed rationale and procedural overview for the primary behavioural technique for Performance Anxiety: Graded Exposure.
+
+**Primary Behavioural Technique:** **Graded Exposure (using performance-based tasks)**
+
+**Step-by-Step Viva-Voce Script:**
+
+**Step 1: Name the Technique and Core Rationale**
+*   *"The core behavioural technique for Saba's performance anxiety is **Graded Exposure**. The rationale is to systematically and repeatedly engage in feared performance situations to provide new learning that disconfirms her catastrophic predictions about her performance and the audience's reaction. The focus is on reducing both anticipatory and in-situation anxiety, and building self-efficacy."*
+*   *"For Saba, this would ideally be done in a group therapy setting to provide a ready-made, controlled audience, but it can be effectively adapted for individual therapy using in-session roleplays and real-world assignments."*
+
+**Step 2: Explain the Detailed Procedure**
+*   **1. Hierarchy Construction:** *"First, we would collaboratively build a hierarchy of feared speaking tasks. We would manipulate variables to control the difficulty, such as: **duration** (e.g., 1 minute vs. 10 minutes), **preparation time** (1 week vs. 1 hour), **topic** (familiar vs. unfamiliar), and **audience** (me vs. friendly peers vs. formal examiners)."*
+*   **2. In-Session Exposure:** *"We would start in-session with a manageable task, like Saba presenting one slide of a presentation to me for 2 minutes."*
+*   **3. **CRITICAL: Dropping Safety Behaviours:** *"Before each exposure, we would identify and agree to drop one safety behaviour. For instance, 'For this 2-minute presentation, the goal is to not look at your notes' or '...to not sip any water'."*
+*   **4. Shifting Attention:** *"During the exposure, I would use prompts to help her shift her attention outward. For example, 'Your task for this minute is to try and notice the colour of my eyes' or '...to focus on clearly explaining this one key concept to me'."*
+*   **5. Debrief and Learning:** *"Afterwards, we would debrief not just on her anxiety levels, but on what she learned about her performance and her ability to cope without her safety behaviours."*
+
+**Step 3: Provide a Sample Hierarchy for Saba**
+
+| Step | Exercise | Key Variable / Dropped Safety Behaviour | Predicted SUDS |
+| :--- | :--- | :--- | :--- |
+| 1 | Read one paragraph from a textbook aloud to me. | - | 40 |
+| 2 | Give a 2-minute summary of a familiar topic to me. | No verbatim notes. | 55 |
+| 3 | Give the same 2-min summary to me and a colleague via Zoom. | - | 65 |
+| 4 | Give a 5-minute presentation to me on a university topic. | Make eye contact for 50% of the time. | 75 |
+| 5 | Ask a question in one of her university seminars. | - | 85 |
+| 6 | Deliver her required 10-minute formal presentation. | Use only palm cards; no sipping water. | 95 |
+
+---
+### **Page 4 of 5: Cognitive Techniques (Roleplay & Viva-Voce Component)**
+*(Essential Competency 4: Cognitive techniques)*
+
+**Objective:** To demonstrate Socratic Dialogue in a roleplay to guide Saba in evaluating a core performance-related belief. To be prepared to name and describe an alternative.
+
+**Primary Technique (Roleplay): Socratic Dialogue**
+
+**Target Belief for Roleplay:** "If my voice shakes, the audience will think I don't know what I'm talking about and that I'm boring." (Conviction: 95%).
+
+**Step-by-Step Roleplay Procedure:**
+
+1.  **Isolate the Thought & Validate:** *"Saba, that's a huge amount of pressure to put on yourself. Let's examine that thought: 'If my voice shakes, they'll think I'm incompetent and boring.' It makes perfect sense that you'd feel anxious if you believe that. Can we look at it more closely?"*
+2.  **Gather Evidence Against:** *"Let's start with 'incompetent'. You consistently excel on your written assignments for the same topics. What does that say about your actual competence and knowledge?"*
+3.  **Decouple Anxiety from Performance:** *"Have you ever seen a presenter—a lecturer, a politician—who seemed nervous but still delivered a really interesting and informative talk? Is it possible for anxiety and competence to exist at the same time?"*
+4.  **Use the Double Standard Technique:** *"If you were in the audience and a fellow student's voice was a little shaky, but they were presenting interesting material, would your first thought be 'She's so boring and incompetent'? Or might you think, 'Wow, public speaking is tough, good on her for doing it'?"*
+5.  **Develop a More Balanced Thought:** *"So, given that your written work proves your competence, and that you wouldn't judge someone else so harshly, what is a more accurate or helpful way of thinking about this?"* (Guide towards: "My voice might shake because I'm nervous, but that doesn't change the fact that I know my material. The audience is more likely to be focused on the content than on my voice.").
+6.  **Re-rate Conviction:** *"On a 0-100 scale, how much do you believe that new thought right now?"*
+
+**Alternative Cognitive Technique (for Viva-Voce): Video/Audio Feedback**
+
+*   **Rationale:** *"A highly effective cognitive technique for Saba would be **audio or video feedback**. Her belief is based on a distorted internal *feeling* of how she sounds and appears. Objective feedback provides undeniable data to challenge this distorted self-perception."*
+*   **Procedure:** *"We would audio-record a short, in-session presentation. First, I would ask her to rate her performance and how shaky she *thought* her voice sounded. Then, we would listen back to the recording together. Her task would be to listen as if she were a neutral examiner, simply evaluating the clarity and content. Inevitably, the perceived shakiness is far less noticeable than what she felt internally. This rapidly corrects the negative self-image and builds confidence in her actual abilities."*
+
+---
+### **Page 5 of 5: Learning Discovery / Homework (Viva-Voce Component)**
+*(Essential Competency 5: Choice and explanation of homework task)*
+
+**Objective:** To prescribe a clear, collaborative, and relevant homework task based on the first step of the Graded Exposure hierarchy, framed as a Behavioural Experiment.
+
+**Step-by-Step Viva-Voce Script:**
+
+**Step 1: State the Homework Task Clearly**
+*   **Task:** *"Saba, your homework for this week is to conduct your first **Behavioural Experiment**. The task is based on the first step of our hierarchy: you are to **read one paragraph from a textbook aloud, and record it on your phone.**"*
+*   **Monitoring & The Experiment:** *"The experiment has two parts. First, *before* you listen back, write down your prediction: 'I will sound incredibly shaky and stupid.' Rate your conviction in that belief. Second, listen back to the recording, trying to listen as a neutral person would, and write down what you *actually* hear. The goal is to compare the prediction with the reality."*
+
+**Step 2: Provide a Clear, Compelling Rationale**
+*   *"The rationale for this homework is to begin challenging the distorted negative image you have of your own performance. Right now, your judgment is based on how anxious you *feel*, not on how you actually sound. By recording and listening back, you are gathering objective, real-world data. This process of acting as a scientist and testing your own predictions is the most powerful way to update your beliefs and build a more realistic and confident view of your own capabilities."*
+
+**Step 3: Anticipate Barriers and Collaborate on a Plan B**
+*   **Collaborative Problem-Solving:** *"What might make it difficult to complete this task this week? Is there a fear of what you might hear on the recording?"*
+*   **Plan B:** *"If listening back feels too overwhelming at first, Plan B is to just do the recording. You can bring the recording to our next session, and we can listen to it for the first time together. The first step is just taking the action. How confident do you feel, 0-100%, that you can try either Plan A or Plan B?"*

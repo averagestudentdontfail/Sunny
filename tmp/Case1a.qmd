@@ -1,0 +1,412 @@
+---
+title: "Exam Binder: Case 1a - Peter (Panic Disorder)"
+subtitle: "Cognitive Behavioural Therapy Assessment and Intervention Framework"
+author: "Clinical Psychology Student"
+date: "June 24, 2025"
+abstract: |
+  This examination binder presents a comprehensive cognitive behavioural therapy (CBT) framework for assessing and treating panic disorder, using Peter's case as an exemplar. The document integrates the 5-Stage Functional Analysis Model with Barlow's Vicious Cycle of Panic theory to provide a systematic approach to case formulation. Key components include collaborative assessment techniques, psychoeducation strategies, interoceptive exposure protocols, cognitive restructuring methods, and structured homework assignments. The framework emphasizes evidence-based interventions designed to break the maintenance cycle of panic through both behavioural and cognitive mechanisms. Essential competencies covered include assessment skills, psychoeducation delivery, behavioural technique implementation, cognitive intervention strategies, and therapeutic homework design.
+
+keywords: [Panic Disorder, Cognitive Behavioural Therapy, Interoceptive Exposure, Functional Analysis, Case Formulation, Psychoeducation]
+
+# Document formatting
+format:
+  pdf:
+    documentclass: article
+    classoption: [11pt, letterpaper, onecolumn]
+    geometry: 
+      - top=1.2in
+      - bottom=1.2in
+      - left=1.25in
+      - right=1.25in
+    fontfamily: mathpazo
+    fontsize: 11pt
+    linestretch: 1.5
+    number-sections: true
+    colorlinks: true
+    linkcolor: NavyBlue
+    urlcolor: NavyBlue
+    citecolor: NavyBlue
+    toccolor: black
+    fig-pos: "H"
+    tbl-pos: "H"
+    lot: false
+    lof: false
+    keep-tex: true
+    pdf-engine: pdflatex
+    cite-method: biblatex
+    biblio-style: apa
+    include-in-header:
+      - text: |
+          \usepackage{booktabs}
+          \usepackage{longtable}
+          \usepackage{array}
+          \usepackage{multirow}
+          \usepackage{float}
+          \usepackage{amsmath}
+          \usepackage{amsfonts}
+          \usepackage{amssymb}
+          \usepackage{mathtools}
+          \usepackage{bm}
+          \usepackage{microtype}
+          \usepackage{setspace}
+          \usepackage{fancyhdr}
+          \usepackage{titlesec}
+          \usepackage{caption}
+          \usepackage{tikz}
+          \usetikzlibrary{shapes.geometric,arrows,positioning,decorations.pathreplacing}
+          
+          % Custom colors
+          \definecolor{sunnyyellow}{RGB}{255, 223, 0}
+          \definecolor{sunnyblue}{RGB}{30, 144, 255}
+          \definecolor{sunnygray}{RGB}{248, 249, 250}
+          \definecolor{clinicalred}{RGB}{220, 53, 69}
+          \definecolor{clinicalgreen}{RGB}{40, 167, 69}
+          
+          % Professional section formatting
+          \titleformat{\section}{\large\bfseries\sffamily\color{NavyBlue}}{\thesection}{1em}{}
+          \titlespacing*{\section}{0pt}{24pt}{12pt}
+          
+          \titleformat{\subsection}{\normalsize\bfseries\sffamily\color{NavyBlue}}{\thesubsection}{1em}{}
+          \titlespacing*{\subsection}{0pt}{18pt}{9pt}
+          
+          \titleformat{\subsubsection}{\normalsize\bfseries\sffamily\color{NavyBlue}}{\thesubsubsection}{1em}{}
+          \titlespacing*{\subsubsection}{0pt}{12pt}{6pt}
+          
+          % Professional header and footer
+          \pagestyle{fancy}
+          \fancyhf{}
+          \rhead{\small\thepage}
+          \lhead{\small\textit{Case 1a: Peter (Panic Disorder)}}
+          \renewcommand{\headrulewidth}{0.5pt}
+          \renewcommand{\headrule}{\hbox to\headwidth{\color{NavyBlue}\leaders\hrule height \headrulewidth\hfill}}
+          \setlength{\headheight}{14pt}
+
+          % Add formatting for paragraph and subparagraph to avoid titlesec errors
+          \titleformat{\paragraph}[runin]{\normalfont\normalsize\bfseries\sffamily\color{NavyBlue}}{\theparagraph}{1em}{}[.]
+          \titlespacing*{\paragraph}{0pt}{12pt}{1em}
+
+          \titleformat{\subparagraph}[runin]{\normalfont\normalsize\bfseries\sffamily\color{NavyBlue}}{\thesubparagraph}{1em}{}[.]
+          \titlespacing*{\subparagraph}{0pt}{12pt}{1em}
+
+# Cross-referencing
+crossref:
+  fig-title: "Figure"
+  tbl-title: "Table"
+  title-delim: ":"
+  fig-prefix: "Figure"
+  tbl-prefix: "Table"
+
+# Execution options
+execute:
+  echo: false
+  warning: false
+  message: false
+
+# Language
+lang: en-US
+---
+
+# Introduction and Overview
+
+This examination binder presents a comprehensive framework for the assessment and treatment of panic disorder using cognitive behavioural therapy (CBT) principles. The case study focuses on Peter, a client presenting with classic panic disorder symptoms, providing an exemplar for the systematic application of evidence-based interventions.
+
+The framework integrates five essential competencies: (1) comprehensive assessment using the 5-Stage Functional Analysis Model, (2) collaborative psychoeducation based on Barlow's Vicious Cycle of Panic, (3) behavioural interventions through interoceptive exposure, (4) cognitive restructuring techniques, and (5) structured homework assignments for skills consolidation.
+
+# CB Assessment: Functional Analysis Using the 5-Stage Model
+
+## Objective and Theoretical Framework
+
+The primary objective is to conduct a collaborative functional analysis of Peter's panic using the 5-Stage Model, moving from general description to specific, shared understanding of the **Vicious Cycle of Panic** as it applies to his supermarket incident.
+
+### Barlow's Vicious Cycle of Panic Model
+
+The theoretical foundation rests on Barlow's conceptualization of panic as a vicious cycle involving catastrophic misinterpretation of bodily sensations. @fig-panic-cycle illustrates this model:
+
+```{=latex}
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[
+  node distance=2cm and 3cm,
+  every node/.style={align=center, text width=2.5cm},
+  box/.style={rectangle, draw, thick, fill=blue!10, minimum height=1.2cm},
+  cycle/.style={rectangle, draw, thick, fill=red!20, minimum height=1.2cm},
+  relief/.style={ellipse, draw, thick, fill=green!10, minimum height=1cm},
+  maintain/.style={ellipse, draw, thick, fill=red!30, minimum height=1cm},
+  arrow/.style={->, thick, >=stealth}
+]
+
+% Main cycle nodes
+\node[box] (trigger) {Trigger\\e.g., Stress, Exercise, Caffeine};
+\node[cycle, right=of trigger] (threat) {Perceived Threat\\``Oh no, what's this feeling?''};
+\node[cycle, below=of threat] (sensations) {Bodily Sensations\\Palpitations, Dizziness};
+\node[cycle, left=of sensations] (catastrophic) {Catastrophic Misinterpretation\\``I'm having a heart attack!''};
+\node[cycle, above=of catastrophic] (anxiety) {Anxiety/Fear\\SUDS 90/100};
+
+% Safety behaviours and outcomes
+\node[box, right=3cm of sensations] (safety) {Safety Behaviours\\\& Avoidance\\e.g., Fleeing store,\\Avoiding gym};
+\node[relief, below=of safety] (shortterm) {Short-Term\\Relief};
+\node[maintain, above=of safety] (longterm) {Long-Term:\\Fear Increases};
+
+% Arrows for main cycle
+\draw[arrow] (trigger) -- (threat);
+\draw[arrow] (threat) -- (sensations);
+\draw[arrow] (sensations) -- (catastrophic);
+\draw[arrow] (catastrophic) -- (anxiety);
+\draw[arrow] (anxiety) -- (threat);
+\draw[arrow, bend left=20] (sensations) to (anxiety);
+
+% Safety behaviour arrows
+\draw[arrow] (anxiety) -- (safety);
+\draw[arrow] (safety) -- (shortterm);
+\draw[arrow] (safety) -- (longterm);
+\draw[arrow, dashed, bend right=30] (shortterm) to (longterm);
+
+% Vicious cycle highlight
+\draw[thick, red, dashed, rounded corners] 
+  ([xshift=-0.3cm,yshift=0.3cm]threat.north west) rectangle 
+  ([xshift=0.3cm,yshift=-0.3cm]anxiety.south east);
+
+\node[above=0.2cm of threat, text=red, font=\textbf] {Vicious Cycle};
+
+\end{tikzpicture}
+\caption{Barlow's Vicious Cycle of Panic: Theoretical Model}
+\label{fig-panic-cycle}
+\end{figure}
+```
+
+This diagram demonstrates how an initial trigger leads to bodily sensations, which are catastrophically misinterpreted. This misinterpretation spikes fear, amplifying bodily sensations and creating a vicious feedback loop. Safety behaviours provide short-term relief but prevent new learning and maintain the cycle long-term.
+
+## Stage-by-Stage Assessment Procedure
+
+### Stage 1: Identify Problem Behaviours and Context (~2 minutes)
+
+**Action:** Define the problem in concrete, behavioural terms. What does the client do/not do? What are the specific physiological symptoms?
+
+**Assessment Script:**
+> "Peter, thank you for coming in. My goal today is to build a really clear picture of these panic attacks with you. You've mentioned a few key things that are happening: you're experiencing intense physical feelings like a **pounding heart, dizziness, and tremors**. And in terms of what you do, it sounds like you've started **avoiding the gym**, and you mentioned you **left your trolley and fled the supermarket**. Have I got that right? Are there any other key behaviours we should put on our map?"
+
+### Stage 2: Clarify Antecedents (Triggers and Modifiers) (~3 minutes)
+
+**Action:** Investigate specific internal and external events preceding the problem, using the supermarket incident as anchor point.
+
+**Assessment Script:**
+> "Okay, let's go back to the supermarket. Can you walk me through the moments *just before* your heart started pounding? We call these 'triggers.' Were you feeling rushed? Stressed? What was the first sign that things were about to shift?"
+
+**Probing for Modifiers using BASIC-P framework:**
+
+- **Affect:** "You mentioned work has been very stressful with the new boss. How does your general stress level on a given day seem to affect the likelihood of an attack?"
+- **Physiological:** "It seems like any activity that increases your heart rate, even normal exercise, can act as a trigger now. Is that right?"
+
+### Stage 3: Clarify Consequences (The Maintenance Cycle) (~3 minutes)
+
+**Action:** Uncover the Vicious Cycle by linking trigger to thought, emotion, and subsequent behaviours that maintain the problem.
+
+**Eliciting the Hot Thought:**
+> "Okay, so your heart starts to pound. In that exact instant, what is the *meaning* you give to that sensation? What's the most frightening thought that goes through your mind?"
+
+*Target: Catastrophic Misinterpretation (e.g., "I'm going to collapse," "I'm having a heart attack")*
+
+**Linking Thought to Emotion/Physiology:**
+> "And when that thought 'I'm having a heart attack' hits, what happens to your fear on that 0-100 scale? ... And what about the pounding in your chest? Does it get worse, stay the same, or get better after that thought?"
+
+**Behavioural Consequence and Negative Reinforcement:**
+> "So in response to all that, you left the store. Tell me, what happened to your anxiety level once you were outside? ... It probably went down, which is a huge relief. Here's the tricky part of panic: because leaving made you feel better, what did that teach your brain about the supermarket? Did it teach it that the supermarket is a safe place, or a dangerous place you were right to escape from?"
+
+### Stage 4: Identify Strengths, Resources and Coping (~1 minute)
+
+**Action:** Actively search for positive factors to create balanced view and instill hope.
+
+**Assessment Script:**
+> "Peter, while this cycle sounds exhausting, I also want to acknowledge what's working *for* you. You have a very supportive wife who is a nurse. You've successfully been through CBT for this before, which is a huge strength—it means you are capable of getting better. And despite all this, you're still going to work and you came here today to get help. That shows real determination."
+
+### Stage 5: Integrate into Preliminary Formulation (~1 minute)
+
+**Action:** Verbally summarise the Vicious Cycle model using gathered information to make it specific to Peter.
+
+**Collaborative Summary:**
+> "So, if we put all the pieces together, we get a clear map. It seems a **Trigger**, like background stress, leads to a normal **Bodily Sensation**. Your brain then has a **Catastrophic Thought**, 'I'm having a heart attack.' This thought understandably creates intense **Fear**, which floods your body with adrenaline and makes the sensations even worse. To save yourself, you engage in a **Safety Behaviour** like fleeing the store. This gives you immediate relief, but accidentally reinforces the initial belief that the situation was truly dangerous, making the whole cycle more likely to happen again. This is a classic, well-understood pattern, and the most important thing to know is that we have very effective, evidence-based tools to break you out of this trap. Does this picture feel right to you?"
+
+# Psychoeducation: The Vicious Cycle Model
+
+## Objective and Key Principles
+
+**Objective:** Explain the 'Vicious Cycle of Panic' model and treatment rationale in a clear, collaborative, and non-pathologizing manner using analogy and visual aids.
+
+**Key Principles:** Proceed from known to unknown; use analogies; link to treatment rationale.
+
+## Psychoeducation Procedure
+
+### Step 1: Introduce the Model and Analogy
+
+> "Peter, based on the map we just built, I'd like to share a model that explains this panic trap. Think of your body's anxiety system like a highly sensitive smoke alarm. A good smoke alarm is meant to go off when there's a real fire. But sometimes, an alarm can become faulty and go off just from a bit of steam from the shower. It's giving a real alarm, but to a false danger. That's exactly what's happening with panic."
+
+### Step 2: Draw and Explain the Cycle
+
+**The Trigger (The 'Steam'):** 
+> "It starts with what we call a trigger - a normal bodily sensation like a fast heartbeat from climbing stairs or feeling stressed."
+
+**The Misinterpretation (The 'Faulty Sensor'):** 
+> "But your 'alarm system', because of that scary first attack, now misinterprets that 'steam' as a 'fire'. It tells you, 'This is dangerous, it's a heart attack'."
+
+**The Adrenaline Rush (The 'Loud Alarm'):** 
+> "When your brain thinks there's a fire, it floods your body with adrenaline to prepare you to fight or flee. This is why your heart pounds even harder, you feel dizzy, and you feel that overwhelming urge to escape. It's a real physical response, but to a false alarm."
+
+**The Reinforcement (Confirming the Faulty Belief):** 
+> "And here's the trap. Because you escape the situation (like leaving the gym), your anxiety goes down. Your brain then thinks, 'Whew, I got out just in time. Escaping is what saved me.' So it reinforces the belief that the situation was truly dangerous, making the alarm even more sensitive for next time."
+
+### Step 3: Link Directly to Treatment Plan
+
+**Rationale for Interoceptive Exposure (IE):**
+> "So, to fix this, we need to recalibrate your alarm system. We're going to do exercises that deliberately create the 'steam'—the physical sensations—right here in this safe room. This will allow your brain to experience the sensations over and over without any 'fire' happening, until it learns they are not dangerous."
+
+**Rationale for Cognitive Restructuring (CR):**
+> "At the same time, we're going to work on the 'faulty sensor' itself. We will examine those scary thoughts, look at the actual evidence for and against them, and develop more realistic ways of thinking about the sensations."
+
+### Step 4: Check Understanding and Instill Hope
+
+> "This two-pronged approach is the most effective, evidence-based way to treat panic. It puts you back in the driver's seat. How does this explanation fit with your experience?"
+
+# Behavioural Techniques: Interoceptive Exposure
+
+## Primary Technique and Core Rationale
+
+**Technique:** **Interoceptive Exposure (IE)**
+
+**Core Rationale:** Break the conditioned fear response to internal bodily sensations through **habituation** and **extinction learning**. We directly target the catastrophic misinterpretation of physical symptoms by proving through direct experience that they are harmless.
+
+## Detailed Procedure
+
+### 1. Psychoeducation and Rationale
+Ensure Peter understands the rationale: we are deliberately triggering false alarms to recalibrate them.
+
+### 2. Hierarchy Construction
+Collaboratively build a graduated hierarchy of exercises that elicit his specific feared sensations—palpitations and breathlessness. Order from least to most anxiety-provoking, rated on 0-100 SUDS scale. This empowers him and ensures we start at manageable level (e.g., 40/100 SUDS).
+
+### 3. In-Session Exposure
+Begin with first item in-session, for example, 'marching on the spot for 60 seconds'. Instruct him to focus on sensations without trying to suppress or distract from them.
+
+### 4. Monitoring
+During exercise, monitor his SUDS. Goal is to stay with sensation until anxiety peaks and begins to naturally decrease by about 50%, demonstrating habituation.
+
+### 5. Blocking Safety Behaviours
+Critically, instruct him to drop any safety behaviours such as checking pulse, deep breathing, or telling himself 'it's okay'. These behaviours interfere with extinction learning process.
+
+### 6. Debrief and Reappraisal
+After each exposure, debrief. Ask: "What did you notice? Your heart pounded, but what was the catastrophic outcome? Did you collapse?" This consolidates new, non-catastrophic learning.
+
+## Sample Hierarchy for Peter
+
+@tbl-exposure-hierarchy presents a graduated hierarchy of interoceptive exposure exercises tailored to Peter's specific feared sensations:
+
+| Step | Exercise | Feared Sensation | Predicted SUDS (0-100) |
+|:-----|:---------|:-----------------|:----------------------:|
+| 1 | March on the spot for 1 minute | Palpitations | 40 |
+| 2 | Tense all muscles for 1 minute | Body tension, tingling | 50 |
+| 3 | Run up and down stairs for 1 flight | Breathlessness, palpitations | 60 |
+| 4 | Spin in a chair for 1 minute | Dizziness, unreality | 70 |
+| 5 | Hyperventilate for 60 seconds | Breathlessness, dizziness, tingling | 80 |
+
+: Sample Interoceptive Exposure Hierarchy {#tbl-exposure-hierarchy}
+
+## Critical Considerations
+
+**Medication Considerations:** Address his use of anxiolytic medication. Explain that taking a benzodiazepine before exposure would chemically suppress the anxiety we need to work with, making the exercise ineffective. Agreement needed that he would not use it as safety behaviour before sessions or homework.
+
+# Cognitive Techniques: Socratic Dialogue and Behavioural Experiments
+
+## Primary Technique: Socratic Dialogue
+
+### Target Belief for Intervention
+**Belief:** "When my heart starts pounding, it means I'm having a heart attack and I might die." 
+**Conviction:** 95% during panic
+
+### Step-by-Step Procedure
+
+#### 1. Isolate the Thought and Set the Frame
+> "Peter, let's focus on that specific thought we identified earlier: 'When my heart pounds, I'm having a heart attack.' I'm not here to tell you you're wrong, but I'm curious to explore it with you. Can we put that thought under a microscope for a few minutes?"
+
+#### 2. Gather Evidence For
+> "What's the evidence that supports this thought? What makes it feel so true in the moment?"
+
+*Expected responses: intensity of feelings, "it feels just like what I've read about," "I had to go to the ED"*
+
+#### 3. Gather Evidence Against
+> "That's compelling evidence. Now let's play devil's advocate for a moment. What's the evidence *against* this thought? What did the doctors at the Emergency Department tell you after they ran the tests? How many times have you had this sensation and this thought? And how many times has it actually been a heart attack?"
+
+#### 4. Introduce Alternative Explanations
+> "Okay, so it has happened hundreds of times and has never been a heart attack. Let's think about other, non-dangerous reasons a person's heart might pound?"
+
+*Guide towards: exercise, stress, caffeine, excitement, anxiety itself*
+
+#### 5. Use the Double Standard Technique
+> "This is a really helpful question. You mentioned your wife Uma is a nurse. If she came home from a stressful shift and said 'My heart is racing,' what would be your first thought about what was happening to her? Would you assume it was a heart attack?"
+
+#### 6. Develop a More Balanced Thought
+> "So, given that the medical tests were all clear, that it's happened hundreds of times without being a heart attack, and that there are many non-dangerous explanations for a pounding heart, what could be a more balanced or helpful thought to have in that moment?"
+
+*Guide towards: "My heart is pounding. This is just my body's response to anxiety. It's uncomfortable but not dangerous. It will pass."*
+
+#### 7. Test the New Thought
+> "How does that new thought feel? Let's rate its believability from 0-100%."
+
+## Alternative Cognitive Technique: Behavioural Experiment
+
+### Rationale
+If Socratic dialogue isn't fully effective, a more powerful cognitive technique would be a **Behavioural Experiment**. Its purpose is to experientially test the validity of his prediction in real-world setting, providing 'gut-level' evidence more powerful than verbal discussion alone.
+
+### Procedure
+
+**Target Belief:** "If I go to the gym and do my old workout, I *will* have a full-blown panic attack and have to be taken to hospital." (Conviction: 80%)
+
+**Experiment Design:** 
+- **Task:** Go to gym together
+- **Specific Step:** 10 minutes on treadmill at moderate pace
+- **Operational Definition:** Define what "full-blown panic attack" means for measurement
+
+**Learning Outcome:** Gather data to see if prediction comes true. Review outcome and learning (e.g., "I felt anxious and my heart pounded, but I did not have a full-blown attack or collapse"), then re-rate conviction in original belief.
+
+# Learning Discovery and Homework Assignment
+
+## Homework Tasks
+
+### Behavioural Task: Interoceptive Exposure Practice
+**Assignment:** Practice the first interoceptive exposure exercise completed in session: **marching on the spot for one full minute, three times every day.**
+
+**Monitoring:** Use **Situational Exposure Diary** to track:
+- SUDS before, during, and after
+- Observations and discoveries
+- Creates clear, structured task
+
+### Cognitive Task: Thought Change Record
+**Assignment:** Begin using a **Thought Change Record**. 
+
+**Objective:** Be a detective—whenever noticing anxiety, simply 'catch' the thought that came just before and write it down. 
+
+**Note:** Not challenging thoughts yet, just building awareness.
+
+## Rationale for Homework
+
+### Interoceptive Exposure Rationale
+The repeated **Interoceptive Exposure** practice is like physical therapy for his brain's alarm system. Each repetition without catastrophe weakens the old fear-pathway and strengthens a new safety-pathway. It is the most direct way to achieve habituation and reduce fear of sensations.
+
+### Thought Record Rationale
+The **Thought Record** serves a different purpose. It helps him practice the skill of metacognition—seeing thoughts as mental events rather than objective facts. This is the foundational skill required before we can effectively evaluate and restructure thoughts in later sessions. 
+
+**Ultimate Goal:** The homework empowers him to become his own therapist, as real change happens in the 167 hours between sessions, not just the one hour together.
+
+## Collaborative Problem-Solving
+
+### Anticipating Barriers
+> "Peter, on a scale of 0 to 100, how confident are you that you can complete this homework? What might get in the way?"
+
+### Plan B Development
+If low confidence expressed, create **Plan B**:
+> "If marching for a full minute feels like too much, what's a step back that still feels like a step forward? Perhaps 30 seconds?"
+
+**Key Principle:** "There is no such thing as unsuccessful homework, because we learn something every time." This encourages effort over perfect performance and builds self-efficacy.
+
+# Conclusion
+
+This comprehensive framework demonstrates the systematic application of CBT principles to panic disorder treatment. The integration of functional analysis, psychoeducation, behavioural interventions, cognitive techniques, and structured homework provides a evidence-based approach to breaking the vicious cycle of panic. The collaborative nature of all interventions ensures client engagement while building skills for long-term recovery and relapse prevention.
+
+The case exemplifies how understanding the maintenance mechanisms of panic disorder enables targeted interventions that address both the cognitive and behavioural components of the disorder, ultimately empowering clients to become their own therapists.

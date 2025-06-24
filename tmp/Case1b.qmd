@@ -1,0 +1,165 @@
+
+---
+### **Exam Binder: Case 1b - Pipipa (Panic Disorder & Agoraphobia)**
+
+---
+
+### **Page 1 of 5: CB Assessment (Roleplay Component)**
+*(Essential Competency 1: Coverage of relevant issues & Assessment skills)*
+
+**Objective:** To conduct a collaborative functional analysis of Pipipa's panic and agoraphobia. The goal is to build a shared formulation that explains not just the panic attacks, but also how the *fear of panic* leads to situational avoidance and dependence on safety signals, trapping her at home.
+
+**Theoretical Model: Barlow's Model of Panic and Agoraphobia**
+
+```mermaid
+graph TD
+    subgraph Panic Cycle
+        direction LR
+        A[Trigger <br> e.g., Breathlessness, Dizziness] --> B(Catastrophic Misinterpretation <br> "I'm losing my mind," "I can't cope");
+        B --> C{Anxiety / Fear <br> SUDS 90/100};
+        C --> A;
+    end
+
+    subgraph Agoraphobia Cycle
+        direction TB
+        C --> D(Anticipatory Anxiety <br> "What if I panic at the shops?");
+        D --> E{Avoidance of Situations <br> e.g., No public transport, No shopping};
+        D --> F{Use of Safety Signals <br> e.g., Must have Tevita/Mother present};
+        E --> G((Short-Term Relief));
+        F --> G;
+        G -.-> H((Long-Term: World Shrinks <br> Fear & Dependence Increase));
+    end
+
+    style H fill:#ff9999,stroke:#333,stroke-width:2px
+```
+*Note: This model shows two interconnected cycles. The core Panic Cycle is driven by the misinterpretation of bodily sensations. This then fuels the Agoraphobia Cycle, where the *fear* of a future panic attack leads to widespread avoidance and reliance on safety signals, which ultimately maintains the entire disorder.*
+
+---
+**Step-by-Step Roleplay Procedure (integrating the 5-Stage Model):**
+
+**Stage 1: Identify the Problem Behaviours & Context (~2 mins)**
+*   **Action:** Define the full scope of the problem: both the panic and the avoidance.
+*   **Script:** *"Pipipa, thank you for sharing your story. It sounds incredibly challenging, especially with a new baby. Let's map this out. I'm hearing two main problems: first, the panic attacks themselves—the intense breathlessness, dizziness, and fear. Second, and perhaps the bigger problem right now, is that you're now mostly **housebound**, **avoiding public transport and shopping**, and you feel you can only leave the house if **Tevita or your mother is with you**. Is that a fair summary?"*
+
+**Stage 2: Clarify Antecedents (Triggers for Panic & Avoidance) (~3 mins)**
+*   **Action:** Differentiate between triggers for panic (internal) and triggers for avoidance (external).
+*   **Script (Probing Panic):** *"When you do have a panic attack, what's the first physical sensation you notice? Is it the breathlessness? The dizziness?"*
+*   **Script (Probing Agoraphobia):** *"Now let's talk about the avoidance. What is it about *shopping alone* or *taking the bus* that feels so frightening? What do you fear might happen in those specific situations?"*
+*   **Probing Cultural Context:** *"You mentioned your Aunt's experience. Can you tell me more about that? How does her story influence your fears of 'losing your mind'?"* (This validates her fear's origin).
+
+**Stage 3: Clarify Consequences (The Maintenance Cycle) (~3 mins)**
+*   **Action:** Uncover the cognitions that drive the fear and the reinforcing consequences of avoidance.
+*   **Script (Eliciting the Hot Thought):** *"Imagine you had to go shopping alone with Jeda right now. What is the most terrifying thought that comes to mind? What is the absolute worst-case scenario you're picturing?"* (Guiding for: "I'll have a panic attack, I'll lose control, and I won't be able to look after Jeda," "People will see me losing my mind like my Aunt").
+*   **Script (Consequences of Avoidance):** *"By staying home, what happens to that fear in the short-term? ... It goes away, which is a relief. But in the long-term, what does staying home do to your confidence in your ability to cope on your own? Does it make it stronger or weaker?"*
+*   **Script (Consequences of Safety Signals):** *"When Tevita is with you, your anxiety is lower. What message does this send to your brain about your own ability to handle things alone?"* (This highlights how safety signals prevent self-efficacy).
+
+**Stage 4: Identify Strengths & Positive Modifiers (~1 min)**
+*   **Action:** Actively look for strengths, especially those rooted in her culture and past.
+*   **Script:** *"Pipipa, despite all this, you are so clearly a devoted mother to Jeda. I'm also hearing about the incredible strength you draw from your family and community. You've beaten this once before as a teenager with their support. That tells me you are resilient and that connection is a huge resource for you. That is our foundation for recovery."*
+
+**Stage 5: Integrate into a Preliminary Formulation (Collaborative Summary) (~1 min)**
+*   **Action:** Verbally summarise the dual-cycle model, validating her experience.
+*   **Script:** *"So, it seems we have a 'trap within a trap'. There's the 'panic trap' where sensations lead to scary thoughts. But that has created a bigger 'agoraphobia trap' where the fear of panic makes you avoid more and more of your life, shrinking your world and making you dependent on others. This is an exhausting but very common pattern, especially for new mothers. The good news is, we can work on both traps, step-by-step, to get you back to being the mother, wife, and woman you want to be. Does this model make sense to you?"*
+
+---
+### **Page 2 of 5: Psychoeducation (Viva-Voce Component)**
+
+**Objective:** To explain the interconnected models of panic and agoraphobia and the rationale for treatment, using an analogy that captures the "shrinking world."
+
+**Key Principles (from W4 lecture notes):** Proceed from known to unknown; use powerful analogies; link directly to treatment.
+
+**Step-by-Step Viva-Voce Script:**
+
+**Step 1: Explain the Core Panic Cycle**
+*   *"Pipipa, as we discussed, the root of this is the 'faulty smoke alarm' of panic. A normal sensation, like breathlessness from carrying Jeda, is misinterpreted by your brain as a sign of extreme danger, like 'losing your mind'. This triggers the adrenaline and the intense fear of a panic attack."*
+
+**Step 2: Explain the Agoraphobia Trap with an Analogy**
+*   *"Because that alarm is so terrifying, you've started doing what any sensible person would do: you've started avoiding any place where you think the alarm might go off. It's like your world was once a big, open field, but now you've built a small fence around yourself where you feel safe. Every time you avoid going to the shops, that fence gets a little smaller, and the world outside the fence seems a little scarier. Tevita and your mother have become like security guards who can walk with you outside the fence, but this just reinforces the idea that you can't manage out there on your own. Your world has become a shrinking cage, maintained by avoidance and safety behaviours."*
+
+**Step 3: Link Directly to the Treatment Plan**
+*   **Rationale for In-Vivo Exposure:** *"So, the main part of our work will be to slowly and safely start pushing that fence back out. We'll do this together, step-by-step, by gradually re-entering the situations you've been avoiding, *without* your safety signals. This is called **in-vivo exposure**, and it's the most effective way to teach your brain that these places are safe and that *you* are capable of coping."*
+*   **Rationale for Interoceptive Exposure:** *"At the same time, we can do exercises here in the office to help you get more comfortable with the physical feelings of panic themselves. This will make the 'smoke alarm' less scary, so you'll have more confidence when you go out into the real world."*
+
+**Step 4: Address Cultural Context and Instill Hope**
+*   *"We know from your past that your family and community are a source of immense strength. We will find ways to involve them as your 'cheerleading squad', encouraging you as you take these brave steps, rather than as 'security guards' that accidentally keep the fear going. You've done this before, and you absolutely can do it again. How does this plan sound?"*
+
+---
+### **Page 3 of 5: Behavioural Techniques (Viva-Voce Component)**
+
+**Objective:** To name and provide a detailed rationale and procedural overview for the primary behavioural technique for Agoraphobia, Graded In-Vivo Exposure, while also acknowledging the role of IE.
+
+**Primary Behavioural Technique:** **Graded In-Vivo Exposure**
+
+**Step-by-Step Viva-Voce Script:**
+
+**Step 1: Name the Technique and Core Rationale**
+*   *"The primary and most essential behavioural technique for Pipipa's agoraphobia is **Graded In-Vivo Exposure**. The rationale is to reverse the cycle of avoidance that maintains her fear. By systematically re-entering feared situations, she gathers direct, corrective evidence that disconfirms her catastrophic predictions (e.g., that she will lose her mind or be unable to cope). This process builds self-efficacy and reduces both anticipatory anxiety and the need for safety signals."*
+
+**Step 2: Explain the Detailed Procedure**
+*   **1. Hierarchy Construction:** *"First, we would collaboratively create a graduated fear hierarchy of avoided situations. Items would be specific, measurable, and ordered by her SUDS rating. For Pipipa, this would include variables like location (shops, public transport), duration, and presence of others (alone vs. with Jeda vs. with Tevita)."*
+*   **2. In-Session Preparation & Roleplay:** *"Before the first real-world exposure, we might role-play it in the session to troubleshoot potential problems and build her confidence."*
+*   **3. In-Vivo Exposure:** *"She would then begin the first step of the hierarchy as homework. The instruction is to remain in the situation until her anxiety, which will initially spike, naturally reduces by about 50%. This is the process of habituation."*
+*   **4. **CRITICAL: Eliminating Safety Signals:** *"A non-negotiable component is the systematic removal of safety signals. We would plan for her to do these exposures *alone*. We would frame Tevita's and her mother's new role as supporting her independence, not enabling her avoidance."*
+*   **5. Debrief and Consolidation:** *"In the next session, we would review her exposure diary, focusing on what she learned versus what she predicted. This consolidates the cognitive shift."*
+
+**Step 3: Provide a Sample Hierarchy for Pipipa**
+
+| Step | Exercise | Predicted SUDS (0-100) |
+| :--- | :--- | :--- |
+| 1 | Walk to her letterbox and back, alone. | 30 |
+| 2 | Walk around the block for 10 minutes, alone. | 45 |
+| 3 | Go to the local corner store with Jeda, with Tevita waiting in the car. | 60 |
+| 4 | Go to the local corner store with Jeda, alone. | 70 |
+| 5 | Take a 10-minute bus ride during a quiet time of day, alone. | 80 |
+| 6 | Go to the large supermarket for 15 minutes during a quiet time, alone with Jeda. | 90 |
+
+**Step 4: Mention Complementary Technique**
+*   *"In parallel, we could use **Interoceptive Exposure** (e.g., hyperventilating, spinning in a chair) in-session. This would serve to desensitize her to the raw physical sensations of panic, thereby increasing her confidence to engage in the more challenging in-vivo exposure tasks."*
+
+---
+### **Page 4 of 5: Cognitive Techniques (Roleplay & Viva-Voce Component)**
+*(Essential Competency 4: Cognitive techniques)*
+
+**Objective:** To demonstrate Socratic Dialogue in a roleplay to guide Pipipa in evaluating a core agoraphobic belief. To be prepared to name and describe an alternative cognitive technique.
+
+**Primary Technique (Roleplay): Socratic Dialogue**
+
+**Target Belief for Roleplay:** "If I have a panic attack while I'm out shopping alone with Jeda, I will lose my mind and won't be able to care for her." (Conviction: 95%).
+
+**Step-by-Step Roleplay Procedure:**
+
+1.  **Isolate the Thought & Validate:** *"Pipipa, that's a very powerful and understandable fear, especially as a new mum. Let's put that thought on the table: 'If I panic alone with Jeda, I'll lose my mind and can't care for her.' Would it be okay to explore that together?"*
+2.  **Examine the Meaning:** *"When you say 'lose my mind,' what does that look like? What's the image you have? Is it connected to what you fear happened to your Aunt?"*
+3.  **Gather Evidence Against:** *"You've had panic attacks before. Has there ever been a time when you completely lost touch with reality or were unable to function? What have you done in the past, even when feeling terrified?"* (She will likely describe escaping, but she still *functioned* enough to do so).
+4.  **Introduce Alternative Explanations:** *"Is it possible that having a panic attack feels like you're losing your mind, but that it's actually just an extreme fear reaction? Could the feeling and the reality be two different things?"*
+5.  **Use the Double Standard Technique (Culturally Adapted):** *"If another young mother from your community came to you and shared this exact same fear, what would you tell her? Would you think she was 'going crazy,' or would you see her as a new mum under immense stress who needs support?"*
+6.  **Develop a More Balanced Thought:** *"Given that you've never actually lost control before, and that you would have compassion for another mother in your shoes, what's a more realistic or compassionate way to think about this?"* (Guide towards: "Even if I feel panic, it's just a feeling. It doesn't mean I'm losing my mind. I can still focus on keeping Jeda safe until the feeling passes.").
+7.  **Re-rate Conviction:** *"How much do you believe that new thought, 0-100%?"*
+
+**Alternative Cognitive Technique (for Viva-Voce): Behavioural Experiment**
+
+*   **Rationale:** *"To provide even more powerful, experiential evidence against her catastrophic beliefs, a **Behavioural Experiment** would be the ideal next step. It directly tests her predictions in a controlled way."*
+*   **Procedure:**
+    *   **Belief:** "If I walk to the corner store alone with Jeda, I will become so overwhelmed with panic that I won't be able to walk home." (Conviction: 80%).
+    *   **Experiment:** *"The experiment would be to walk to the corner store and back. We would define 'overwhelmed' beforehand (e.g., "I will have to call Tevita to come and get me"). Her task is to go, and to not call Tevita unless that specific outcome happens."*
+    *   **Learning:** *"The purpose is to collect real-world data. We would then review the outcome: 'Did you get so overwhelmed you couldn't walk home? What did you actually do to get through it? What does this tell you about your ability to cope?'"*
+
+---
+### **Page 5 of 5: Learning Discovery / Homework (Viva-Voce Component)**
+*(Essential Competency 5: Choice and explanation of homework task)*
+
+**Objective:** To prescribe a clear, collaborative, and relevant homework task based on the first step of the Graded Exposure hierarchy and explain its rationale.
+
+**Step-by-Step Viva-Voce Script:**
+
+**Step 1: State the Homework Task Clearly**
+*   **Behavioural Task:** *"Pipipa, your main task for this week is to begin pushing that fence back. Based on the hierarchy we built, your homework will be to **walk to your letterbox and back, completely on your own, once every day.** You will use the **Situational Exposure Diary** to track your anxiety (SUDS) before, during, and after, and most importantly, what you discovered."*
+*   **Cognitive Task:** *"While you are doing the walk, I want you to act like a scientist and just notice any scary thoughts that pop up. Just notice them, without fighting them, and we can discuss them next week."*
+
+**Step 2: Provide a Clear, Compelling Rationale**
+*   *"The rationale for this homework is to begin the process of **reclaiming your world**. Each time you complete this walk alone, you are sending a powerful message to your brain that disconfirms its fearful predictions. You are proving that you are safe, that you can cope with the anxiety, and that you do not need a 'safety signal' to manage. This small, repeated step is the foundation for building the confidence you need to tackle the bigger goals, like going shopping or returning to work."*
+
+**Step 3: Anticipate Barriers and Collaborate on a Plan B**
+*   **Collaborative Problem-Solving:** *"What might get in the way of you doing this walk alone every day? What's the biggest barrier?"*
+*   **Plan B:** *"If walking all the way to the letterbox feels like a 10/10 challenge, what would a 7/10 challenge be? ... Okay, so Plan B is to walk to the edge of your property and back. The goal is the attempt and the new learning, not perfect performance."*
+*   **Incorporating Cultural Strengths:** *"How can we involve Tevita and your mother as your support crew? Perhaps after you complete the walk, you can call them to celebrate the victory. Their role is to be your cheerleaders for these brave steps, which is a wonderful way to use the strength of your family to help you get better."*
