@@ -1,0 +1,783 @@
+% Options for packages loaded elsewhere
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+%
+\documentclass[
+  american,
+  letterpaper,
+  DIV=11,
+  numbers=noendperiod]{scrartcl}
+\usepackage{xcolor}
+\usepackage{amsmath,amssymb}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+% Make \paragraph and \subparagraph free-standing
+\makeatletter
+\ifx\paragraph\undefined\else
+  \let\oldparagraph\paragraph
+  \renewcommand{\paragraph}{
+    \@ifstar
+      \xxxParagraphStar
+      \xxxParagraphNoStar
+  }
+  \newcommand{\xxxParagraphStar}[1]{\oldparagraph*{#1}\mbox{}}
+  \newcommand{\xxxParagraphNoStar}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+  \let\oldsubparagraph\subparagraph
+  \renewcommand{\subparagraph}{
+    \@ifstar
+      \xxxSubParagraphStar
+      \xxxSubParagraphNoStar
+  }
+  \newcommand{\xxxSubParagraphStar}[1]{\oldsubparagraph*{#1}\mbox{}}
+  \newcommand{\xxxSubParagraphNoStar}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+\makeatother
+
+
+\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\newsavebox\pandoc@box
+\newcommand*\pandocbounded[1]{% scales image to fit in text height/width
+  \sbox\pandoc@box{#1}%
+  \Gscale@div\@tempa{\textheight}{\dimexpr\ht\pandoc@box+\dp\pandoc@box\relax}%
+  \Gscale@div\@tempb{\linewidth}{\wd\pandoc@box}%
+  \ifdim\@tempb\p@<\@tempa\p@\let\@tempa\@tempb\fi% select the smaller of both
+  \ifdim\@tempa\p@<\p@\scalebox{\@tempa}{\usebox\pandoc@box}%
+  \else\usebox{\pandoc@box}%
+  \fi%
+}
+% Set default figure placement to htbp
+\def\fps@figure{htbp}
+\makeatother
+
+
+
+\ifLuaTeX
+\usepackage[bidi=basic]{babel}
+\else
+\usepackage[bidi=default]{babel}
+\fi
+% get rid of language-specific shorthands (see #6817):
+\let\LanguageShortHands\languageshorthands
+\def\languageshorthands#1{}
+\ifLuaTeX
+  \usepackage[english]{selnolig} % disable illegal ligatures
+\fi
+
+
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+
+
+ 
+
+
+\usepackage{microtype}
+\usepackage{booktabs}
+\usepackage{amsmath}
+\usepackage{mathtools}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{float}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{bm}
+\usepackage{setspace}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{caption}
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric,arrows,positioning,decorations.pathreplacing,shapes}
+% Custom colors
+\definecolor{sunnyyellow}{RGB}{255, 223, 0}
+\definecolor{sunnyblue}{RGB}{30, 144, 255}
+\definecolor{sunnygray}{RGB}{248, 249, 250}
+\definecolor{clinicalred}{RGB}{220, 53, 69}
+\definecolor{clinicalgreen}{RGB}{40, 167, 69}
+% Professional section formatting
+\titleformat{\section}{\large\bfseries\sffamily\color{NavyBlue}}{\thesection}{1em}{}
+\titlespacing*{\section}{0pt}{24pt}{12pt}
+\titleformat{\subsection}{\normalsize\bfseries\sffamily\color{NavyBlue}}{\thesubsection}{1em}{}
+\titlespacing*{\subsection}{0pt}{18pt}{9pt}
+\titleformat{\subsubsection}{\normalsize\bfseries\sffamily\color{NavyBlue}}{\thesubsubsection}{1em}{}
+\titlespacing*{\subsubsection}{0pt}{12pt}{6pt}
+% Add formatting for paragraph and subparagraph to avoid titlesec errors
+\titleformat{\paragraph}[runin]{\normalfont\normalsize\bfseries\sffamily\color{NavyBlue}}{\theparagraph}{1em}{}[.]
+\titlespacing*{\paragraph}{0pt}{12pt}{1em}
+\titleformat{\subparagraph}[runin]{\normalfont\normalsize\bfseries\sffamily\color{NavyBlue}}{\thesubparagraph}{1em}{}[.]
+\titlespacing*{\subparagraph}{0pt}{12pt}{1em}
+\KOMAoption{captions}{tableheading}
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\AtBeginDocument{%
+\ifdefined\contentsname
+  \renewcommand*\contentsname{Table of contents}
+\else
+  \newcommand\contentsname{Table of contents}
+\fi
+\ifdefined\listfigurename
+  \renewcommand*\listfigurename{List of Figures}
+\else
+  \newcommand\listfigurename{List of Figures}
+\fi
+\ifdefined\listtablename
+  \renewcommand*\listtablename{List of Tables}
+\else
+  \newcommand\listtablename{List of Tables}
+\fi
+\ifdefined\figurename
+  \renewcommand*\figurename{Figure}
+\else
+  \newcommand\figurename{Figure}
+\fi
+\ifdefined\tablename
+  \renewcommand*\tablename{Table}
+\else
+  \newcommand\tablename{Table}
+\fi
+}
+\@ifpackageloaded{float}{}{\usepackage{float}}
+\floatstyle{ruled}
+\@ifundefined{c@chapter}{\newfloat{codelisting}{h}{lop}}{\newfloat{codelisting}{h}{lop}[chapter]}
+\floatname{codelisting}{Listing}
+\newcommand*\listoflistings{\listof{codelisting}{List of Listings}}
+\makeatother
+\makeatletter
+\makeatother
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\@ifpackageloaded{subcaption}{}{\usepackage{subcaption}}
+\makeatother
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={Exam Binder: Case 1a - Peter (Panic Disorder)},
+  pdfauthor={Clinical Psychology Student},
+  pdflang={en-US},
+  colorlinks=true,
+  linkcolor={blue},
+  filecolor={Maroon},
+  citecolor={Blue},
+  urlcolor={Blue},
+  pdfcreator={LaTeX via pandoc}}
+
+
+\title{Exam Binder: Case 1a - Peter (Panic Disorder)}
+\author{Clinical Psychology Student}
+\date{2025-06-24}
+\begin{document}
+\maketitle
+
+
+\newpage
+
+\section{CB Assessment: Functional Analysis Using the 5-Stage
+Model}\label{cb-assessment-functional-analysis-using-the-5-stage-model}
+
+\subsection{Objective and Theoretical
+Framework}\label{objective-and-theoretical-framework}
+
+The primary objective is to conduct a collaborative functional analysis
+of Peter's panic using the 5-Stage Model, moving from general
+description to specific, shared understanding of the \textbf{Vicious
+Cycle of Panic} as it applies to his supermarket incident.
+
+\subsubsection{Barlow's Vicious Cycle of Panic
+Model}\label{barlows-vicious-cycle-of-panic-model}
+
+The theoretical foundation rests on Barlow's conceptualization of panic
+as a vicious cycle involving catastrophic misinterpretation of bodily
+sensations. Figure 1 illustrates this model:
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[
+  node distance=1.8cm and 2.5cm,
+  every node/.style={align=center},
+  box/.style={rectangle, draw, thick, fill=blue!10, minimum height=1.2cm, text width=2.2cm},
+  cycle/.style={rectangle, draw, thick, fill=red!20, minimum height=1.2cm, text width=2.2cm},
+  sensation/.style={ellipse, draw, thick, fill=orange!20, minimum height=1.2cm, text width=2.2cm},
+  relief/.style={ellipse, draw, thick, fill=green!10, minimum height=1cm, text width=1.8cm},
+  maintain/.style={ellipse, draw, thick, fill=red!40, minimum height=1cm, text width=1.8cm},
+  arrow/.style={->, thick, >=stealth},
+  dashed_arrow/.style={->, thick, >=stealth, dashed}
+]
+
+% Main sequence
+\node[box] (trigger) {Trigger\\e.g., Stress, Exercise, Caffeine};
+\node[cycle, right=of trigger] (threat) {Perceived Threat\\``Oh no, what's this feeling?''};
+\node[sensation, below=of threat] (sensations) {Bodily Sensations\\Palpitations, Dizziness};
+\node[cycle, left=of sensations] (catastrophic) {Catastrophic Misinterpretation\\``I'm having a heart attack!''};
+\node[cycle, above=of catastrophic] (anxiety) {Anxiety/Fear\\SUDS 90/100};
+
+% Safety behaviours and outcomes
+\node[box, right=2.5cm of sensations] (safety) {Safety Behaviours\\& Avoidance\\e.g., Fleeing store,\\Avoiding gym};
+\node[relief, below=1.2cm of safety] (shortterm) {Short-Term\\Relief};
+\node[maintain, above=1.2cm of safety] (longterm) {Long-Term:\\Fear Increases};
+
+% Main sequence arrows
+\draw[arrow] (trigger) -- (threat);
+\draw[arrow] (threat) -- (sensations);
+\draw[arrow] (sensations) -- (catastrophic);
+\draw[arrow] (catastrophic) -- (anxiety);
+
+% Vicious cycle feedback loops
+\draw[arrow, bend left=30] (anxiety) to (sensations);
+\draw[arrow, bend left=40] (anxiety) to (threat);
+
+% Safety behaviour arrows
+\draw[arrow] (anxiety) -- (safety);
+\draw[dashed_arrow] (safety) -- (shortterm);
+\draw[arrow] (safety) -- (longterm);
+
+% Vicious cycle highlight box
+\draw[thick, red, dashed, rounded corners] 
+  ([xshift=-0.4cm,yshift=0.4cm]threat.north west) rectangle 
+  ([xshift=0.4cm,yshift=-0.4cm]catastrophic.south east);
+
+\node[above=0.3cm of threat, text=red, font=\textbf\large] {Vicious Cycle};
+
+\end{tikzpicture}
+\caption{Barlow's Vicious Cycle of Panic: Theoretical Model}
+\end{figure}
+
+This diagram demonstrates how an initial trigger leads to bodily
+sensations, which are catastrophically misinterpreted. This
+misinterpretation spikes fear, amplifying bodily sensations and creating
+a vicious feedback loop. Safety behaviours provide short-term relief but
+prevent new learning and maintain the cycle long-term.
+
+\subsection{Stage-by-Stage Assessment
+Procedure}\label{stage-by-stage-assessment-procedure}
+
+\subsubsection{Stage 1: Identify Problem Behaviours and Context
+(\textasciitilde2
+minutes)}\label{stage-1-identify-problem-behaviours-and-context-2-minutes}
+
+\textbf{Action:} Define the problem in concrete, behavioural terms. What
+does the client do/not do? What are the specific physiological symptoms?
+
+\textbf{Assessment Script:} \textgreater{} ``Peter, thank you for coming
+in. My goal today is to build a really clear picture of these panic
+attacks with you. You've mentioned a few key things that are happening:
+you're experiencing intense physical feelings like a \textbf{pounding
+heart, dizziness, and tremors}. And in terms of what you do, it sounds
+like you've started \textbf{avoiding the gym}, and you mentioned you
+\textbf{left your trolley and fled the supermarket}. Have I got that
+right? Are there any other key behaviours we should put on our map?''
+
+\subsubsection{Stage 2: Clarify Antecedents (Triggers and Modifiers)
+(\textasciitilde3
+minutes)}\label{stage-2-clarify-antecedents-triggers-and-modifiers-3-minutes}
+
+\textbf{Action:} Investigate specific internal and external events
+preceding the problem, using the supermarket incident as anchor point.
+
+\textbf{Assessment Script:} \textgreater{} ``Okay, let's go back to the
+supermarket. Can you walk me through the moments \emph{just before} your
+heart started pounding? We call these `triggers.' Were you feeling
+rushed? Stressed? What was the first sign that things were about to
+shift?''
+
+\textbf{Probing for Modifiers using BASIC-P framework:}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Affect:} ``You mentioned work has been very stressful with the
+  new boss. How does your general stress level on a given day seem to
+  affect the likelihood of an attack?''
+\item
+  \textbf{Physiological:} ``It seems like any activity that increases
+  your heart rate, even normal exercise, can act as a trigger now. Is
+  that right?''
+\end{itemize}
+
+\subsubsection{Stage 3: Clarify Consequences (The Maintenance Cycle)
+(\textasciitilde3
+minutes)}\label{stage-3-clarify-consequences-the-maintenance-cycle-3-minutes}
+
+\textbf{Action:} Uncover the Vicious Cycle by linking trigger to
+thought, emotion, and subsequent behaviours that maintain the problem.
+
+\textbf{Eliciting the Hot Thought:} \textgreater{} ``Okay, so your heart
+starts to pound. In that exact instant, what is the \emph{meaning} you
+give to that sensation? What's the most frightening thought that goes
+through your mind?''
+
+\emph{Target: Catastrophic Misinterpretation (e.g., ``I'm going to
+collapse,'' ``I'm having a heart attack'')}
+
+\textbf{Linking Thought to Emotion/Physiology:} \textgreater{} ``And
+when that thought `I'm having a heart attack' hits, what happens to your
+fear on that 0-100 scale? \ldots{} And what about the pounding in your
+chest? Does it get worse, stay the same, or get better after that
+thought?''
+
+\textbf{Behavioural Consequence and Negative Reinforcement:}
+\textgreater{} ``So in response to all that, you left the store. Tell
+me, what happened to your anxiety level once you were outside? \ldots{}
+It probably went down, which is a huge relief. Here's the tricky part of
+panic: because leaving made you feel better, what did that teach your
+brain about the supermarket? Did it teach it that the supermarket is a
+safe place, or a dangerous place you were right to escape from?''
+
+\subsubsection{Stage 4: Identify Strengths, Resources and Coping
+(\textasciitilde1
+minute)}\label{stage-4-identify-strengths-resources-and-coping-1-minute}
+
+\textbf{Action:} Actively search for positive factors to create balanced
+view and instill hope.
+
+\textbf{Assessment Script:} \textgreater{} ``Peter, while this cycle
+sounds exhausting, I also want to acknowledge what's working \emph{for}
+you. You have a very supportive wife who is a nurse. You've successfully
+been through CBT for this before, which is a huge strength---it means
+you are capable of getting better. And despite all this, you're still
+going to work and you came here today to get help. That shows real
+determination.''
+
+\subsubsection{Stage 5: Integrate into Preliminary Formulation
+(\textasciitilde1
+minute)}\label{stage-5-integrate-into-preliminary-formulation-1-minute}
+
+\textbf{Action:} Verbally summarise the Vicious Cycle model using
+gathered information to make it specific to Peter.
+
+\textbf{Collaborative Summary:} \textgreater{} ``So, if we put all the
+pieces together, we get a clear map. It seems a \textbf{Trigger}, like
+background stress, leads to a normal \textbf{Bodily Sensation}. Your
+brain then has a \textbf{Catastrophic Thought}, `I'm having a heart
+attack.' This thought understandably creates intense \textbf{Fear},
+which floods your body with adrenaline and makes the sensations even
+worse. To save yourself, you engage in a \textbf{Safety Behaviour} like
+fleeing the store. This gives you immediate relief, but accidentally
+reinforces the initial belief that the situation was truly dangerous,
+making the whole cycle more likely to happen again. This is a classic,
+well-understood pattern, and the most important thing to know is that we
+have very effective, evidence-based tools to break you out of this trap.
+Does this picture feel right to you?''
+
+\section{Psychoeducation: The Vicious Cycle
+Model}\label{psychoeducation-the-vicious-cycle-model}
+
+\subsection{Objective and Key
+Principles}\label{objective-and-key-principles}
+
+\textbf{Objective:} Explain the `Vicious Cycle of Panic' model and
+treatment rationale in a clear, collaborative, and non-pathologizing
+manner using analogy and visual aids.
+
+\textbf{Key Principles:} Proceed from known to unknown; use analogies;
+link to treatment rationale.
+
+\subsection{Psychoeducation Procedure}\label{psychoeducation-procedure}
+
+\subsubsection{Step 1: Introduce the Model and
+Analogy}\label{step-1-introduce-the-model-and-analogy}
+
+\begin{quote}
+``Peter, based on the map we just built, I'd like to share a model that
+explains this panic trap. Think of your body's anxiety system like a
+highly sensitive smoke alarm. A good smoke alarm is meant to go off when
+there's a real fire. But sometimes, an alarm can become faulty and go
+off just from a bit of steam from the shower. It's giving a real alarm,
+but to a false danger. That's exactly what's happening with panic.''
+\end{quote}
+
+\subsubsection{Step 2: Draw and Explain the
+Cycle}\label{step-2-draw-and-explain-the-cycle}
+
+\textbf{The Trigger (The `Steam'):} \textgreater{} ``It starts with what
+we call a trigger - a normal bodily sensation like a fast heartbeat from
+climbing stairs or feeling stressed.''
+
+\textbf{The Misinterpretation (The `Faulty Sensor'):} \textgreater{}
+``But your `alarm system', because of that scary first attack, now
+misinterprets that `steam' as a `fire'. It tells you, `This is
+dangerous, it's a heart attack'.''
+
+\textbf{The Adrenaline Rush (The `Loud Alarm'):} \textgreater{} ``When
+your brain thinks there's a fire, it floods your body with adrenaline to
+prepare you to fight or flee. This is why your heart pounds even harder,
+you feel dizzy, and you feel that overwhelming urge to escape. It's a
+real physical response, but to a false alarm.''
+
+\textbf{The Reinforcement (Confirming the Faulty Belief):}
+\textgreater{} ``And here's the trap. Because you escape the situation
+(like leaving the gym), your anxiety goes down. Your brain then thinks,
+`Whew, I got out just in time. Escaping is what saved me.' So it
+reinforces the belief that the situation was truly dangerous, making the
+alarm even more sensitive for next time.''
+
+\subsubsection{Step 3: Link Directly to Treatment
+Plan}\label{step-3-link-directly-to-treatment-plan}
+
+\textbf{Rationale for Interoceptive Exposure (IE):} \textgreater{} ``So,
+to fix this, we need to recalibrate your alarm system. We're going to do
+exercises that deliberately create the `steam'---the physical
+sensations---right here in this safe room. This will allow your brain to
+experience the sensations over and over without any `fire' happening,
+until it learns they are not dangerous.''
+
+\textbf{Rationale for Cognitive Restructuring (CR):} \textgreater{} ``At
+the same time, we're going to work on the `faulty sensor' itself. We
+will examine those scary thoughts, look at the actual evidence for and
+against them, and develop more realistic ways of thinking about the
+sensations.''
+
+\subsubsection{Step 4: Check Understanding and Instill
+Hope}\label{step-4-check-understanding-and-instill-hope}
+
+\begin{quote}
+``This two-pronged approach is the most effective, evidence-based way to
+treat panic. It puts you back in the driver's seat. How does this
+explanation fit with your experience?''
+\end{quote}
+
+\section{Behavioural Techniques: Interoceptive
+Exposure}\label{behavioural-techniques-interoceptive-exposure}
+
+\subsection{Primary Technique and Core
+Rationale}\label{primary-technique-and-core-rationale}
+
+\textbf{Technique:} \textbf{Interoceptive Exposure (IE)}
+
+\textbf{Core Rationale:} Break the conditioned fear response to internal
+bodily sensations through \textbf{habituation} and \textbf{extinction
+learning}. We directly target the catastrophic misinterpretation of
+physical symptoms by proving through direct experience that they are
+harmless.
+
+\subsection{Detailed Procedure}\label{detailed-procedure}
+
+\subsubsection{1. Psychoeducation and
+Rationale}\label{psychoeducation-and-rationale}
+
+Ensure Peter understands the rationale: we are deliberately triggering
+false alarms to recalibrate them.
+
+\subsubsection{2. Hierarchy Construction}\label{hierarchy-construction}
+
+Collaboratively build a graduated hierarchy of exercises that elicit his
+specific feared sensations---palpitations and breathlessness. Order from
+least to most anxiety-provoking, rated on 0-100 SUDS scale. This
+empowers him and ensures we start at manageable level (e.g., 40/100
+SUDS).
+
+\subsubsection{3. In-Session Exposure}\label{in-session-exposure}
+
+Begin with first item in-session, for example, `marching on the spot for
+60 seconds'. Instruct him to focus on sensations without trying to
+suppress or distract from them.
+
+\subsubsection{4. Monitoring}\label{monitoring}
+
+During exercise, monitor his SUDS. Goal is to stay with sensation until
+anxiety peaks and begins to naturally decrease by about 50\%,
+demonstrating habituation.
+
+\subsubsection{5. Blocking Safety
+Behaviours}\label{blocking-safety-behaviours}
+
+Critically, instruct him to drop any safety behaviours such as checking
+pulse, deep breathing, or telling himself `it's okay'. These behaviours
+interfere with extinction learning process.
+
+\subsubsection{6. Debrief and
+Reappraisal}\label{debrief-and-reappraisal}
+
+After each exposure, debrief. Ask: ``What did you notice? Your heart
+pounded, but what was the catastrophic outcome? Did you collapse?'' This
+consolidates new, non-catastrophic learning.
+
+\subsection{Sample Hierarchy for
+Peter}\label{sample-hierarchy-for-peter}
+
+Table 1 presents a graduated hierarchy of interoceptive exposure
+exercises tailored to Peter's specific feared sensations:
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.1034}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.1724}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.3103}}
+  >{\centering\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.4138}}@{}}
+\caption{Sample Interoceptive Exposure Hierarchy}\tabularnewline
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Step
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Exercise
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Feared Sensation
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Predicted SUDS (0-100)
+\end{minipage} \\
+\midrule\noalign{}
+\endfirsthead
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Step
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Exercise
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Feared Sensation
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Predicted SUDS (0-100)
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+1 & March on the spot for 1 minute & Palpitations & 40 \\
+2 & Tense all muscles for 1 minute & Body tension, tingling & 50 \\
+3 & Run up and down stairs for 1 flight & Breathlessness, palpitations &
+60 \\
+4 & Spin in a chair for 1 minute & Dizziness, unreality & 70 \\
+5 & Hyperventilate for 60 seconds & Breathlessness, dizziness, tingling
+& 80 \\
+\end{longtable}
+
+\subsection{Critical Considerations}\label{critical-considerations}
+
+\textbf{Medication Considerations:} Address his use of anxiolytic
+medication. Explain that taking a benzodiazepine before exposure would
+chemically suppress the anxiety we need to work with, making the
+exercise ineffective. Agreement needed that he would not use it as
+safety behaviour before sessions or homework.
+
+\section{Cognitive Techniques: Socratic Dialogue and Behavioural
+Experiments}\label{cognitive-techniques-socratic-dialogue-and-behavioural-experiments}
+
+\subsection{Primary Technique: Socratic
+Dialogue}\label{primary-technique-socratic-dialogue}
+
+\subsubsection{Target Belief for
+Intervention}\label{target-belief-for-intervention}
+
+\textbf{Belief:} ``When my heart starts pounding, it means I'm having a
+heart attack and I might die.'' \textbf{Conviction:} 95\% during panic
+
+\subsubsection{Step-by-Step Procedure}\label{step-by-step-procedure}
+
+\paragraph{1. Isolate the Thought and Set the
+Frame}\label{isolate-the-thought-and-set-the-frame}
+
+\begin{quote}
+``Peter, let's focus on that specific thought we identified earlier:
+`When my heart pounds, I'm having a heart attack.' I'm not here to tell
+you you're wrong, but I'm curious to explore it with you. Can we put
+that thought under a microscope for a few minutes?''
+\end{quote}
+
+\paragraph{2. Gather Evidence For}\label{gather-evidence-for}
+
+\begin{quote}
+``What's the evidence that supports this thought? What makes it feel so
+true in the moment?''
+\end{quote}
+
+\emph{Expected responses: intensity of feelings, ``it feels just like
+what I've read about,'' ``I had to go to the ED''}
+
+\paragraph{3. Gather Evidence Against}\label{gather-evidence-against}
+
+\begin{quote}
+``That's compelling evidence. Now let's play devil's advocate for a
+moment. What's the evidence \emph{against} this thought? What did the
+doctors at the Emergency Department tell you after they ran the tests?
+How many times have you had this sensation and this thought? And how
+many times has it actually been a heart attack?''
+\end{quote}
+
+\paragraph{4. Introduce Alternative
+Explanations}\label{introduce-alternative-explanations}
+
+\begin{quote}
+``Okay, so it has happened hundreds of times and has never been a heart
+attack. Let's think about other, non-dangerous reasons a person's heart
+might pound?''
+\end{quote}
+
+\emph{Guide towards: exercise, stress, caffeine, excitement, anxiety
+itself}
+
+\paragraph{5. Use the Double Standard
+Technique}\label{use-the-double-standard-technique}
+
+\begin{quote}
+``This is a really helpful question. You mentioned your wife Uma is a
+nurse. If she came home from a stressful shift and said `My heart is
+racing,' what would be your first thought about what was happening to
+her? Would you assume it was a heart attack?''
+\end{quote}
+
+\paragraph{6. Develop a More Balanced
+Thought}\label{develop-a-more-balanced-thought}
+
+\begin{quote}
+``So, given that the medical tests were all clear, that it's happened
+hundreds of times without being a heart attack, and that there are many
+non-dangerous explanations for a pounding heart, what could be a more
+balanced or helpful thought to have in that moment?''
+\end{quote}
+
+\emph{Guide towards: ``My heart is pounding. This is just my body's
+response to anxiety. It's uncomfortable but not dangerous. It will
+pass.''}
+
+\paragraph{7. Test the New Thought}\label{test-the-new-thought}
+
+\begin{quote}
+``How does that new thought feel? Let's rate its believability from
+0-100\%.''
+\end{quote}
+
+\subsection{Alternative Cognitive Technique: Behavioural
+Experiment}\label{alternative-cognitive-technique-behavioural-experiment}
+
+\subsubsection{Rationale}\label{rationale}
+
+If Socratic dialogue isn't fully effective, a more powerful cognitive
+technique would be a \textbf{Behavioural Experiment}. Its purpose is to
+experientially test the validity of his prediction in real-world
+setting, providing `gut-level' evidence more powerful than verbal
+discussion alone.
+
+\subsubsection{Procedure}\label{procedure}
+
+\textbf{Target Belief:} ``If I go to the gym and do my old workout, I
+\emph{will} have a full-blown panic attack and have to be taken to
+hospital.'' (Conviction: 80\%)
+
+\textbf{Experiment Design:} - \textbf{Task:} Go to gym together -
+\textbf{Specific Step:} 10 minutes on treadmill at moderate pace -
+\textbf{Operational Definition:} Define what ``full-blown panic attack''
+means for measurement
+
+\textbf{Learning Outcome:} Gather data to see if prediction comes true.
+Review outcome and learning (e.g., ``I felt anxious and my heart
+pounded, but I did not have a full-blown attack or collapse''), then
+re-rate conviction in original belief.
+
+\section{Learning Discovery and Homework
+Assignment}\label{learning-discovery-and-homework-assignment}
+
+\subsection{Homework Tasks}\label{homework-tasks}
+
+\subsubsection{Behavioural Task: Interoceptive Exposure
+Practice}\label{behavioural-task-interoceptive-exposure-practice}
+
+\textbf{Assignment:} Practice the first interoceptive exposure exercise
+completed in session: \textbf{marching on the spot for one full minute,
+three times every day.}
+
+\textbf{Monitoring:} Use \textbf{Situational Exposure Diary} to track: -
+SUDS before, during, and after - Observations and discoveries - Creates
+clear, structured task
+
+\subsubsection{Cognitive Task: Thought Change
+Record}\label{cognitive-task-thought-change-record}
+
+\textbf{Assignment:} Begin using a \textbf{Thought Change Record}.
+
+\textbf{Objective:} Be a detective---whenever noticing anxiety, simply
+`catch' the thought that came just before and write it down.
+
+\textbf{Note:} Not challenging thoughts yet, just building awareness.
+
+\subsection{Rationale for Homework}\label{rationale-for-homework}
+
+\subsubsection{Interoceptive Exposure
+Rationale}\label{interoceptive-exposure-rationale}
+
+The repeated \textbf{Interoceptive Exposure} practice is like physical
+therapy for his brain's alarm system. Each repetition without
+catastrophe weakens the old fear-pathway and strengthens a new
+safety-pathway. It is the most direct way to achieve habituation and
+reduce fear of sensations.
+
+\subsubsection{Thought Record Rationale}\label{thought-record-rationale}
+
+The \textbf{Thought Record} serves a different purpose. It helps him
+practice the skill of metacognition---seeing thoughts as mental events
+rather than objective facts. This is the foundational skill required
+before we can effectively evaluate and restructure thoughts in later
+sessions.
+
+\textbf{Ultimate Goal:} The homework empowers him to become his own
+therapist, as real change happens in the 167 hours between sessions, not
+just the one hour together.
+
+\subsection{Collaborative
+Problem-Solving}\label{collaborative-problem-solving}
+
+\subsubsection{Anticipating Barriers}\label{anticipating-barriers}
+
+\begin{quote}
+``Peter, on a scale of 0 to 100, how confident are you that you can
+complete this homework? What might get in the way?''
+\end{quote}
+
+\subsubsection{Plan B Development}\label{plan-b-development}
+
+If low confidence expressed, create \textbf{Plan B}: \textgreater{} ``If
+marching for a full minute feels like too much, what's a step back that
+still feels like a step forward? Perhaps 30 seconds?''
+
+\textbf{Key Principle:} ``There is no such thing as unsuccessful
+homework, because we learn something every time.'' This encourages
+effort over perfect performance and builds self-efficacy.
+
+
+
+
+\end{document}

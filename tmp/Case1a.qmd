@@ -79,7 +79,7 @@ The theoretical foundation rests on Barlow's conceptualization of panic as a vic
   every node/.style={align=center},
   box/.style={rectangle, draw, thick, fill=blue!10, minimum height=1.2cm, text width=2.2cm},
   cycle/.style={rectangle, draw, thick, fill=red!20, minimum height=1.2cm, text width=2.2cm},
-  diamond/.style={diamond, draw, thick, fill=orange!20, minimum height=1.2cm, text width=2.2cm, aspect=1.5},
+  sensation/.style={ellipse, draw, thick, fill=orange!20, minimum height=1.2cm, text width=2.2cm},
   relief/.style={ellipse, draw, thick, fill=green!10, minimum height=1cm, text width=1.8cm},
   maintain/.style={ellipse, draw, thick, fill=red!40, minimum height=1cm, text width=1.8cm},
   arrow/.style={->, thick, >=stealth},
@@ -89,12 +89,12 @@ The theoretical foundation rests on Barlow's conceptualization of panic as a vic
 % Main sequence
 \node[box] (trigger) {Trigger\\e.g., Stress, Exercise, Caffeine};
 \node[cycle, right=of trigger] (threat) {Perceived Threat\\``Oh no, what's this feeling?''};
-\node[diamond, below=of threat] (sensations) {Bodily Sensations\\Palpitations, Dizziness};
+\node[sensation, below=of threat] (sensations) {Bodily Sensations\\Palpitations, Dizziness};
 \node[cycle, left=of sensations] (catastrophic) {Catastrophic Misinterpretation\\``I'm having a heart attack!''};
 \node[cycle, above=of catastrophic] (anxiety) {Anxiety/Fear\\SUDS 90/100};
 
 % Safety behaviours and outcomes
-\node[box, right=2.5cm of sensations] (safety) {Safety Behaviours\\\\& Avoidance\\e.g., Fleeing store,\\Avoiding gym};
+\node[box, right=2.5cm of sensations] (safety) {Safety Behaviours\\& Avoidance\\e.g., Fleeing store,\\Avoiding gym};
 \node[relief, below=1.2cm of safety] (shortterm) {Short-Term\\Relief};
 \node[maintain, above=1.2cm of safety] (longterm) {Long-Term:\\Fear Increases};
 
